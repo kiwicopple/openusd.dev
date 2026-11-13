@@ -1,10 +1,9 @@
-# Release checklist (not authorized yet)
+# Releasing
 
-- Paul chooses/reserves the npm name and authorizes publication. `openusd` remains provisional; `ousd` alias is deferred.
-- Agree on a software license, repository, maintainers, and a supported runtime matrix. Dataset CC0 does not license third-party material.
-- Review the current primary-source data and material availability limitations. Do not relabel a build date as a review date.
-- Decide whether to add CommonJS and browser distribution support; test any newly supported targets.
-- Run `npm test`, inspect `npm pack --dry-run`, then install the actual tarball in a clean consumer and run the README example and TypeScript check.
-- Only after authorization remove `private: true` and the `prepublishOnly` guard, choose the release version and changelog, and configure publisher credentials through the approved flow.
+1. Update `version` in `package.json` (semver) and commit.
+2. `npm test` (builds and runs tests; also runs automatically via `prepublishOnly`).
+3. Inspect contents with `npm pack --dry-run`.
+4. `npm login`, then `npm publish` (`publishConfig.access` is `public`). Use `--tag <name>` for prereleases.
+5. Tag the release: `git tag v<version> && git push --tags`.
 
-No npm publication, website deployment, account creation, payment, or secret storage is part of this prototype. Source is maintained in kiwicopple/openusd.dev.
+Before each release, review the data snapshot's primary-source limitations; do not relabel a build date as a review date.

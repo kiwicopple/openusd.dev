@@ -2,9 +2,11 @@
 
 List the providers documented by [openusd.dev](https://openusd.dev). This first increment is an **offline, read-only directory**, not a payments SDK. No credentials, account onboarding, transactions, balance queries, or network requests.
 
-**Unpublished prototype.** `openusd` is a working package name, not a reserved npm name. Do not run `npm install openusd` expecting this implementation. The package is private and has a publication guard.
+```sh
+npm install openusd
+```
 
-## Run locally
+## Develop locally
 
 Requires Node.js 22.12+ and npm. From this directory:
 
@@ -14,10 +16,10 @@ npm test
 npm pack
 ```
 
-Install the resulting tarball in your application:
+Install the resulting tarball in another project to test it:
 
 ```sh
-npm install /path/to/openusd-0.0.0-alpha.1.tgz
+npm install /path/to/openusd-0.1.0.tgz
 ```
 
 ```js
