@@ -1,8 +1,17 @@
 {
   "name": "openusd",
-  "version": "0.0.0-alpha.1",
-  "private": true,
+  "version": "0.1.0",
   "description": "Read-only provider directory companion to openusd.dev",
+  "license": "MIT",
+  "homepage": "https://openusd.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiwicopple/openusd.dev.git",
+    "directory": "packages/openusd"
+  },
+  "bugs": {
+    "url": "https://github.com/kiwicopple/openusd.dev/issues"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -15,17 +24,21 @@
   "files": [
     "dist",
     "README.md",
+    "LICENSE",
     "docs"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json && node scripts/fix-declarations.mjs",
     "test": "npm run build && node --test test/*.test.mjs",
-    "prepublishOnly": "node -e \"throw new Error('Publication is not authorized; complete the release checklist first.')\""
+    "prepublishOnly": "npm test"
   },
   "devDependencies": {
     "typescript": "5.9.2"
   },
   "engines": {
     "node": ">=22.12.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
