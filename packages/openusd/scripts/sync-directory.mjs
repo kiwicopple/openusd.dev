@@ -1,0 +1,10 @@
+import { readFile, writeFile } from 'node:fs/promises';
+const path = process.argv[2];
+if (!path) throw new Error('Provide a reviewed site dist/data/ecosystem.json path. This script does not fetch or verify providers.');
+const contents = await readFile(path, 'utf8');
+const data = JSON.parse(contents);
+if (data.schemaVersion !== '0.1.0-alpha' || !Array.isArray(data.providers) || !Array.isArray(data.capabilities) || !Array.isArray(data.sources)) throw new Error('Unsupported directory schema');
+const ids = new Set(data.providers.map(p=>p.id));
+if (ids.size !== data.providers.length || data.providers.some(p=>typeof p.id!=='string'||typeof p.name!=='string') || data.capabilities.some(c=>!ids.has(c.providerId))) throw new Error('Invalid provider references');
+await writeFile(new URL('../src/ecosystem.json',import.meta.url),contents);
+console.log(`Copied ${ids.size} providers, snapshot modified ${data.modifiedAt}; review and test before release.`);

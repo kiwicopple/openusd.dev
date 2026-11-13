@@ -1,0 +1,3778 @@
+{
+  "$schema": "https://openusd.dev/data/ecosystem.schema.json",
+  "schemaVersion": "0.1.0-alpha",
+  "description": "OUSD provider and network reference. A dated snapshot; no provider integration independently tested.",
+  "documentation": "https://openusd.dev/data/",
+  "modifiedAt": "2026-11-09",
+  "license": {
+    "identifier": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "noticeUrl": "https://openusd.dev/data/LICENSE.txt",
+    "scope": "The original openusd.dev dataset compilation and original descriptions, to the extent Paul Copplestone holds copyright or database rights. Cited third-party documentation, third-party code, provider logos and trademarks are excluded and retain their own rights.",
+    "modifiedAt": "2026-10-12"
+  },
+  "reviewCoverage": {
+    "oldestRecordReview": "2026-10-11",
+    "newestRecordReview": "2026-11-09",
+    "recordCount": 31,
+    "meaning": "Range of individual provider, capability, and network review dates. Not a complete-site certification."
+  },
+  "providers": [
+    {
+      "id": "visa",
+      "name": "Visa",
+      "kind": "Payments infrastructure",
+      "description": "OUSD portal access in restricted beta; API access coming soon.",
+      "detail": true,
+      "modifiedAt": "2026-10-12",
+      "reviewedAt": "2026-10-11",
+      "profile": {
+        "title": "Visa OUSD integration",
+        "introduction": {
+          "text": "Visa operates a global digital-payments network connecting businesses, consumers and financial institutions. Its Visa Stablecoin Platform (VSP) brings OUSD and wallet operations into institutional treasury and settlement workflows.",
+          "sourceIds": [
+            "visa-launch"
+          ]
+        },
+        "sections": [
+          {
+            "id": "hold-ousd",
+            "heading": "Holding OUSD",
+            "paragraphs": [
+              {
+                "text": "VSP supports OUSD balances for selected institutional clients in beta.",
+                "sourceIds": [
+                  "visa-launch"
+                ]
+              },
+              {
+                "text": "Start through your Visa representative, then connect bank accounts and configure users and approvals. Use the portal to manage OUSD holdings within the limits agreed for your business.",
+                "sourceIds": [
+                  "visa-launch"
+                ]
+              },
+              {
+                "text": "Geographic and volume limits apply. Confirm the OUSD network and funding instructions for your account before depositing.",
+                "sourceIds": [
+                  "visa-product"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "send-payouts",
+            "heading": "Sending payouts from OUSD",
+            "paragraphs": [
+              {
+                "text": "VSP supports OUSD transfers; the wallet arrangement determines where they are executed.",
+                "sourceIds": [
+                  "visa-launch"
+                ]
+              },
+              {
+                "text": "With Visa Wallet-as-a-Service, configure permitted destinations and approval roles before transferring through VSP. With Bring Your Own Wallet, carry out ongoing transfers through your existing wallet provider.",
+                "sourceIds": [
+                  "visa-product"
+                ]
+              },
+              {
+                "text": "Confirm the destination, OUSD network and beta volume limits with Visa. VSP’s general network list is not an operation-by-operation OUSD support matrix.",
+                "sourceIds": [
+                  "visa-product"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "mint-and-redeem-ousd",
+            "heading": "Minting and redeeming OUSD",
+            "paragraphs": [
+              {
+                "text": "Eligible VSP clients can mint and redeem OUSD through the portal.",
+                "sourceIds": [
+                  "visa-launch"
+                ]
+              },
+              {
+                "text": "Obtain the account’s dedicated virtual-account instructions for ACH or wire funding. For redemption, use the linked bank account and approved off-ramp instructions.",
+                "sourceIds": [
+                  "visa-product"
+                ]
+              },
+              {
+                "text": "Arrange onboarding and bank-account controls with Visa first. These beta flows remain subject to your approved geography and volume.",
+                "sourceIds": [
+                  "visa-launch"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "create-wallets",
+            "heading": "Creating OUSD wallets",
+            "paragraphs": [
+              {
+                "text": "VSP offers Wallet-as-a-Service or a connection to your existing wallet provider.",
+                "sourceIds": [
+                  "visa-product"
+                ]
+              },
+              {
+                "text": "For the Visa-managed stack, onboard through Visa and configure users, linked bank accounts and policies. For an existing wallet, agree the connection and on/off-ramp setup with your representative.",
+                "sourceIds": [
+                  "visa-launch"
+                ]
+              },
+              {
+                "text": "Access requires a Visa Access ID and Visa-issued Business Identification (BID) number. Wallet-as-a-Service is currently offered alongside beta OUSD access.",
+                "sourceIds": [
+                  "visa-product"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "custody-ousd",
+            "heading": "Managing OUSD custody",
+            "paragraphs": [
+              {
+                "text": "Visa supplies key-management technology for Wallet-as-a-Service; the client remains its own custodian.",
+                "sourceIds": [
+                  "visa-product"
+                ]
+              },
+              {
+                "text": "Configure destination allowlists, dual approval and passkey signing in the Visa wallet model. With your existing wallet provider, retain its custody arrangement and confirm which controls apply.",
+                "sourceIds": [
+                  "visa-product"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "accessing-apis",
+            "heading": "Accessing APIs",
+            "paragraphs": [
+              {
+                "text": "The VSP portal and documentation are available; API access is still described as coming soon.",
+                "sourceIds": [
+                  "visa-product"
+                ]
+              },
+              {
+                "text": "Ask your representative for specifications and timing before planning an automated integration. No public release date or self-service API access is established by the product page.",
+                "sourceIds": [
+                  "visa-product"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "kind": "Payments platform",
+      "description": "OUSD balances and product-specific integration docs. External transfer assets vary by product.",
+      "detail": true,
+      "modifiedAt": "2026-11-09",
+      "reviewedAt": "2026-10-12",
+      "profile": {
+        "title": "Stripe OUSD integration",
+        "introduction": {
+          "text": "Stripe provides payment processing and financial tools for businesses, including Treasury balances, payouts and card issuing. It completed its acquisition of stablecoin infrastructure company Bridge in February 2025. OUSD support depends on the individual Stripe product.",
+          "sourceIds": [
+            "stripe-treasury",
+            "stripe-cards",
+            "stripe-bridge-acquisition"
+          ]
+        },
+        "sections": [
+          {
+            "id": "hold-ousd",
+            "heading": "Holding OUSD",
+            "paragraphs": [
+              {
+                "text": "Can an account hold OUSD? An eligible Treasury financial account can store OUSD, with Bridge custody. It holds one stablecoin storage currency at a time.",
+                "sourceIds": [
+                  "stripe-store-funds",
+                  "stripe-treasury"
+                ]
+              },
+              {
+                "text": "In Dashboard Settings, open Linked accounts and payouts → Settlement and transfer rules. Under Manage financial account currencies, select OUSD and save. Each account holds one stablecoin storage currency at a time; it cannot store OUSD and USDC simultaneously.",
+                "sourceIds": [
+                  "stripe-store-funds"
+                ]
+              },
+              {
+                "text": "To fund from a wallet, open Balances → Add funds → Crypto transfer, choose the network and use its deposit instructions. This requires administrator access. The documented incoming asset is USDC, or USDC.e on Tempo, converted into the storage currency; these are not native OUSD deposit instructions.",
+                "sourceIds": [
+                  "stripe-add-funds",
+                  "stripe-store-funds"
+                ]
+              },
+              {
+                "text": "US businesses have public-preview access; the other listed eligible countries require private-preview access. Bank funding first enters a supported fiat balance before conversion to OUSD.",
+                "sourceIds": [
+                  "stripe-treasury",
+                  "stripe-add-funds"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "send-payouts",
+            "heading": "Sending payouts from OUSD",
+            "paragraphs": [
+              {
+                "text": "What reaches the recipient? Treasury can fund payouts from OUSD, but the documented external assets are supported fiat, USDC or USDC.e. Native OUSD recipient delivery is not established by this product guide.",
+                "sourceIds": [
+                  "stripe-transfer-send"
+                ]
+              },
+              {
+                "text": "For your own wallet, open Treasury → Transfer, select or add the external account, review the costs and destination, then select Review → Transfer. For a third party, use Treasury → Payouts → Send money, choose or onboard a recipient, enter the amount and method, select Review → Send, then track the payout.",
+                "sourceIds": [
+                  "stripe-transfer-send",
+                  "stripe-global-payouts"
+                ]
+              },
+              {
+                "text": "Crypto delivery uses USDC on Arbitrum, Avalanche C-Chain, Base, Ethereum, Optimism, Polygon, Solana and Stellar; Tempo uses USDC.e. Bank payouts convert to the destination currency. Sender, recipient and payout-method eligibility must each be checked; US access is public preview and other listed countries use private preview.",
+                "sourceIds": [
+                  "stripe-transfer-send"
+                ]
+              },
+              {
+                "text": "Which interface? Use Treasury transfers for accounts you own and Global Payouts for third-party recipients. Global Payouts recommends Payout Intents for US and UK senders; each attempt is an OutboundPayment. UK cross-border payouts require Payout Intents. These generic API examples do not independently establish an OUSD funding route; confirm account and payout-method eligibility.",
+                "sourceIds": [
+                  "stripe-global-payouts",
+                  "stripe-transfer-send"
+                ]
+              },
+              {
+                "text": "Connect is a separate, fiat-funded USDC flow. A US platform must obtain private-preview approval and complete due diligence, enable the crypto method and Express Dashboard, then use the Transfers API. Recipients must be eligible individuals or sole proprietors; companies, nonprofits, and US recipients in New York or Hawaii are excluded. This does not establish OUSD delivery.",
+                "sourceIds": [
+                  "stripe-connect"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "issue-cards",
+            "heading": "Issuing OUSD-funded cards",
+            "paragraphs": [
+              {
+                "text": "Stripe’s customer Issuing card programs are in private preview; confirm OUSD funding for the chosen integration.",
+                "sourceIds": [
+                  "stripe-cards"
+                ]
+              },
+              {
+                "text": "For wallet-funded consumer cards, complete Stripe and Bridge program onboarding and connect the accounts using Bridge’s installation link. Request the Bridge customer’s cards endorsement, then use the returned cardholder ID with Stripe Issuing. Create a card within 24 hours before the consumer endorsement expires. Confirm OUSD and the chain with Bridge; configure the approved funding wallet and custody type. Noncustodial funding also needs spending approval.",
+                "sourceIds": [
+                  "stripe-bridge-cards"
+                ]
+              },
+              {
+                "text": "For commercial wallet-funded programs, Bridge returns a connected-account ID after business endorsement approval. Create authorized cardholders and cards under that account.",
+                "sourceIds": [
+                  "stripe-bridge-cards"
+                ]
+              },
+              {
+                "text": "For financial-account customer cards, request preview access and configure an eligible US or European Connect platform. Onboard connected accounts in approved markets, activate storage and card capabilities, then create and fund USDC financial accounts before issuing cards. This separate recipe does not establish OUSD funding.",
+                "sourceIds": [
+                  "stripe-cards",
+                  "stripe-financial-account-cards"
+                ]
+              },
+              {
+                "text": "For cards spending your own business’s Treasury stablecoin balance, open Cards → Create card and follow the cardholder, card-type and activation steps. This is a separate product: US public preview, with country-specific invitation access elsewhere.",
+                "sourceIds": [
+                  "stripe-treasury-cards"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "convert-ousd",
+            "heading": "Converting OUSD",
+            "paragraphs": [
+              {
+                "text": "Which conversion is available? Treasury converts OUSD to or from supported fiat balances in the same eligible financial account. The Dashboard flow is documented; the general currency-conversion API is private preview.",
+                "sourceIds": [
+                  "stripe-convert-funds"
+                ]
+              },
+              {
+                "text": "Open Treasury → Convert. Select the source and destination balances, enter the amount, review the displayed terms and submit. Both currencies must be supported in that account.",
+                "sourceIds": [
+                  "stripe-convert-funds"
+                ]
+              },
+              {
+                "text": "USD/OUSD conversion does not involve foreign exchange; other fiat pairs use the current rate. This does not imply zero fees. The account cannot directly switch between OUSD and USDC storage balances through this flow. The documented stablecoin steps use the Dashboard; the general conversion API is private preview.",
+                "sourceIds": [
+                  "stripe-convert-funds"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "custody-ousd",
+            "heading": "Managing OUSD custody",
+            "paragraphs": [
+              {
+                "text": "Bridge custodies OUSD held in Stripe Treasury financial accounts.",
+                "sourceIds": [
+                  "stripe-store-funds"
+                ]
+              },
+              {
+                "text": "Enable OUSD in the financial account, then review movements in Transactions → All activity → Financial account. Filter to OUSD and export transactions for reconciliation when an accounting integration cannot read them. This is managed financial-account custody, not a self-custody wallet-creation API.",
+                "sourceIds": [
+                  "stripe-store-funds"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "accept-payments",
+            "heading": "Accepting OUSD payments",
+            "paragraphs": [
+              {
+                "text": "Can customers pay in OUSD? Stripe’s September 30, 2026 launch announcement explicitly includes OUSD payment acceptance, and its OUSD overview links to Payments. The detailed accepted-token table still names only USDC, USDP and USDG. This conflict remained unresolved on October 12, 2026; confirm the merchant, network and integration with Stripe before implementation.",
+                "sourceIds": [
+                  "stripe-ousd-launch",
+                  "stripe-ousd",
+                  "stripe-payments"
+                ]
+              },
+              {
+                "text": "Get OUSD-specific confirmation for your merchant, network and integration before enabling it in your product. After approval, request Stablecoins and Crypto in payment-method settings and wait until it is active. The documented Checkout flow uses USD line items; dynamic payment methods display eligible options.",
+                "sourceIds": [
+                  "stripe-payments",
+                  "stripe-accept-stablecoins"
+                ]
+              },
+              {
+                "text": "The setup guide excludes New York; the product overview lists additional markets in private preview. Its published customer limit is USD 10,000 per transaction. Payments settle to fiat; refunds return as stablecoins to the original wallet. Confirm the exact settlement currency for your account. The documented USDC test flow cannot validate OUSD acceptance.",
+                "sourceIds": [
+                  "stripe-payments",
+                  "stripe-accept-stablecoins"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "bridge",
+      "name": "Bridge",
+      "kind": "Payments infrastructure",
+      "description": "OUSD issuance, custodial wallets and transfers; production access requires onboarding.",
+      "detail": true,
+      "modifiedAt": "2026-11-09",
+      "reviewedAt": "2026-10-12",
+      "profile": {
+        "title": "Bridge OUSD integration",
+        "introduction": {
+          "text": "Bridge builds stablecoin APIs for moving funds, creating custodial wallets and issuing tokens. Stripe acquired Bridge in February 2025. Bridge Building Inc. currently issues OUSD; the separate Bridge National Trust Bank remains in organization and is not the issuer.",
+          "sourceIds": [
+            "stripe-bridge-acquisition",
+            "bridge-live"
+          ]
+        },
+        "sections": [
+          {
+            "id": "hold-ousd",
+            "heading": "Holding OUSD",
+            "paragraphs": [
+              {
+                "text": "Bridge custodial wallets explicitly support OUSD on Base, Ethereum, Solana and Tempo.",
+                "sourceIds": [
+                  "bridge-wallets"
+                ]
+              },
+              {
+                "text": "Create the beneficiary’s wallet, then fund it using an approved orchestration route or a supported direct deposit. Read balances and wallet history, and process bridge_wallet.activity events for deposits and withdrawals. Keep a company treasury under the company’s own customer ID.",
+                "sourceIds": [
+                  "bridge-wallet-movements",
+                  "bridge-wallets"
+                ]
+              },
+              {
+                "text": "Wallet accounting uses whole US cents. Production fund flows need Legal & Compliance approval; wallet geography restrictions and the EEA restriction described under Creating OUSD wallets apply before funding.",
+                "sourceIds": [
+                  "bridge-wallets",
+                  "bridge-routes"
+                ]
+              },
+              {
+                "text": "Prepare deposit handling before November 16, 2026: Bridge says incoming RTP deposits may return rtp in Transfer source payment_received_rail, Virtual Account source payment_rail, and wallet activity/history. Accept that response value in parsers and webhooks. When creating transfers or configuring virtual accounts, keep using fednow; rtp is a response value, not a request rail. This upcoming rail change does not establish an additional OUSD route.",
+                "sourceIds": [
+                  "bridge-changelog"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "send-payouts",
+            "heading": "Sending payouts from OUSD",
+            "paragraphs": [
+              {
+                "text": "Bridge Transfers can deliver OUSD or another supported destination asset; check each route direction.",
+                "sourceIds": [
+                  "bridge-transfers",
+                  "bridge-routes"
+                ]
+              },
+              {
+                "text": "1. Create a transfer with the amount, customer, source, destination and idempotency key.",
+                "sourceIds": [
+                  "bridge-transfers"
+                ]
+              },
+              {
+                "text": "2. For external funding, follow source_deposit_instructions, including the deposit reference. For a Bridge-wallet source, retrieve the wallet and supply initiation context when initiation_required is true; Bridge pulls the wallet balance.",
+                "sourceIds": [
+                  "bridge-transfers"
+                ]
+              },
+              {
+                "text": "3. Track the transfer to payment_processed and retain the final transaction hash. Reconcile refunds and exception states separately.",
+                "sourceIds": [
+                  "bridge-transfer-states"
+                ]
+              },
+              {
+                "text": "Handle transaction compliance reviews through Bridge’s RFI API (beta). Retrieve GET /v0/rfis/{id}, inspect requested_items and their response_types, then submit answers to POST /v0/rfis/{id}/responses with customer:write scope. This API covers transaction RFIs, not customer RFIs; Dashboard Support and email responses remain available. An RFI response is not confirmation that a paused transfer completed.",
+                "sourceIds": [
+                  "bridge-rfi",
+                  "bridge-changelog"
+                ]
+              },
+              {
+                "text": "The guide’s Tempo/OUSD request conflicts with Polygon and Stellar in other examples; those examples do not prove OUSD support on those chains.",
+                "sourceIds": [
+                  "bridge-transfers",
+                  "bridge-transfer-states"
+                ]
+              },
+              {
+                "text": "The reviewed routes list OUSD destinations on Base, Ethereum, Solana and Tempo, and OUSD sources on Base, Ethereum, Solana and Bridge Wallet; the reviewed route-explorer matrix did not establish a Tempo-source route. USD ACH-to-OUSD has a USD 1 minimum; listed Base/Ethereum/Solana OUSD-to-USD ACH or wire routes have a 1 OUSD minimum, after developer fees. Recheck the current route and minimum before submission. EEA users are limited to USDC and EURC.",
+                "sourceIds": [
+                  "bridge-routes",
+                  "bridge-minimums"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "issue-cards",
+            "heading": "Issuing OUSD-funded cards",
+            "paragraphs": [
+              {
+                "text": "Bridge wallet-funded cards use Stripe Issuing; current OUSD card funding still needs confirmation.",
+                "sourceIds": [
+                  "stripe-bridge-cards"
+                ]
+              },
+              {
+                "text": "1. Complete coordinated Bridge and Stripe program onboarding and connect the accounts using Bridge’s installation link.",
+                "sourceIds": [
+                  "stripe-bridge-cards"
+                ]
+              },
+              {
+                "text": "2. Request the cards endorsement for the Bridge customer. Consumer onboarding returns a Stripe cardholder ID for creating the Issuing card; create it within 24 hours before the endorsement expires, or renew the KYC confirmation.",
+                "sourceIds": [
+                  "stripe-bridge-cards",
+                  "bridge-card-kyc"
+                ]
+              },
+              {
+                "text": "3. Configure the approved funding wallet with the current Stripe integration. Noncustodial wallets need the required onchain spending approval; Bridge wallets need sufficient funds.",
+                "sourceIds": [
+                  "bridge-card-funding",
+                  "stripe-bridge-cards"
+                ]
+              },
+              {
+                "text": "Confirm OUSD, the chain and the program’s geographic eligibility. The legacy Bridge card-account provisioning endpoint is deprecated; use the current Stripe Issuing integration.",
+                "sourceIds": [
+                  "bridge-card-funding",
+                  "bridge-card-legacy"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "mint-and-redeem-ousd",
+            "heading": "Minting and redeeming OUSD",
+            "paragraphs": [
+              {
+                "text": "Open Standard network partners can arrange direct OUSD access through Bridge.",
+                "sourceIds": [
+                  "bridge-live"
+                ]
+              },
+              {
+                "text": "Complete the applicable onboarding and agree the funding and destination route. Bridge handles minting and reserve allocation, or burning and release of funds, within the approved issuance flow. The public issuance overview does not provide a universally available OUSD mint endpoint.",
+                "sourceIds": [
+                  "bridge-live",
+                  "bridge-mint-burn"
+                ]
+              },
+              {
+                "text": "Follow the transfer’s actual deposit instructions and reconcile the destination credit. For bank redemption, the wallet off-ramp requires a verified customer, funded wallet and external bank-account reference; its USDB example must not be copied as an OUSD request.",
+                "sourceIds": [
+                  "bridge-transfers",
+                  "bridge-wallet-offramp"
+                ]
+              },
+              {
+                "text": "Access and cost: partner onboarding and approval apply to each route; the issuance overview does not establish one global API release stage. Bridge announces no Bridge minting or redemption fee. Developer charges, network costs, funding/payout rail charges and conversion costs still need a quote for the chosen operation.",
+                "sourceIds": [
+                  "bridge-live",
+                  "bridge-mint-burn",
+                  "bridge-developer-fees"
+                ]
+              },
+              {
+                "text": "Route checks: the current matrix lists USD ACH into OUSD on Base, Ethereum, Solana and Tempo, and OUSD from Base, Ethereum or Solana into USD ACH or Wire. Each listed minimum is 1 in the source currency, after developer fees. No OUSD@Tempo source entry was established; EEA users are limited to USDC and EURC.",
+                "sourceIds": [
+                  "bridge-routes",
+                  "bridge-minimums"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "create-wallets",
+            "heading": "Creating OUSD wallets",
+            "paragraphs": [
+              {
+                "text": "Bridge provides a direct custodial-wallet API with explicit OUSD support on four networks.",
+                "sourceIds": [
+                  "bridge-wallets"
+                ]
+              },
+              {
+                "text": "After onboarding and production fund-flow approval, create the beneficiary customer with country and, where applicable, US state. Create a wallet through POST /v0/customers/{customerId}/wallets with the selected chain; save its wallet ID and receiving address.",
+                "sourceIds": [
+                  "bridge-wallet-movements",
+                  "bridge-wallets"
+                ]
+              },
+              {
+                "text": "The OUSD wallet matrix lists Base, Ethereum, Solana and Tempo. Wallets exclude New York, Texas, Kenya, Australia, Japan, Singapore, Malaysia, Vietnam and Indonesia. Broader eligibility rules also apply; EEA users are limited to USDC and EURC. Check both the business and beneficiary before provisioning and funding.",
+                "sourceIds": [
+                  "bridge-wallets",
+                  "bridge-routes"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "convert-ousd",
+            "heading": "Converting OUSD",
+            "paragraphs": [
+              {
+                "text": "Bridge documents conversion into and out of OUSD using approved transfer routes.",
+                "sourceIds": [
+                  "bridge-ousd-migration"
+                ]
+              },
+              {
+                "text": "Access and route: confirm the source asset, destination asset and both chains in the Route Explorer, plus account and beneficiary eligibility. USDC sources on Base, Ethereum, Solana, Tempo or in Bridge Wallet are listed into OUSD on its four native networks. Do not infer reverse routes, all-pairs support or a Tempo OUSD source route. EEA routes do not support OUSD.",
+                "sourceIds": [
+                  "bridge-routes"
+                ]
+              },
+              {
+                "text": "1. Inventory wallets, liquidation addresses, reusable transfer templates and virtual accounts. In the migration guide, USDx includes USDC; it is a placeholder for the existing asset, not a token identifier. Upgrade legacy Prefunded Account integrations to Wallet APIs first.",
+                "sourceIds": [
+                  "bridge-ousd-migration"
+                ]
+              },
+              {
+                "text": "2. Schedule downtime, pause deposits and withdrawals, and let in-flight transfers finish. Change destination currency on liquidation addresses, reusable templates and virtual accounts. Only close eligible awaiting-funds transfers; later-stage transfers must settle.",
+                "sourceIds": [
+                  "bridge-ousd-migration"
+                ]
+              },
+              {
+                "text": "3. Convert each wallet balance with a unique idempotency key for that operation. Wait for payment_processed, reconcile OUSD balances and late USDC deposits, then resume. Cross-chain migration needs new destination wallets/accounts and routes. Prepare rollback only after verifying its reverse route.",
+                "sourceIds": [
+                  "bridge-ousd-migration"
+                ]
+              },
+              {
+                "text": "Cost and limits: inspect the route quote, developer fees and post-fee minimums before migrating. A no-mint/redemption-fee announcement does not establish zero total conversion or network cost. Generic migration examples must not expand OUSD beyond Base, Ethereum, Solana and Tempo.",
+                "sourceIds": [
+                  "bridge-developer-fees",
+                  "bridge-minimums",
+                  "bridge-live",
+                  "bridge-ousd"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "custody-ousd",
+            "heading": "Managing OUSD custody",
+            "paragraphs": [
+              {
+                "text": "Bridge offers custodial OUSD wallets, subject to approved production fund flows and geographic restrictions.",
+                "sourceIds": [
+                  "bridge-wallets"
+                ]
+              },
+              {
+                "text": "Identify the beneficiary and obtain Bridge Legal & Compliance approval for the fund flow before accepting deposits. Use Bridge Orchestration APIs for transfers; direct deposits require a supported token and chain. Apply the same customer and geographic checks described under Creating OUSD wallets.",
+                "sourceIds": [
+                  "bridge-wallets"
+                ]
+              },
+              {
+                "text": "Reconcile wallet balances and history in whole US cents, rather than treating that accounting precision as the token’s onchain decimals. Retain the wallet and customer references for each movement.",
+                "sourceIds": [
+                  "bridge-wallets",
+                  "bridge-wallet-movements"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "testing-integrations",
+            "heading": "Testing integrations",
+            "paragraphs": [
+              {
+                "text": "Bridge Sandbox supports simulated payment activity and associated webhooks. It does not submit transactions to live banks or blockchains, so simulated completion is not evidence of OUSD settlement.",
+                "sourceIds": [
+                  "bridge-sandbox"
+                ]
+              },
+              {
+                "text": "1. Obtain sandbox access, create a sandbox customer and simulate its compliance state. Configure and activate a sandbox webhook endpoint for the event categories you need.",
+                "sourceIds": [
+                  "bridge-sandbox"
+                ]
+              },
+              {
+                "text": "2. Run a supported simulation: liquidation deposits produce liquidation_address.drain; virtual-account deposits produce virtual_account.activity and applicable transfer events; wallet deposits produce bridge_wallet.activity.",
+                "sourceIds": [
+                  "bridge-sandbox"
+                ]
+              },
+              {
+                "text": "3. Retrieve the resulting resource or wallet history and compare it with received events. Exercise duplicates, delays and failures in your application separately. Event coverage and timing may differ from production; do not assume blockchain-testnet or every OUSD route support.",
+                "sourceIds": [
+                  "bridge-sandbox"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "coinbase",
+      "name": "Coinbase",
+      "kind": "Exchange and infrastructure",
+      "description": "U.S. exchange purchases are documented. Business conversion, custody and wallet access need product-specific checks.",
+      "detail": true,
+      "modifiedAt": "2026-10-12",
+      "reviewedAt": "2026-10-11",
+      "profile": {
+        "title": "Coinbase OUSD integration",
+        "introduction": {
+          "text": "Coinbase operates a cryptocurrency exchange and offers business, institutional custody and developer products. Its Open USD asset page identifies the Open Standard token. The US exchange purchase flow is documented; business integrations need product-specific confirmation.",
+          "sourceIds": [
+            "coinbase-ousd",
+            "coinbase-ousd-buy"
+          ]
+        },
+        "sections": [
+          {
+            "id": "hold-ousd",
+            "heading": "Holding OUSD",
+            "paragraphs": [
+              {
+                "text": "Coinbase documents buying and managing Open USD on its US exchange; business holding arrangements need confirmation.",
+                "sourceIds": [
+                  "coinbase-ousd-buy"
+                ]
+              },
+              {
+                "text": "For an application treasury or customer balances, first identify the Coinbase product and account entity. Confirm OUSD holding, deposit and withdrawal support in that account before designing the funding flow. Exchange buying access does not establish Prime or API eligibility.",
+                "sourceIds": [
+                  "coinbase-prime-support",
+                  "coinbase-ousd-buy"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "create-wallets",
+            "heading": "Creating OUSD wallets",
+            "paragraphs": [
+              {
+                "text": "Open Standard lists Coinbase as a wallet integration path but does not identify an OUSD wallet API.",
+                "sourceIds": [
+                  "os-integrate"
+                ]
+              },
+              {
+                "text": "Ask Coinbase which wallet product fits the intended controller and beneficiary. Obtain its OUSD network support and provisioning documentation before creating a funding flow. The native token addresses on Coinbase’s asset page identify OUSD; they are not a product deposit or withdrawal matrix.",
+                "sourceIds": [
+                  "os-integrate",
+                  "coinbase-ousd"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "convert-ousd",
+            "heading": "Converting OUSD",
+            "paragraphs": [
+              {
+                "text": "Coinbase documents a US exchange purchase flow; institutional 1:1 conversion is a separate listed path.",
+                "sourceIds": [
+                  "coinbase-ousd-buy",
+                  "os-integrate"
+                ]
+              },
+              {
+                "text": "For the documented exchange flow, verify the Coinbase account and add an approved payment method. Open Buy & Sell, choose OpenUSD, enter the amount and review the quote and fees before placing the order. Fees can apply and appear in the preview.",
+                "sourceIds": [
+                  "coinbase-ousd-buy"
+                ]
+              },
+              {
+                "text": "For a business conversion integration, confirm the product, pair, account access and API with Coinbase. The US buying instructions do not establish worldwide availability or a 1:1 conversion API.",
+                "sourceIds": [
+                  "os-integrate",
+                  "coinbase-ousd-buy"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "custody-ousd",
+            "heading": "Managing OUSD custody",
+            "paragraphs": [
+              {
+                "text": "Open Standard lists Coinbase custody; exact OUSD institutional support depends on the chosen account.",
+                "sourceIds": [
+                  "os-integrate"
+                ]
+              },
+              {
+                "text": "If using Prime, inspect asset availability in its authenticated interface or supported-products endpoint; prospective customers can contact Prime about their geography. Confirm OUSD custody and transfer support with the relevant custody entity before depositing.",
+                "sourceIds": [
+                  "coinbase-prime-support"
+                ]
+              },
+              {
+                "text": "Prime availability varies by geography and custody entity. A retail OUSD purchase or a generic asset list does not establish institutional custody approval.",
+                "sourceIds": [
+                  "coinbase-prime-support"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "mastercard",
+      "name": "Mastercard",
+      "kind": "Payments infrastructure",
+      "description": "Wholesale OUSD minting and redemption, plus directory-listed integration paths with separate access requirements.",
+      "detail": true,
+      "modifiedAt": "2026-11-09",
+      "reviewedAt": "2026-10-11",
+      "profile": {
+        "title": "Mastercard OUSD integration",
+        "introduction": {
+          "text": "Mastercard provides payments-network and digital-asset infrastructure for financial institutions, merchants and platforms. It announced OUSD access through BVNK in September 2026; its product page describes wholesale OUSD minting and redemption.",
+          "sourceIds": [
+            "mastercard-digital-assets",
+            "mastercard-bvnk-ousd"
+          ]
+        },
+        "sections": [
+          {
+            "id": "send-payouts",
+            "heading": "Sending payouts from OUSD",
+            "paragraphs": [
+              {
+                "text": "Open Standard lists Mastercard for sending funds, but does not specify an OUSD payout API or network matrix.",
+                "sourceIds": [
+                  "os-integrate"
+                ]
+              },
+              {
+                "text": "Use the official enrollment route to request the intended payout flow. Confirm recipient markets, delivered asset, settlement timing and the account-specific integration before implementing. An OUSD listing alone does not establish those details.",
+                "sourceIds": [
+                  "os-integrate",
+                  "mastercard-enrollment"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "mint-and-redeem-ousd",
+            "heading": "Minting and redeeming OUSD",
+            "paragraphs": [
+              {
+                "text": "Mastercard documents wholesale OUSD minting and redemption for exchanges, distributors and institutions.",
+                "sourceIds": [
+                  "mastercard-digital-assets"
+                ]
+              },
+              {
+                "text": "Begin with the stablecoin enrollment form linked from its OUSD offer. Agree the approved workflow, funding instructions and redemption destination with Mastercard before sending funds. Its BVNK announcement identifies the infrastructure path, rather than a public self-service API recipe.",
+                "sourceIds": [
+                  "mastercard-digital-assets",
+                  "mastercard-bvnk-ousd",
+                  "mastercard-enrollment"
+                ]
+              },
+              {
+                "text": "BVNK now documents direct OUSD access, but its launch announcement and currencies reference disagree on network and geographic scope. Confirm the BVNK route for your entity; this does not establish Mastercard-wide API or sandbox availability. Mastercard’s own pages still leave exact pricing and transaction limits unestablished.",
+                "sourceIds": [
+                  "bvnk-ousd-launch",
+                  "bvnk-currencies",
+                  "mastercard-digital-assets"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "create-wallets",
+            "heading": "Creating OUSD wallets",
+            "paragraphs": [
+              {
+                "text": "Mastercard is listed as an OUSD wallet integration path; product-level provisioning details still need confirmation.",
+                "sourceIds": [
+                  "os-integrate"
+                ]
+              },
+              {
+                "text": "Describe the wallet owner, beneficiary and custody requirements during enrollment. Obtain the approved product documentation and OUSD network scope before provisioning. Mastercard’s general blockchain list is not an OUSD wallet support matrix.",
+                "sourceIds": [
+                  "mastercard-enrollment",
+                  "mastercard-digital-assets"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "convert-ousd",
+            "heading": "Converting OUSD",
+            "paragraphs": [
+              {
+                "text": "Open Standard lists Mastercard for buying, selling and swaps through API or portal access.",
+                "sourceIds": [
+                  "os-integrate"
+                ]
+              },
+              {
+                "text": "Request the conversion product through enrollment and confirm the source/destination pair, available interface, fees and limits. The directory listing does not establish self-service credentials or a release stage for that operation.",
+                "sourceIds": [
+                  "os-integrate",
+                  "mastercard-enrollment"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "privy",
+      "name": "Privy",
+      "kind": "Wallet infrastructure",
+      "description": "Embedded wallet infrastructure and Bridge-backed custodial OUSD transfers; configuration and access differ.",
+      "detail": true,
+      "modifiedAt": "2026-11-02",
+      "reviewedAt": "2026-10-12",
+      "profile": {
+        "title": "Privy OUSD integration",
+        "introduction": {
+          "text": "Privy provides wallet infrastructure for applications, including embedded wallets, external-wallet connections and custodial wallets backed by Bridge. Its wallet model determines who can authorize transactions; its custodial transfer guide explicitly includes OUSD.",
+          "sourceIds": [
+            "privy-wallets",
+            "privy-custodial-overview",
+            "privy-custodial-send"
+          ]
+        },
+        "sections": [
+          {
+            "id": "hold-ousd",
+            "heading": "Holding OUSD",
+            "paragraphs": [
+              {
+                "text": "Privy can expose a Bridge-custodied OUSD wallet and its balance inside an application.",
+                "sourceIds": [
+                  "privy-custodial-overview",
+                  "privy-custodial-send"
+                ]
+              },
+              {
+                "text": "After provisioning, fund through the supported deposit address or an approved Bridge virtual-account or transfer route. Confirm the actual OUSD asset and chain with Bridge before sending; these funding methods are not universal asset support.",
+                "sourceIds": [
+                  "privy-custodial-funding",
+                  "privy-custodial-overview"
+                ]
+              },
+              {
+                "text": "Subscribe to balance notifications and reconcile movements. Use bridge_metadata to distinguish deposits from refunds of failed off-ramps. Enterprise enablement and the custodian’s beneficiary and regional requirements apply before funding.",
+                "sourceIds": [
+                  "privy-custodial-webhooks",
+                  "privy-custodial-setup"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "send-payouts",
+            "heading": "Sending payouts from OUSD",
+            "paragraphs": [
+              {
+                "text": "Privy documents custodial OUSD transfers, including an OUSD-on-Tempo example. This is a wallet-to-wallet transfer, not a bank-payout API.",
+                "sourceIds": [
+                  "privy-custodial-send"
+                ]
+              },
+              {
+                "text": "Prerequisites: Privy Enterprise, custodial-wallet enablement, Bridge onboarding and beneficiary KYC. Use an existing funded Tempo mainnet custodial wallet. Setup uses a Bridge production integration; the example below is documentation, not a sandbox transfer or an independently executed payment. Confirm route, fees and limits before use.",
+                "sourceIds": [
+                  "privy-custodial-setup",
+                  "privy-custodial-create",
+                  "privy-custodial-send"
+                ]
+              },
+              {
+                "text": "When the wallet requires Strong Customer Authentication (SCA), your app authenticates the customer; Privy forwards the attestation to Bridge. Set initiation.channel and initiation.subchannel to the actual payment flow. Use sca_used only after SCA occurred, or the applicable eligible exemption/non-applicability outcome—not a placeholder chosen to make a request pass.",
+                "sourceIds": [
+                  "privy-custodial-sca",
+                  "privy-custodial-send"
+                ]
+              },
+              {
+                "text": "Optional auth_factors may accompany sca_used. If supplied, include at least two factors from distinct categories, each with its authentication time and internal reference; omit auth_factors for other outcomes. Confirm requirements for the specific wallet. These fields do not establish regional OUSD eligibility.",
+                "sourceIds": [
+                  "privy-custodial-send"
+                ]
+              },
+              {
+                "text": "1. Before submission, persist an application payment ID, app/environment, wallet ID, Bridge customer ID, approved recipient, asset, chain and exact amount. Store one immutable request fingerprint, reference_id and idempotency key for that attempt. These are recommended application records, not additional Privy API fields.",
+                "sourceIds": [
+                  "privy-custodial-send",
+                  "privy-action-reference",
+                  "privy-idempotency"
+                ]
+              },
+              {
+                "text": "2. The request uses amount in standard units: 10.0 means ten OUSD. Supply the authorization signature when an owner or additional signer requires it; include custody_options.initiation when required by the wallet’s strong-customer-authentication flow. The destination must be the approved recipient’s address, never the OUSD token contract.",
+                "sourceIds": [
+                  "privy-custodial-send",
+                  "privy-transfer-api"
+                ]
+              },
+              {
+                "text": "3. Save the returned action id, wallet_id, type, status, transfer fields and observation time. If the response is lost, recover with GET /v1/actions?reference_id=invoice-1042-attempt-1. reference_id is unique per app, at most 64 characters, and is not an idempotency key.",
+                "sourceIds": [
+                  "privy-action-reference",
+                  "privy-action-status"
+                ]
+              },
+              {
+                "text": "4. Retrieve GET /v1/wallets/{wallet_id}/actions/{action_id}?include=steps. Poll with backoff until terminal; a local timeout remains unresolved work. For this custodial flow, succeeded reports onchain confirmation; rejected has no onchain effect; failed can include prior effects and needs inspection before retrying.",
+                "sourceIds": [
+                  "privy-action-status",
+                  "privy-custodial-lifecycle"
+                ]
+              },
+              {
+                "text": "5. Verify webhook signatures before use. Transfer events identify wallet_action_id, while the action resource uses id; neither is the delivery ID used for deduplication. Treat events as triggers to retrieve authoritative state. Compare wallet, exact amount, asset, chain and recipient against the approved intent, then post a matching succeeded effect once in the ledger. Preserve mismatches and failed steps for review.",
+                "sourceIds": [
+                  "privy-transfer-event",
+                  "privy-webhook-verification",
+                  "privy-custodial-lifecycle"
+                ]
+              },
+              {
+                "text": "Keep returned evidence and any available settlement receipt. The documented custodian_transaction step exposes status and failure_reason, but does not guarantee a transaction_hash field; do not invent one. Fees are separate reconciliation fields, not assumed to be zero.",
+                "sourceIds": [
+                  "privy-action-types",
+                  "privy-custodial-send"
+                ]
+              },
+              {
+                "text": "Retry boundary: reuse the same privy-idempotency-key and identical request body within its 24-hour window; expired keys can execute a new operation. For /transfer, synchronous 5xx responses delete the idempotency record, so the same key can retry a fresh attempt. POLICY_VIOLATION also clears the record; correct the policy issue before retrying. These exceptions do not make an ambiguous timeout or asynchronously failed action safe to repeat: reconcile through reference/action lookup before another payment.",
+                "sourceIds": [
+                  "privy-idempotency",
+                  "privy-action-reference",
+                  "privy-custodial-lifecycle"
+                ]
+              }
+            ],
+            "examples": [
+              {
+                "id": "tempo-transfer-request",
+                "title": "Worked request: ten OUSD on Tempo",
+                "language": "http",
+                "description": "Documentation-only HTTP request with placeholders. It has not been submitted. Use only in an authorized server integration; keep secrets out of browser code and logs. This minimal body omits custody_options.initiation. Add the wallet’s required authentication context described above and required authorization signatures before use.",
+                "code": "POST https://api.privy.io/v1/wallets/{wallet_id}/transfer\nContent-Type: application/json\nprivy-app-id: {app_id}\nAuthorization: Basic {base64(app_id:app_secret)}\nprivy-idempotency-key: {persisted_uuid_for_this_attempt}\nprivy-authorization-signature: {required_authorization_signature}\n\n{\n  \"reference_id\": \"invoice-1042-attempt-1\",\n  \"amount\": \"10.0\",\n  \"source\": { \"asset\": \"ousd\", \"chain\": \"tempo\" },\n  \"destination\": { \"address\": \"{approved_recipient_hex_address}\" }\n}",
+                "sourceIds": [
+                  "privy-custodial-send",
+                  "privy-action-reference",
+                  "privy-idempotency",
+                  "privy-transfer-api"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "create-wallets",
+            "heading": "Creating OUSD wallets",
+            "paragraphs": [
+              {
+                "text": "Privy offers embedded wallets and a separate Bridge-backed custodial route with documented OUSD transfers.",
+                "sourceIds": [
+                  "privy-wallets",
+                  "privy-custodial-send"
+                ]
+              },
+              {
+                "text": "1. For the custodial route, obtain a Privy Enterprise plan and app enablement. Complete Bridge onboarding and beneficiary KYC.",
+                "sourceIds": [
+                  "privy-custodial-setup"
+                ]
+              },
+              {
+                "text": "2. Register the Bridge production API key under Configuration → Integrations, then enable Custodial wallets under Wallets → Advanced and select Bridge.",
+                "sourceIds": [
+                  "privy-custodial-setup"
+                ]
+              },
+              {
+                "text": "3. Create the wallet with POST /v1/custodial_wallets. Set provider to bridge and provider_user_id to the beneficiary’s Bridge customer ID. Configure the chain, owner and policies, then save the returned wallet ID and address.",
+                "sourceIds": [
+                  "privy-custodial-create"
+                ]
+              },
+              {
+                "text": "Custodial creation lists Tempo, Base and Solana mainnet; the explicit OUSD transfer example is on Tempo. Confirm other asset/chain combinations and regional access with Bridge rather than combining separate asset and chain lists.",
+                "sourceIds": [
+                  "privy-custodial-create",
+                  "privy-custodial-send"
+                ]
+              },
+              {
+                "text": "For an embedded wallet, choose user or application control, configure the owner and policies, then use the documented client or server SDK creation flow. The owner controls authorization; an entity association does not grant control. This general wallet flow does not establish every OUSD payment or issuer service.",
+                "sourceIds": [
+                  "privy-create-wallet",
+                  "privy-wallets"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "custody-ousd",
+            "heading": "Managing OUSD custody",
+            "paragraphs": [
+              {
+                "text": "Bridge is the custodian for Privy custodial wallets; Privy configures who may request actions.",
+                "sourceIds": [
+                  "privy-custodial-overview",
+                  "privy-custodial-controls"
+                ]
+              },
+              {
+                "text": "Complete the Enterprise and Bridge setup, then assign the owner, policies and additional signers needed for the application. A custodial wallet owner cannot export private keys or transact without custodian approval.",
+                "sourceIds": [
+                  "privy-custodial-setup",
+                  "privy-custodial-controls"
+                ]
+              },
+              {
+                "text": "Bridge screens transactions before execution. Enforce the beneficiary’s geographic and route restrictions, track each action, and inspect failed steps before retrying because partial onchain effects are possible. Fees and transaction limits remain to be confirmed for the account.",
+                "sourceIds": [
+                  "privy-custodial-lifecycle",
+                  "privy-custodial-send"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "bvnk",
+      "name": "BVNK",
+      "kind": "Payments infrastructure",
+      "description": "Direct and embedded OUSD access, with conflicting network and eligibility documentation to resolve before funding.",
+      "detail": true,
+      "modifiedAt": "2026-11-09",
+      "reviewedAt": "2026-11-09",
+      "profile": {
+        "title": "BVNK OUSD integration",
+        "introduction": {
+          "text": "BVNK provides business payment infrastructure and is part of Mastercard. Its November 6 announcement adds a direct OUSD integration path.",
+          "sourceIds": [
+            "bvnk-ousd-launch"
+          ]
+        },
+        "sections": [
+          {
+            "id": "access-and-networks",
+            "heading": "Confirming account and network access",
+            "paragraphs": [
+              {
+                "text": "The launch lists Ethereum, Solana, Base and Tempo for eligible businesses outside the EEA. The currencies reference instead describes US eligibility and Plasma, with Tempo forthcoming. Confirm your entity, network and operation before funding; this reference does not establish a Plasma deployment or OUSD sandbox.",
+                "sourceIds": [
+                  "bvnk-ousd-launch",
+                  "bvnk-currencies"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "hold-ousd",
+            "heading": "Holding OUSD",
+            "paragraphs": [
+              {
+                "text": "BVNK offers OUSD storage through its platform and API.",
+                "sourceIds": [
+                  "bvnk-ousd-launch"
+                ]
+              },
+              {
+                "text": "Resolve the account and network discrepancy above before adding funds. The reduced currency list for non-MTL US states does not list OUSD.",
+                "sourceIds": [
+                  "bvnk-currencies"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "send-payouts",
+            "heading": "Sending payouts from OUSD",
+            "paragraphs": [
+              {
+                "text": "BVNK lists direct business transfers and embedded payouts.",
+                "sourceIds": [
+                  "bvnk-ousd-launch"
+                ]
+              },
+              {
+                "text": "Confirm the recipient asset, rail, fees and timing for your account. The currencies reference requires transactions to meet a EUR 1-equivalent minimum; a generic network list does not prove an OUSD route.",
+                "sourceIds": [
+                  "bvnk-currencies"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "mint-and-redeem-ousd",
+            "heading": "Minting and redeeming OUSD",
+            "paragraphs": [
+              {
+                "text": "Wholesale users can mint and burn OUSD at 1:1 against USD.",
+                "sourceIds": [
+                  "bvnk-ousd-launch"
+                ]
+              },
+              {
+                "text": "Confirm access terms and total fees before funding.",
+                "sourceIds": [
+                  "bvnk-ousd-launch"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "create-wallets",
+            "heading": "Creating OUSD wallets",
+            "paragraphs": [
+              {
+                "text": "Existing BVNK customers can open a network-specific OUSD wallet in the portal; embedded wallets are also offered.",
+                "sourceIds": [
+                  "bvnk-ousd-launch"
+                ]
+              },
+              {
+                "text": "Wallet creation alone does not resolve the conflicting network and eligibility documentation.",
+                "sourceIds": [
+                  "bvnk-currencies",
+                  "bvnk-ousd-launch"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "convert-ousd",
+            "heading": "Converting OUSD",
+            "paragraphs": [
+              {
+                "text": "BVNK offers OUSD conversion through its platform and API.",
+                "sourceIds": [
+                  "bvnk-ousd-launch"
+                ]
+              },
+              {
+                "text": "Before depositing, check the currency response’s supportsDeposits flag and exact network. This flag does not prove a withdrawal route.",
+                "sourceIds": [
+                  "bvnk-currencies"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "networks": [
+    {
+      "id": "base",
+      "name": "Base",
+      "legacyRecordId": "base-native-ousd",
+      "asset": "OUSD",
+      "deployment": "native",
+      "address": "0xB2000000000000000000002fEb517dFeC7415344",
+      "explorerUrl": "https://basescan.org/address/0xB2000000000000000000002fEb517dFeC7415344",
+      "sourceId": "os-integrate",
+      "reviewedAt": "2026-10-12",
+      "modifiedAt": "2026-11-09",
+      "profile": {
+        "title": "OUSD on Base",
+        "introduction": {
+          "text": "Open Standard lists native OUSD on Base. Use the Base-specific contract below with Base Mainnet, chain ID 8453. Base uses ETH for network fees.",
+          "sourceIds": [
+            "os-integrate",
+            "base-connection"
+          ]
+        },
+        "sections": [
+          {
+            "id": "network-setup",
+            "heading": "Connecting to Base",
+            "paragraphs": [
+              {
+                "text": "Base Mainnet uses chain ID 8453 and the public RPC endpoint https://mainnet.base.org. Base Sepolia is a separate development network with chain ID 84532 and RPC endpoint https://sepolia.base.org. Both use ETH as their network currency.",
+                "sourceIds": [
+                  "base-connection"
+                ]
+              },
+              {
+                "text": "Use the RPC endpoint for reads and other requests. Base separately lists https://mainnet-sequencer.base.org for mainnet transaction submission. Check which endpoint your client uses rather than sending balance queries to the submission endpoint.",
+                "sourceIds": [
+                  "base-connection"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "read-only-balance",
+            "heading": "Reading OUSD with a network check",
+            "paragraphs": [
+              {
+                "text": "The downloadable Node.js example first requires chain ID 8453, then queries the exact OUSD contract above. It pins eth_getCode, decimals() and balanceOf(address) to the same block number and prints the raw integer plus an exact decimal-string balance. eth_getBalance reads a native-currency balance, not OUSD.",
+                "sourceIds": [
+                  "os-integrate",
+                  "ethereum-rpc",
+                  "evm-read-example",
+                  "base-connection",
+                  "base-rpc"
+                ]
+              },
+              {
+                "text": "The example makes JSON-RPC reads only; it requests no wallet connection, signature or transaction. The queried owner address is sent to the selected RPC endpoint. The command below uses the zero address only as a syntax illustration; replace it with the public address you intend to inspect.",
+                "sourceIds": [
+                  "evm-read-example"
+                ]
+              },
+              {
+                "text": "The example queries decimals at runtime and checks the ABI response shape; it does not hard-code an unverified OUSD precision. It also rejects a contract with no bytecode at the selected block. Review the deployed interface before relying on the result.",
+                "sourceIds": [
+                  "os-integrate",
+                  "ethereum-rpc",
+                  "evm-read-example",
+                  "base-connection",
+                  "base-rpc"
+                ]
+              },
+              {
+                "text": "Validation limit: the script passed syntax and mocked-response checks, including wrong-network and malformed-response failures. Live RPC requests from this review environment were blocked, so no live EVM balance result is claimed. Output should include network, chainId, block, token, owner, codeBytes, decimals, rawBalance and balance. A latest-block read is not a settlement or spendability guarantee.",
+                "sourceIds": [
+                  "evm-read-example"
+                ]
+              }
+            ],
+            "examples": [
+              {
+                "id": "base-balance-example",
+                "title": "Run the read-only balance example",
+                "language": "bash",
+                "description": "Save the linked download as read-ousd-evm.mjs and use Node.js 18 or later. Use a trusted RPC endpoint; do not paste an RPC credential into source code or shared logs.",
+                "code": "node read-ousd-evm.mjs base 0x0000000000000000000000000000000000000000",
+                "sourceIds": [
+                  "evm-read-example"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "network-fees",
+            "heading": "Estimating both fee components",
+            "paragraphs": [
+              {
+                "text": "A Base transaction has an execution fee on Base and an L1 fee for publishing transaction data to Ethereum. Estimate both components when budgeting a transfer; an execution-only estimate does not cover the complete network cost.",
+                "sourceIds": [
+                  "base-fees"
+                ]
+              },
+              {
+                "text": "Base documents GasPriceOracle methods for estimating the L1 component from a serialized transaction or its approximate size. Fees vary with network conditions, so use the current estimate rather than a fixed price per OUSD transfer.",
+                "sourceIds": [
+                  "base-fees"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tools-and-confirmation",
+            "heading": "Reading contracts and confirming payments",
+            "paragraphs": [
+              {
+                "text": "Base’s JSON-RPC reference covers eth_chainId, read-only contract queries with eth_call, event logs, and transaction receipts. eth_getBalance returns an account’s ETH balance; it is not a query for the account’s OUSD holdings.",
+                "sourceIds": [
+                  "base-rpc"
+                ]
+              },
+              {
+                "text": "Base’s pending block tag now resolves to the latest canonical block; the RPC reference recommends using latest instead. Do not treat either as safe or finalized when deciding when to credit a payment. Public Base endpoints remain HTTP-only; WebSocket subscriptions require a WebSocket-capable provider.",
+                "sourceIds": [
+                  "base-rpc"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ousd-limits",
+            "heading": "OUSD deployment and access limits",
+            "paragraphs": [
+              {
+                "text": "Open Standard’s native Base listing identifies OUSD, but does not establish a supported OUSD bridge route, a Base Sepolia deployment, or every provider’s deposit and withdrawal routes. Confirm the asset, network, and operation with the selected provider.",
+                "sourceIds": [
+                  "os-integrate"
+                ]
+              },
+              {
+                "text": "The listed contract identifies the token, not a customer receiving address. This reference has not tested OUSD transfers or provider integrations on Base.",
+                "sourceIds": [
+                  "os-integrate"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "source": {
+        "id": "os-integrate",
+        "url": "https://joinopenstandard.com/integrate",
+        "title": "Open Standard: Build with Open USD",
+        "publishedAt": null,
+        "reviewedAt": "2026-10-12"
+      }
+    },
+    {
+      "id": "ethereum",
+      "name": "Ethereum",
+      "legacyRecordId": "ethereum-native-ousd",
+      "asset": "OUSD",
+      "deployment": "native",
+      "address": "0x9f6F3991D525015a6F8CaF062C83b62fD3AC4436",
+      "explorerUrl": "https://etherscan.io/address/0x9f6F3991D525015a6F8CaF062C83b62fD3AC4436",
+      "sourceId": "os-integrate",
+      "reviewedAt": "2026-10-12",
+      "modifiedAt": "2026-10-12",
+      "profile": {
+        "title": "OUSD on Ethereum",
+        "introduction": {
+          "text": "Open Standard lists native OUSD on Ethereum. Pair the Ethereum contract below with Ethereum Mainnet, chain ID 1; a matching token symbol on another network is not the same deployment.",
+          "sourceIds": [
+            "os-integrate",
+            "ethereum-rpc"
+          ]
+        },
+        "sections": [
+          {
+            "id": "network-setup",
+            "heading": "Connecting to Ethereum Mainnet",
+            "paragraphs": [
+              {
+                "text": "Connect through your Ethereum node or selected RPC provider, then check the network with eth_chainId. The JSON-RPC reference returns chain IDs as hexadecimal strings; Ethereum Mainnet is 1, represented as 0x1.",
+                "sourceIds": [
+                  "ethereum-rpc"
+                ]
+              },
+              {
+                "text": "Sepolia is Ethereum’s recommended testnet for application development. Accounts can exist across networks, but their balances and transaction histories are separate. A Mainnet token address does not establish a corresponding Sepolia deployment.",
+                "sourceIds": [
+                  "ethereum-networks"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "read-only-balance",
+            "heading": "Reading OUSD with a network check",
+            "paragraphs": [
+              {
+                "text": "The downloadable Node.js example first requires chain ID 1, then queries the exact OUSD contract above. It pins eth_getCode, decimals() and balanceOf(address) to the same block number and prints the raw integer plus an exact decimal-string balance. eth_getBalance reads a native-currency balance, not OUSD.",
+                "sourceIds": [
+                  "os-integrate",
+                  "ethereum-rpc",
+                  "evm-read-example"
+                ]
+              },
+              {
+                "text": "The example makes JSON-RPC reads only; it requests no wallet connection, signature or transaction. The queried owner address is sent to the selected RPC endpoint. The command below uses the zero address only as a syntax illustration; replace it with the public address you intend to inspect.",
+                "sourceIds": [
+                  "evm-read-example"
+                ]
+              },
+              {
+                "text": "The example queries decimals at runtime and checks the ABI response shape; it does not hard-code an unverified OUSD precision. It also rejects a contract with no bytecode at the selected block. Review the deployed interface before relying on the result.",
+                "sourceIds": [
+                  "os-integrate",
+                  "ethereum-rpc",
+                  "evm-read-example"
+                ]
+              },
+              {
+                "text": "Validation limit: the script passed syntax and mocked-response checks, including wrong-network and malformed-response failures. Live RPC requests from this review environment were blocked, so no live EVM balance result is claimed. Output should include network, chainId, block, token, owner, codeBytes, decimals, rawBalance and balance. A latest-block read is not a settlement or spendability guarantee.",
+                "sourceIds": [
+                  "evm-read-example"
+                ]
+              }
+            ],
+            "examples": [
+              {
+                "id": "ethereum-balance-example",
+                "title": "Run the read-only balance example",
+                "language": "bash",
+                "description": "Save the linked download as read-ousd-evm.mjs and use Node.js 18 or later. Use a trusted RPC endpoint; do not paste an RPC credential into source code or shared logs.",
+                "code": "RPC_URL=\"YOUR_ETHEREUM_MAINNET_RPC_URL\" node read-ousd-evm.mjs ethereum 0x0000000000000000000000000000000000000000",
+                "sourceIds": [
+                  "evm-read-example"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "network-fees",
+            "heading": "Funding ETH execution fees",
+            "paragraphs": [
+              {
+                "text": "Ethereum charges transaction fees in ETH. The cost depends on gas used and the base and priority fees. Keep fee funding separate from the OUSD amount; a failed transaction can still consume gas.",
+                "sourceIds": [
+                  "ethereum-gas"
+                ]
+              },
+              {
+                "text": "Estimate the actual contract operation. Ethereum’s 21,000-gas example describes a basic ETH transfer, not a universal gas limit for token transfers or other contract calls. Use an estimate for the transaction you intend to submit.",
+                "sourceIds": [
+                  "ethereum-gas",
+                  "ethereum-rpc"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tools-and-confirmation",
+            "heading": "Inspecting contract state and receipts",
+            "paragraphs": [
+              {
+                "text": "Use eth_call for read-only contract queries and eth_getTransactionReceipt to retrieve an included transaction’s receipt. These are general Ethereum interfaces; consult the token’s actual contract interface before constructing OUSD calls.",
+                "sourceIds": [
+                  "ethereum-rpc"
+                ]
+              },
+              {
+                "text": "Ethereum RPC distinguishes pending, latest, safe, and finalized block state. Set a confirmation policy for payment crediting instead of treating a pending observation as final settlement.",
+                "sourceIds": [
+                  "ethereum-rpc"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ousd-limits",
+            "heading": "OUSD deployment and access limits",
+            "paragraphs": [
+              {
+                "text": "The canonical Ethereum listing does not grant minting or redemption access and does not establish that a particular provider accepts this OUSD contract. Confirm the required operation and account eligibility with that provider.",
+                "sourceIds": [
+                  "os-integrate"
+                ]
+              },
+              {
+                "text": "Use the listed contract to identify OUSD, not as a personal receiving address. This reference has not tested Ethereum OUSD transfers, provider integrations, or a Sepolia OUSD deployment.",
+                "sourceIds": [
+                  "os-integrate",
+                  "ethereum-networks"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "source": {
+        "id": "os-integrate",
+        "url": "https://joinopenstandard.com/integrate",
+        "title": "Open Standard: Build with Open USD",
+        "publishedAt": null,
+        "reviewedAt": "2026-10-12"
+      }
+    },
+    {
+      "id": "solana",
+      "name": "Solana",
+      "legacyRecordId": "solana-native-ousd",
+      "asset": "OUSD",
+      "deployment": "native",
+      "address": "ousd2mJsPEckLHcSCDxyKD7NDGARZcfLbDZkKiatYHB",
+      "explorerUrl": "https://solscan.io/token/ousd2mJsPEckLHcSCDxyKD7NDGARZcfLbDZkKiatYHB",
+      "sourceId": "os-integrate",
+      "reviewedAt": "2026-10-12",
+      "modifiedAt": "2026-10-12",
+      "profile": {
+        "title": "OUSD on Solana",
+        "introduction": {
+          "text": "On Solana, identify OUSD by the mint address below. A mint defines a token; individual holdings live in separate token accounts. Do not use the OUSD mint as a customer receiving account.",
+          "sourceIds": [
+            "os-integrate",
+            "solana-tokens"
+          ]
+        },
+        "sections": [
+          {
+            "id": "network-setup",
+            "heading": "Choosing the Solana cluster",
+            "paragraphs": [
+              {
+                "text": "Solana’s documented public Mainnet RPC is https://api.mainnet.solana.com. For application development, use Devnet at https://api.devnet.solana.com. Testnet is intended for validator and network stress testing. Each cluster has separate state.",
+                "sourceIds": [
+                  "solana-clusters"
+                ]
+              },
+              {
+                "text": "Shared public RPC endpoints are rate-limited and are not intended for production applications. Select dedicated or private infrastructure before relying on RPC availability for customer payments.",
+                "sourceIds": [
+                  "solana-clusters"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "read-only-balance",
+            "heading": "Reading an OUSD balance safely",
+            "paragraphs": [
+              {
+                "text": "The read-only example checks the Mainnet genesis hash, the exact OUSD mint, its owning program and six decimals before summing visible amounts from every token account returned for an owner. It verifies each account’s program, mint, owner and amount precision. No key, signature or transaction is needed.",
+                "sourceIds": [
+                  "solana-genesis",
+                  "solana-account-info",
+                  "solana-owner-accounts",
+                  "solana-read-example"
+                ]
+              },
+              {
+                "text": "On October 12, 2026, getAccountInfo returned an initialized Token-2022 mint at finalized slot 456215899. Its extensions were mintCloseAuthority, permanentDelegate, defaultAccountState, confidentialTransferMint, transferHook, metadataPointer, pausableConfig and tokenMetadata. The mint was not paused; its transfer-hook program ID was null. These are dated observations, not permanent token guarantees.",
+                "sourceIds": [
+                  "solana-ousd-observation",
+                  "solana-extensions"
+                ]
+              },
+              {
+                "text": "Download the example below and run it with Node.js 18 or later and a public wallet address you intend to query. That address is sent to the RPC endpoint. The smoke test used the public system-program address, not a customer wallet; it returned no token accounts at finalized slot 456215919 and visibleBalance 0.000000.",
+                "sourceIds": [
+                  "solana-read-example",
+                  "solana-ousd-observation"
+                ]
+              },
+              {
+                "text": "Expected output includes cluster, slot, mint, tokenProgram, owner, decimals, tokenAccounts, rawVisibleBalance and visibleBalance. Amounts stay integer or exact decimal strings. The query does not decrypt confidential balances, establish spendability or prove a payment settled; account reads can be at a later finalized slot than the mint read.",
+                "sourceIds": [
+                  "solana-read-example",
+                  "solana-owner-accounts",
+                  "solana-extensions"
+                ]
+              }
+            ],
+            "examples": [
+              {
+                "id": "solana-balance-example",
+                "title": "Run the read-only balance example",
+                "language": "bash",
+                "description": "Save the linked download as read-ousd-solana.mjs. This reproducible smoke test queries a public program address and should not be used as a customer receiving address.",
+                "code": "node read-ousd-solana.mjs 11111111111111111111111111111111",
+                "sourceIds": [
+                  "solana-read-example",
+                  "solana-ousd-observation"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "network-fees",
+            "heading": "Budgeting SOL and token-account storage",
+            "paragraphs": [
+              {
+                "text": "Solana transaction fees are paid in SOL and comprise a base fee plus an optional prioritization fee. Budget the fee payer’s SOL separately from the OUSD amount being transferred.",
+                "sourceIds": [
+                  "solana-fees"
+                ]
+              },
+              {
+                "text": "An associated token account provides a predictable account address for an owner and mint. Creating one requires a refundable minimum storage balance, funded by the instruction’s payer even when another wallet owns the account. Include that cost when a recipient needs a new token account.",
+                "sourceIds": [
+                  "solana-tokens"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tools-and-confirmation",
+            "heading": "Reading balances and choosing commitment",
+            "paragraphs": [
+              {
+                "text": "A token account records its mint, owner, and token amount. A wallet can own multiple accounts for one mint. Check those fields when reading OUSD holdings instead of treating the mint address as the customer’s balance account.",
+                "sourceIds": [
+                  "solana-tokens"
+                ]
+              },
+              {
+                "text": "Solana RPC supports reads, simulation, and subscriptions. Choose the commitment level deliberately: processed data can roll back; confirmed reflects a supermajority vote; finalized is the network’s strongest confirmation state.",
+                "sourceIds": [
+                  "solana-commitment"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ousd-limits",
+            "heading": "OUSD deployment and access limits",
+            "paragraphs": [
+              {
+                "text": "OUSD uses Token-2022. The read-only mint observation on October 12, 2026 found six decimals and the program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb. Inspect current extensions before selecting account-derivation or transfer tooling; a balance read does not test transfers.",
+                "sourceIds": [
+                  "solana-ousd-launch",
+                  "solana-ousd-observation"
+                ]
+              },
+              {
+                "text": "The native OUSD listing does not establish a Devnet deployment or every provider’s Solana OUSD route. This reference has not tested OUSD transfers or provider integrations on Solana.",
+                "sourceIds": [
+                  "os-integrate",
+                  "solana-clusters"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "source": {
+        "id": "os-integrate",
+        "url": "https://joinopenstandard.com/integrate",
+        "title": "Open Standard: Build with Open USD",
+        "publishedAt": null,
+        "reviewedAt": "2026-10-12"
+      }
+    },
+    {
+      "id": "tempo",
+      "name": "Tempo",
+      "legacyRecordId": "tempo-native-ousd",
+      "asset": "OUSD",
+      "deployment": "native",
+      "address": "0x20c0000000000000000000006a37DA5C996874BE",
+      "explorerUrl": "https://explore.tempo.xyz/address/0x20c0000000000000000000006a37DA5C996874BE",
+      "sourceId": "os-integrate",
+      "reviewedAt": "2026-10-12",
+      "modifiedAt": "2026-10-12",
+      "profile": {
+        "title": "OUSD on Tempo",
+        "introduction": {
+          "text": "Open Standard lists native OUSD on Tempo. Use the contract below with Tempo Mainnet, chain ID 4217. Tempo has no native gas token: transaction fees use supported USD-denominated TIP-20 tokens.",
+          "sourceIds": [
+            "os-integrate",
+            "tempo-connection",
+            "tempo-fees"
+          ]
+        },
+        "sections": [
+          {
+            "id": "network-setup",
+            "heading": "Connecting to Tempo or Moderato",
+            "paragraphs": [
+              {
+                "text": "Tempo Mainnet uses chain ID 4217, HTTP RPC https://rpc.tempo.xyz, and WebSocket RPC wss://rpc.tempo.xyz. The wallet currency symbol is USD, but it does not represent a native token balance.",
+                "sourceIds": [
+                  "tempo-connection"
+                ]
+              },
+              {
+                "text": "Moderato is the development testnet: chain ID 42431, HTTP RPC https://rpc.moderato.tempo.xyz, and WebSocket RPC wss://rpc.moderato.tempo.xyz. Mainnet and testnet funds, assets, and transaction histories are separate.",
+                "sourceIds": [
+                  "tempo-connection"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "read-only-balance",
+            "heading": "Reading OUSD with a network check",
+            "paragraphs": [
+              {
+                "text": "The downloadable Node.js example first requires chain ID 4217, then queries the exact OUSD contract above. It pins eth_getCode, decimals() and balanceOf(address) to the same block number and prints the raw integer plus an exact decimal-string balance. eth_getBalance reads a native-currency balance, not OUSD.",
+                "sourceIds": [
+                  "os-integrate",
+                  "ethereum-rpc",
+                  "evm-read-example",
+                  "tempo-tip20",
+                  "tempo-connection"
+                ]
+              },
+              {
+                "text": "The example makes JSON-RPC reads only; it requests no wallet connection, signature or transaction. The queried owner address is sent to the selected RPC endpoint. The command below uses the zero address only as a syntax illustration; replace it with the public address you intend to inspect.",
+                "sourceIds": [
+                  "evm-read-example"
+                ]
+              },
+              {
+                "text": "Tempo’s TIP-20 specification fixes decimals at six and supplies the balanceOf interface. TIP-20 is implemented by native precompiles, so the example does not require ordinary ERC-20 bytecode on Tempo. It still validates the actual read responses.",
+                "sourceIds": [
+                  "os-integrate",
+                  "ethereum-rpc",
+                  "evm-read-example",
+                  "tempo-tip20",
+                  "tempo-connection"
+                ]
+              },
+              {
+                "text": "Validation limit: the script passed syntax and mocked-response checks, including wrong-network and malformed-response failures. Live RPC requests from this review environment were blocked, so no live EVM balance result is claimed. Output should include network, chainId, block, token, owner, codeBytes, decimals, rawBalance and balance. A latest-block read is not a settlement or spendability guarantee.",
+                "sourceIds": [
+                  "evm-read-example"
+                ]
+              }
+            ],
+            "examples": [
+              {
+                "id": "tempo-balance-example",
+                "title": "Run the read-only balance example",
+                "language": "bash",
+                "description": "Save the linked download as read-ousd-evm.mjs and use Node.js 18 or later. Use a trusted RPC endpoint; do not paste an RPC credential into source code or shared logs.",
+                "code": "node read-ousd-evm.mjs tempo 0x0000000000000000000000000000000000000000",
+                "sourceIds": [
+                  "evm-read-example"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "network-fees",
+            "heading": "Selecting and estimating the fee token",
+            "paragraphs": [
+              {
+                "text": "The fee token can differ from the payment token. If conversion to a validator’s preferred token is required, the Fee AMM needs enough liquidity. The sender can pay fees, or a separately authorized fee payer can sponsor them.",
+                "sourceIds": [
+                  "tempo-fees"
+                ]
+              },
+              {
+                "text": "Estimate the actual call with its sender and fee configuration. Transfers to a new token holder can require more gas than transfers to an existing holder. Gas prices, usage, and network state can change before inclusion; use the receipt and fee-token transfer to reconcile the amount charged.",
+                "sourceIds": [
+                  "tempo-fees"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tools-and-confirmation",
+            "heading": "Using SDKs and checking delivery",
+            "paragraphs": [
+              {
+                "text": "Tempo publishes SDK references for TypeScript with Viem or Wagmi, Go, Python, Foundry, and Rust. Query TIP-20 balances for actual funds instead of interpreting an Ethereum-style native-balance response as spendable money.",
+                "sourceIds": [
+                  "tempo-sdk",
+                  "tempo-evm"
+                ]
+              },
+              {
+                "text": "A successful TIP-20 call does not always mean the intended receiver was credited. If an account-level receive policy blocks delivery, funds go to ReceivePolicyGuard and a recovery receipt is recorded. Token-level policy failures instead revert. Check delivery effects when reconciling payments.",
+                "sourceIds": [
+                  "tempo-receive-policies"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ousd-limits",
+            "heading": "OUSD fee eligibility and access limits",
+            "paragraphs": [
+              {
+                "text": "The native OUSD listing does not establish current OUSD fee-conversion liquidity or a provider-supported OUSD route. Verify fee-token eligibility and the available conversion liquidity for the intended transaction; no OUSD fee-payment transaction was tested for this reference.",
+                "sourceIds": [
+                  "os-integrate",
+                  "tempo-fees"
+                ]
+              },
+              {
+                "text": "Use the listed contract to identify OUSD, not as a personal receiving address. Mainnet setup and generic testnet instructions are separate from evidence of a successful OUSD transfer. This reference has not tested OUSD transfers or provider integrations on Tempo.",
+                "sourceIds": [
+                  "os-integrate",
+                  "tempo-connection"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "source": {
+        "id": "os-integrate",
+        "url": "https://joinopenstandard.com/integrate",
+        "title": "Open Standard: Build with Open USD",
+        "publishedAt": null,
+        "reviewedAt": "2026-10-12"
+      }
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "visa-ousd-portal",
+      "providerId": "visa",
+      "name": "OUSD portal, wallets and transfers",
+      "capability": "Mint, redeem & manage",
+      "assetScope": "Open USD wallet operations; customer self-custody with Visa Wallet-as-a-Service",
+      "networks": null,
+      "networkNote": "Visa lists Ethereum, Solana and Tempo for VSP generally. An OUSD-specific network matrix was not independently verified.",
+      "availability": "private_beta",
+      "availabilityReason": "Editorial mapping of Visa's select-client beta to private_beta.",
+      "summary": "Restricted-beta OUSD minting, redemption and wallet management. With Visa Wallet-as-a-Service, the client remains its own custodian.",
+      "accessRequirements": "Visa Access ID, Visa-issued BID, and representative-led onboarding.",
+      "limitations": [
+        "Volume and geographic limits apply; exact limits unknown."
+      ],
+      "officialDocumentationUrl": "https://www.visa.com/en-us/products/visa-stablecoin-platform",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "visa-product",
+          "url": "https://www.visa.com/en-us/products/visa-stablecoin-platform",
+          "title": "Visa Stablecoin Platform: availability and FAQ",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "Open USD access is beta with volume and geographic restrictions; Access ID and BID required."
+        },
+        {
+          "id": "visa-launch",
+          "url": "https://corporate.visa.com/en/sites/visa-perspectives/newsroom/visa-stablecoin-platform.html",
+          "title": "Visa introduces its Stablecoin Platform",
+          "publishedAt": "2026-07-16",
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "VSP began with selected beta clients, offering OUSD minting, redemption, holding and transfers."
+        }
+      ],
+      "tasks": [
+        "mint-redeem",
+        "hold-funds",
+        "create-wallets",
+        "custody",
+        "send-payouts"
+      ],
+      "access": "restricted_beta",
+      "environment": "production",
+      "verification": "not_tested",
+      "ousdSupport": "documented"
+    },
+    {
+      "id": "visa-ousd-api",
+      "providerId": "visa",
+      "name": "Open USD API access",
+      "capability": "API integration",
+      "assetScope": "Open USD",
+      "networks": null,
+      "networkNote": "Unknown for this capability.",
+      "availability": "announced",
+      "availabilityReason": "The provider FAQ says API access is coming soon.",
+      "summary": "Visa’s FAQ says API access is coming soon. Open Standard lists an API path; confirm timing with Visa.",
+      "accessRequirements": "Contact Visa for API eligibility and timing; published self-service path unknown.",
+      "limitations": [
+        "Public release date unknown.",
+        "Portal availability does not establish API availability."
+      ],
+      "officialDocumentationUrl": "https://www.visa.com/en-us/products/visa-stablecoin-platform",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "visa-product",
+          "url": "https://www.visa.com/en-us/products/visa-stablecoin-platform",
+          "title": "Visa Stablecoin Platform: availability and FAQ",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "The portal and documentation are available; API access is coming soon."
+        }
+      ],
+      "tasks": [
+        "api-access"
+      ],
+      "access": "announced",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "listed"
+    },
+    {
+      "id": "stripe-ousd-adoption",
+      "providerId": "stripe",
+      "name": "Accept payments",
+      "capability": "Payment acceptance",
+      "assetScope": "Open USD",
+      "networks": null,
+      "networkNote": "Unknown. Existing Stripe token/network pairs do not establish OUSD support.",
+      "availability": "unknown",
+      "availabilityReason": "Stripe links payment acceptance from its OUSD overview, but the detailed accepted-token list still omits OUSD; this review cannot resolve availability.",
+      "summary": "Stripe’s launch announcement explicitly includes OUSD Payments acceptance, but its detailed accepted-token list omits OUSD. Confirm the specific merchant, network and integration.",
+      "accessRequirements": "Confirm OUSD acceptance for the exact Stripe product, account, country and network before implementing.",
+      "limitations": [
+        "The detailed payments page lists USDC, USDP and USDG; omission does not prove non-support.",
+        "No OUSD Checkout transaction independently tested."
+      ],
+      "officialDocumentationUrl": "https://docs.stripe.com/stablecoins/ecosystem/ousd",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-12",
+      "reviewedAt": "2026-10-12",
+      "sources": [
+        {
+          "id": "stripe-ousd",
+          "url": "https://docs.stripe.com/stablecoins/ecosystem/ousd",
+          "title": "Stripe: Open USD product integration overview",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "The OUSD overview links to stablecoin payment acceptance, subject to product, country, network and release status."
+        },
+        {
+          "id": "stripe-payments",
+          "url": "https://docs.stripe.com/payments/stablecoin-payments",
+          "title": "Stripe: Stablecoin payments",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "The accepted-token list names USDC, USDP and USDG but does not list OUSD."
+        },
+        {
+          "id": "stripe-ousd-launch",
+          "url": "https://stripe.com/blog/ousd-now-live-on-stripe",
+          "title": "Stripe: OUSD is now live on Stripe",
+          "publishedAt": "2026-09-30",
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "The September 30, 2026 announcement explicitly says businesses can accept OUSD with Stripe Payments; the detailed token list still omits OUSD."
+        }
+      ],
+      "tasks": [
+        "accept-payments"
+      ],
+      "access": "not_established",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "unresolved"
+    },
+    {
+      "id": "bridge-ousd-support",
+      "providerId": "bridge",
+      "name": "OUSD issuance and platform access",
+      "capability": "Issuance & platform access",
+      "assetScope": "Open USD",
+      "networks": null,
+      "networkNote": "OUSD is deployed on Base, Ethereum, Solana and Tempo. Bridge documents specific OUSD wallet and payment routes separately; this issuer-access record does not establish every operation on every network.",
+      "availability": "unknown",
+      "availabilityReason": "Bridge confirms issuance and direct network-partner access, but this review does not establish a uniform API release stage for every operation.",
+      "summary": "OUSD is live, issued by Bridge Building Inc.; Open Standard network partners have direct access through Bridge.",
+      "accessRequirements": "Complete applicable Bridge onboarding; confirm account eligibility and the specific OUSD operation and route.",
+      "limitations": [
+        "Token launch is not proof that every API operation is available to every account.",
+        "Bridge National Trust Bank is not yet operational and does not currently issue OUSD."
+      ],
+      "officialDocumentationUrl": "https://apidocs.bridge.xyz/overview",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "bridge-live",
+          "url": "https://withbridge.com/blog/ousd-is-live-issued-by-bridge",
+          "title": "Bridge: Open USD is live, issued by Bridge",
+          "publishedAt": "2026-09-30",
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "Bridge identifies Bridge Building Inc. as the current OUSD issuer and describes direct access for Open Standard network partners; Bridge National Trust Bank is not yet operational."
+        },
+        {
+          "id": "bridge-ousd",
+          "url": "https://apidocs.bridge.xyz/overview",
+          "title": "Bridge: OUSD overview",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "Bridge documents its OUSD issuer role, supported native networks and geographic restrictions."
+        }
+      ],
+      "tasks": [
+        "mint-redeem"
+      ],
+      "access": "onboarding_required",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "documented"
+    },
+    {
+      "id": "bridge-general-sandbox",
+      "providerId": "bridge",
+      "name": "General developer sandbox",
+      "capability": "Development environment",
+      "assetScope": "General platform · not OUSD verified",
+      "networks": null,
+      "networkNote": "Simulated provider activity; no live bank or blockchain transactions. Blockchain-testnet and exact OUSD route support are not established.",
+      "availability": "unknown",
+      "availabilityReason": "A sandbox access path is documented, but no public/private beta or general-availability designation is established.",
+      "summary": "Bridge Sandbox simulates compliance and payment activity; supported simulations can generate webhook events.",
+      "accessRequirements": "Bridge Developer account and dashboard administrator access to keys; onboarding through Bridge support.",
+      "limitations": [
+        "No live bank or blockchain transactions; simulated completion is not evidence of OUSD settlement.",
+        "Event coverage and timing may differ from production. Do not assume testnet support or every OUSD route."
+      ],
+      "officialDocumentationUrl": "https://apidocs.bridge.xyz/get-started/introduction/quick-start/setting-up-sandbox",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-12",
+      "reviewedAt": "2026-10-12",
+      "sources": [
+        {
+          "id": "bridge-sandbox",
+          "url": "https://apidocs.bridge.xyz/get-started/introduction/quick-start/setting-up-sandbox",
+          "title": "Bridge: Set up a sandbox environment",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "Supported sandbox simulations generate associated payment and wallet webhooks without live bank or blockchain transactions."
+        }
+      ],
+      "tasks": [
+        "development"
+      ],
+      "access": "onboarding_required",
+      "environment": "sandbox",
+      "verification": "not_tested",
+      "ousdSupport": "generic"
+    },
+    {
+      "id": "stripe-ousd-management",
+      "providerId": "stripe",
+      "name": "Hold an OUSD balance",
+      "capability": "Stablecoin balances",
+      "assetScope": "Open USD",
+      "networks": null,
+      "networkNote": "Per-product OUSD network support not established by this overview.",
+      "availability": "unknown",
+      "availabilityReason": "Treasury lists regional preview stages, not one global release stage.",
+      "summary": "Treasury documents OUSD balances. External wallet transfers use USDC or USDC.e.",
+      "accessRequirements": "Eligible financial account; US public preview, private preview in other listed countries.",
+      "limitations": [
+        "Holding OUSD does not imply sending native OUSD to an external wallet.",
+        "Confirm country, account, and transfer currency for the chosen route."
+      ],
+      "officialDocumentationUrl": "https://docs.stripe.com/treasury/stablecoins",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "stripe-treasury",
+          "url": "https://docs.stripe.com/treasury/stablecoins",
+          "title": "Stripe Treasury: stablecoin balances",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "Treasury supports OUSD balances with regional preview access; external wallet transfers use USDC or USDC.e."
+        },
+        {
+          "id": "stripe-store-funds",
+          "url": "https://docs.stripe.com/treasury/store-funds",
+          "title": "Stripe Treasury: Store funds",
+          "publishedAt": null,
+          "reviewedAt": "2026-11-09",
+          "supportedClaim": "Bridge custodies OUSD and USDC balances; a financial account holds only one stablecoin storage currency at a time."
+        }
+      ],
+      "tasks": [
+        "hold-funds",
+        "custody"
+      ],
+      "access": "onboarding_required",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "documented"
+    },
+    {
+      "id": "coinbase-ousd-access",
+      "providerId": "coinbase",
+      "name": "OUSD integration path",
+      "capability": "Conversion & infrastructure",
+      "assetScope": "Open USD",
+      "networks": null,
+      "networkNote": "Coinbase’s OUSD asset page identifies native deployments; it does not establish deposit or withdrawal support for each Coinbase product.",
+      "availability": "unknown",
+      "availabilityReason": "A documented integration path exists; a uniform release stage and account eligibility are not established by the overview.",
+      "summary": "Open Standard lists Coinbase for OUSD conversion, wallets, trading, custody, and related infrastructure. Product-specific eligibility remains to be confirmed.",
+      "accessRequirements": "Complete Coinbase onboarding and confirm the required product and regional eligibility.",
+      "limitations": [
+        "Open Standard named October 1 as the integration start date; individual APIs and account access were not tested.",
+        "Retail exchange availability does not establish Prime, custody, or API eligibility.",
+        "Prime asset availability varies by geography and custody entity."
+      ],
+      "officialDocumentationUrl": "https://joinopenstandard.com/integrate",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "os-integrate",
+          "url": "https://joinopenstandard.com/integrate",
+          "title": "Open Standard: Build with Open USD",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "Open Standard lists Coinbase as an OUSD integration option for 1:1 conversion, wallets, custody, and related infrastructure."
+        },
+        {
+          "id": "os-live",
+          "url": "https://joinopenstandard.com/blog/ousd-is-live",
+          "title": "Open Standard: OUSD is live",
+          "publishedAt": "2026-09-30",
+          "reviewedAt": "2026-11-09",
+          "supportedClaim": "Open Standard’s September 30 launch post says Coinbase integration begins October 1."
+        },
+        {
+          "id": "coinbase-ousd",
+          "url": "https://www.coinbase.com/price/ousd",
+          "title": "Coinbase: Open USD asset identity",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "The Coinbase asset page identifies Open Standard’s OUSD and its native deployments, not a per-product transfer support matrix."
+        },
+        {
+          "id": "coinbase-ousd-buy",
+          "url": "https://www.coinbase.com/how-to-buy/ousd",
+          "title": "Coinbase: Buy Open USD",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "Coinbase’s U.S. guide documents centralized-exchange purchase after verification; fees may apply and are shown in the order preview."
+        },
+        {
+          "id": "coinbase-prime-support",
+          "url": "https://help.coinbase.com/en/prime/trading-and-funding/supported-cryptocurrencies-and-trading-pairs",
+          "title": "Coinbase Prime: Supported assets and trading pairs",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "Prime asset availability differs by geography and custody entity; clients can check the authenticated interface or contact Coinbase."
+        }
+      ],
+      "tasks": [
+        "convert",
+        "create-wallets",
+        "hold-funds",
+        "custody"
+      ],
+      "access": "onboarding_required",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "listed"
+    },
+    {
+      "id": "mastercard-ousd-access",
+      "providerId": "mastercard",
+      "name": "OUSD integration path",
+      "capability": "API or portal access",
+      "assetScope": "Open USD",
+      "networks": null,
+      "networkNote": "Per-product OUSD network support not established by this overview.",
+      "availability": "unknown",
+      "availabilityReason": "A documented integration path exists; a uniform release stage and account eligibility are not established by the overview.",
+      "summary": "Open Standard lists Mastercard API or portal paths for swaps, transfers, settlement, and wallets. These directory-listed operations require product-specific access confirmation.",
+      "accessRequirements": "Contact the provider through the official integration directory for onboarding and product eligibility.",
+      "limitations": [
+        "The directory does not establish self-service API availability, a release stage, or a per-network matrix.",
+        "Provider-documented wholesale minting and redemption are recorded separately."
+      ],
+      "officialDocumentationUrl": "https://joinopenstandard.com/integrate",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "os-integrate",
+          "url": "https://joinopenstandard.com/integrate",
+          "title": "Open Standard: Build with Open USD",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "Open Standard lists Mastercard API or portal access for buy/sell or swaps, receiving and sending funds, settlement, and wallets."
+        }
+      ],
+      "tasks": [
+        "convert",
+        "send-payouts",
+        "create-wallets"
+      ],
+      "access": "onboarding_required",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "listed"
+    },
+    {
+      "id": "privy-ousd-wallets",
+      "providerId": "privy",
+      "name": "Wallet management for OUSD",
+      "capability": "Wallet infrastructure",
+      "assetScope": "Open USD",
+      "networks": null,
+      "networkNote": "General Privy chain support does not establish OUSD support for every wallet configuration. See the separate custodial-wallet capability for its documented asset and chain scope.",
+      "availability": "unknown",
+      "availabilityReason": "A documented integration path exists; a uniform release stage and account eligibility are not established by the overview.",
+      "summary": "Stripe lists Privy wallet management as an OUSD integration path. Privy documents embedded and external wallet configurations.",
+      "accessRequirements": "Consult Privy wallet documentation and confirm the intended network and wallet configuration.",
+      "limitations": [
+        "General wallet and chain support does not verify every OUSD route or provide issuer access."
+      ],
+      "officialDocumentationUrl": "https://docs.privy.io/wallets/overview/types",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "stripe-ousd",
+          "url": "https://docs.stripe.com/stablecoins/ecosystem/ousd",
+          "title": "Stripe: Open USD product integration overview",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "Stripe links Privy wallet management from the OUSD store-and-manage section."
+        },
+        {
+          "id": "privy-wallets",
+          "url": "https://docs.privy.io/wallets/overview/types",
+          "title": "Privy: wallet types",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "Privy documents embedded, custodial, and external wallet configurations; this general guide does not establish OUSD issuer access or every asset and chain route."
+        }
+      ],
+      "tasks": [
+        "create-wallets"
+      ],
+      "access": "onboarding_required",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "listed"
+    },
+    {
+      "id": "stripe-connect-payouts",
+      "providerId": "stripe",
+      "name": "Connect stablecoin payouts",
+      "capability": "Connect stablecoin payouts",
+      "assetScope": "General platform · OUSD route unconfirmed",
+      "networks": null,
+      "networkNote": "Per-product OUSD network support not established by this overview.",
+      "availability": "private_beta",
+      "availabilityReason": "Provider labels the product private preview; OUSD-specific funding or payout remains unconfirmed.",
+      "summary": "US-platform private preview starting with USDC. OUSD payouts are not established by the product guide.",
+      "accessRequirements": "US Connect platform, private-preview approval, additional due diligence and eligible individuals or sole proprietors with Express Dashboard access.",
+      "limitations": [
+        "The product guide describes fiat-funded USDC payouts; OUSD payout currency remains unconfirmed.",
+        "Recipients must be eligible individuals or sole proprietors; companies and nonprofits are excluded."
+      ],
+      "officialDocumentationUrl": "https://docs.stripe.com/connect/stablecoin-payouts",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "stripe-connect",
+          "url": "https://docs.stripe.com/connect/stablecoin-payouts",
+          "title": "Stripe Connect: stablecoin payouts",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "US-platform private preview; the product guide describes payouts starting with USDC. OUSD payout currency is not established by the product guide."
+        }
+      ],
+      "tasks": [
+        "send-payouts"
+      ],
+      "access": "restricted_beta",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "unresolved"
+    },
+    {
+      "id": "stripe-stablecoin-cards",
+      "providerId": "stripe",
+      "name": "Stablecoin-backed cards",
+      "capability": "Stablecoin-backed cards",
+      "assetScope": "General platform · OUSD route unconfirmed",
+      "networks": null,
+      "networkNote": "Per-product OUSD network support not established by this overview.",
+      "availability": "private_beta",
+      "availabilityReason": "Provider labels the product private preview; OUSD-specific funding or payout remains unconfirmed.",
+      "summary": "Private preview for financial-account or wallet-based cards. OUSD funding is not established by the product guide.",
+      "accessRequirements": "Contact Stripe sales and complete product-specific onboarding.",
+      "limitations": [
+        "Confirm OUSD funding for the chosen integration; the financial-account comparison names USDC."
+      ],
+      "officialDocumentationUrl": "https://docs.stripe.com/issuing/stablecoin-cards",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "stripe-cards",
+          "url": "https://docs.stripe.com/issuing/stablecoin-cards",
+          "title": "Stripe: stablecoin-backed cards",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "Private preview with financial-account or wallet-based integration options. Confirm OUSD funding for the chosen integration; the financial-account comparison names USDC."
+        }
+      ],
+      "tasks": [
+        "issue-cards"
+      ],
+      "access": "restricted_beta",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "unresolved"
+    },
+    {
+      "id": "privy-ousd-custodial-transfers",
+      "providerId": "privy",
+      "name": "Custodial OUSD wallets and transfers",
+      "capability": "Custodial wallets and transfers",
+      "assetScope": "Open USD",
+      "networks": [
+        "Tempo"
+      ],
+      "networkNote": "Privy publishes an OUSD-on-Tempo transfer example. Its custodial-wallet chain list also includes Base and Solana, but that list alone does not establish each OUSD route; confirm those combinations with Bridge.",
+      "availability": "unknown",
+      "availabilityReason": "Documented Enterprise feature requiring enablement; the reviewed docs do not name a release stage.",
+      "summary": "Create Bridge-backed custodial wallets and submit OUSD transfers through Privy.",
+      "accessRequirements": "Privy Enterprise plan and enablement, Bridge onboarding, and beneficiary KYC.",
+      "limitations": [
+        "Asset and chain routes and regional eligibility depend on the custodian.",
+        "Transactions require custodian screening; a failed transfer may have partial on-chain effects.",
+        "Fees and transaction limits were not established by the reviewed pages.",
+        "When required by the wallet, supply payment-initiation context and a truthful SCA attestation; the app handles customer authentication and Privy forwards the attestation to Bridge."
+      ],
+      "officialDocumentationUrl": "https://docs.privy.io/wallets/custodial-wallets/sending-funds",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-11-02",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "privy-custodial-setup",
+          "url": "https://docs.privy.io/wallets/custodial-wallets/setup",
+          "title": "Privy: Set up custodial wallets",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "Custodial wallets require Enterprise, account enablement, Bridge onboarding, and beneficiary KYC."
+        },
+        {
+          "id": "privy-custodial-create",
+          "url": "https://docs.privy.io/wallets/custodial-wallets/create-custodial-wallet",
+          "title": "Privy: Create a custodial wallet",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "The custodial-wallet creation API identifies Bridge as custodian and supports Tempo, Base, and Solana mainnet."
+        },
+        {
+          "id": "privy-custodial-send",
+          "url": "https://docs.privy.io/wallets/custodial-wallets/sending-funds",
+          "title": "Privy: Send funds from custodial wallets",
+          "publishedAt": null,
+          "reviewedAt": "2026-11-02",
+          "supportedClaim": "OUSD is named among supported custodial-transfer assets, alongside a supported-chain list and an OUSD-on-Tempo example."
+        },
+        {
+          "id": "privy-custodial-lifecycle",
+          "url": "https://docs.privy.io/wallets/custodial-wallets/transaction-lifecycle",
+          "title": "Privy: Custodial transaction lifecycle",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "The custodian screens transactions; transfer states distinguish rejection before on-chain effects from failure with possible partial effects."
+        },
+        {
+          "id": "privy-custodial-overview",
+          "url": "https://docs.privy.io/wallets/custodial-wallets/overview",
+          "title": "Privy: Custodial wallets overview",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "Custodial wallets provide deposit addresses, stablecoin transfers, and balance notifications through a licensed custodian; Bridge is the current provider."
+        },
+        {
+          "id": "privy-custodial-sca",
+          "url": "https://docs.privy.io/wallets/custodial-wallets/advanced/strong-customer-authentication",
+          "title": "Privy: Strong customer authentication for custodial transfers",
+          "publishedAt": null,
+          "reviewedAt": "2026-11-02",
+          "supportedClaim": "The app authenticates the customer and submits payment-initiation context plus an SCA outcome for Privy to forward to Bridge; exemption outcomes must fit the actual flow."
+        }
+      ],
+      "tasks": [
+        "create-wallets",
+        "hold-funds",
+        "send-payouts",
+        "custody"
+      ],
+      "access": "onboarding_required",
+      "environment": "production",
+      "verification": "not_tested",
+      "ousdSupport": "documented"
+    },
+    {
+      "id": "mastercard-ousd-wholesale",
+      "providerId": "mastercard",
+      "name": "Wholesale OUSD minting and redemption",
+      "capability": "Wholesale minting and redemption",
+      "assetScope": "Open USD",
+      "networks": null,
+      "networkNote": "The reviewed Mastercard pages do not provide an OUSD-specific network matrix. The general digital-asset network list does not establish OUSD support on each chain.",
+      "availability": "unknown",
+      "availabilityReason": "Mastercard documents a wholesale OUSD offer and enrollment route, but the reviewed pages do not name its release stage.",
+      "summary": "Mastercard documents wholesale OUSD minting and redemption for exchanges, distributors, and institutions.",
+      "accessRequirements": "Apply through Mastercard’s stablecoin enrollment form and confirm eligibility and the permitted workflow.",
+      "limitations": [
+        "Exact eligibility, pricing, transaction limits, and OUSD networks are not established by the reviewed product pages.",
+        "An enrollment form does not establish self-service API access or sandbox availability."
+      ],
+      "officialDocumentationUrl": "https://www.mastercard.com/us/en/business/payments/consumer-payments/next-gen-payments/digital-asset-solutions.html",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "mastercard-digital-assets",
+          "url": "https://www.mastercard.com/us/en/business/payments/consumer-payments/next-gen-payments/digital-asset-solutions.html",
+          "title": "Mastercard: Digital asset solutions and OUSD wholesale access",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "Mastercard describes wholesale OUSD mint/redeem access for exchanges, distributors, and institutions and links to its enrollment form."
+        },
+        {
+          "id": "mastercard-bvnk-ousd",
+          "url": "https://www.mastercard.com/global/en/news-and-trends/stories/2026/mastercard-bvnk-open-usd-stablecoin.html",
+          "title": "Mastercard: Open USD access through BVNK",
+          "publishedAt": "2026-09-30",
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "Mastercard’s September 30 announcement identifies BVNK as the infrastructure through which financial institutions, distributors, and enterprises will access OUSD."
+        },
+        {
+          "id": "mastercard-enrollment",
+          "url": "https://form.mastercard.com/jfe/form/SV_9uxcX9XTu2H5cSq",
+          "title": "Mastercard: Stablecoin enrollment form",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "The official Start testing link leads to a Mastercard Stablecoin Enrollment Form; its fields were not readable in this review."
+        }
+      ],
+      "tasks": [
+        "mint-redeem"
+      ],
+      "access": "onboarding_required",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "documented"
+    },
+    {
+      "id": "bridge-ousd-wallets",
+      "providerId": "bridge",
+      "name": "OUSD custodial wallets",
+      "capability": "Wallets and custody",
+      "assetScope": "Open USD",
+      "networks": [
+        "Base",
+        "Ethereum",
+        "Solana",
+        "Tempo"
+      ],
+      "networkNote": "The custodial-wallet asset table explicitly lists OUSD on these four networks.",
+      "availability": "unknown",
+      "availabilityReason": "The documentation establishes the described OUSD operation, but does not establish one global release stage.",
+      "summary": "Create user or company wallets to hold and transfer OUSD. Bridge provides custody; production fund flows require approval.",
+      "accessRequirements": "Complete Bridge onboarding and obtain Legal & Compliance approval for the production fund flow.",
+      "limitations": [
+        "Wallets exclude New York and Texas, plus Kenya, Australia, Japan, Singapore, Malaysia, Vietnam and Indonesia; check the complete current eligibility rules.",
+        "Bridge payment routes limit EEA users to USDC and EURC.",
+        "Wallet accounting uses whole US cents, not the token’s onchain precision. Transfers use Bridge Orchestration APIs; direct deposits require a supported chain/token pair."
+      ],
+      "officialDocumentationUrl": "https://apidocs.bridge.xyz/platform/wallets/overview",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "bridge-wallets",
+          "url": "https://apidocs.bridge.xyz/platform/wallets/overview",
+          "title": "Bridge: Custodial wallets",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "OUSD custodial wallets support Base, Ethereum, Solana and Tempo, with production fund-flow approval, geography exclusions and whole-cent accounting."
+        },
+        {
+          "id": "bridge-routes",
+          "url": "https://apidocs.bridge.xyz/get-started/introduction/what-we-support/payment-routes",
+          "title": "Bridge: Supported blockchains and fiat rails",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "EEA users are limited to USDC and EURC."
+        }
+      ],
+      "tasks": [
+        "hold-funds",
+        "create-wallets",
+        "custody"
+      ],
+      "access": "onboarding_required",
+      "environment": "production",
+      "verification": "not_tested",
+      "ousdSupport": "documented"
+    },
+    {
+      "id": "bridge-ousd-transfers",
+      "providerId": "bridge",
+      "name": "OUSD transfers and conversion",
+      "capability": "Transfers and conversion",
+      "assetScope": "Open USD · destination may be OUSD, another asset or fiat",
+      "networks": [
+        "Base",
+        "Ethereum",
+        "Solana",
+        "Tempo"
+      ],
+      "networkNote": "OUSD destinations are documented on all four networks. OUSD source sections are documented for Base, Ethereum, Solana and Bridge Wallet; a Tempo source route is not established by the reviewed table.",
+      "availability": "unknown",
+      "availabilityReason": "The documentation establishes the described OUSD operation, but does not establish one global release stage.",
+      "summary": "Send or convert OUSD using a documented source-to-destination route. The recipient receives the asset selected for that route.",
+      "accessRequirements": "Complete applicable Bridge onboarding and confirm the customer, source, destination and route eligibility.",
+      "limitations": [
+        "Check each route direction; network deployment and wallet support do not prove every reciprocal transfer route.",
+        "Minimums apply after developer fees. The documented USD ACH-to-OUSD routes have a 1 USD minimum; OUSD from Base, Ethereum or Solana to USD ACH or Wire has a 1 OUSD minimum.",
+        "EEA users are limited to USDC and EURC. Deposits to unsupported asset/network combinations risk loss."
+      ],
+      "officialDocumentationUrl": "https://apidocs.bridge.xyz/get-started/introduction/what-we-support/payment-routes",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "bridge-routes",
+          "url": "https://apidocs.bridge.xyz/get-started/introduction/what-we-support/payment-routes",
+          "title": "Bridge: Supported blockchains and fiat rails",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "The route table lists USD ACH to OUSD on Base, Ethereum, Solana and Tempo; OUSD sources on Base, Ethereum, Solana and Bridge Wallet have documented fiat and crypto destinations and route-specific minimums."
+        },
+        {
+          "id": "bridge-transfers",
+          "url": "https://apidocs.bridge.xyz/platform/orchestration/transfers/transfer",
+          "title": "Bridge: Transfers",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "Transfers specify source and destination; external funding uses returned deposit instructions."
+        },
+        {
+          "id": "bridge-minimums",
+          "url": "https://apidocs.bridge.xyz/platform/orchestration/fees-and-mins/mins",
+          "title": "Bridge: Transaction minimums",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "Transaction minimums are enforced after developer fees are deducted."
+        }
+      ],
+      "tasks": [
+        "send-payouts",
+        "convert"
+      ],
+      "access": "onboarding_required",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "documented"
+    },
+    {
+      "id": "stripe-ousd-payouts",
+      "providerId": "stripe",
+      "name": "Payouts funded from an OUSD balance",
+      "capability": "Treasury-funded payouts",
+      "assetScope": "OUSD funding · fiat or USDC/USDC.e delivery",
+      "networks": null,
+      "networkNote": "External crypto delivery uses USDC on Arbitrum, Avalanche C-Chain, Base, Ethereum, Optimism, Polygon, Solana and Stellar; Tempo uses USDC.e. These are not native OUSD payout routes.",
+      "availability": "unknown",
+      "availabilityReason": "Treasury lists US public preview and private preview in other eligible countries, not one global release stage.",
+      "summary": "Pay from an OUSD financial-account balance to supported bank accounts or crypto wallets. Recipients receive fiat or USDC/USDC.e, rather than native OUSD.",
+      "accessRequirements": "Eligible Stripe financial account with an OUSD balance; complete recipient onboarding for third-party Global Payouts and verify destination availability.",
+      "limitations": [
+        "US public preview and private preview in other listed eligible countries; availability differs by sender, recipient and payout method.",
+        "Bank payouts convert the OUSD balance into the destination currency; external crypto delivery uses USDC or USDC.e.",
+        "This is separate from Connect’s fiat-funded USDC payout flow."
+      ],
+      "officialDocumentationUrl": "https://docs.stripe.com/treasury/transfer#stablecoin-payouts",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-11-09",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "stripe-transfer-send",
+          "url": "https://docs.stripe.com/treasury/transfer",
+          "title": "Stripe Treasury: Transfer funds",
+          "publishedAt": null,
+          "reviewedAt": "2026-11-09",
+          "supportedClaim": "A stablecoin balance can fund bank and crypto-wallet payouts; the external crypto asset matrix lists USDC and USDC.e rather than OUSD."
+        },
+        {
+          "id": "stripe-treasury",
+          "url": "https://docs.stripe.com/treasury/stablecoins",
+          "title": "Stripe Treasury: stablecoin balances",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "Financial accounts support OUSD balances with US public-preview and other-country private-preview access."
+        },
+        {
+          "id": "stripe-global-payouts",
+          "url": "https://docs.stripe.com/global-payouts/send-money",
+          "title": "Stripe Global Payouts: Send money",
+          "publishedAt": null,
+          "reviewedAt": "2026-11-09",
+          "supportedClaim": "Third-party payouts require financial-account funding and recipient creation with a selected payout method."
+        }
+      ],
+      "tasks": [
+        "send-payouts"
+      ],
+      "access": "onboarding_required",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "documented"
+    },
+    {
+      "id": "stripe-ousd-conversion",
+      "providerId": "stripe",
+      "name": "Convert an OUSD balance to or from fiat",
+      "capability": "Balance conversion",
+      "assetScope": "Open USD ↔ supported fiat balances",
+      "networks": null,
+      "networkNote": "This is a conversion between balances in a Stripe financial account, not an external blockchain transfer.",
+      "availability": "unknown",
+      "availabilityReason": "OUSD balance conversion is documented for eligible financial accounts, without a single OUSD-specific global release stage.",
+      "summary": "Convert OUSD to or from a supported fiat balance in the same financial account. This flow does not directly swap OUSD and USDC storage balances.",
+      "accessRequirements": "Eligible financial account that supports both the OUSD balance and the chosen fiat balance.",
+      "limitations": [
+        "A financial account stores only one stablecoin currency at a time.",
+        "USD-to-OUSD conversion does not involve foreign exchange; other fiat pairs use the current exchange rate.",
+        "The documented OUSD balance-conversion steps use the Dashboard; a universally available OUSD conversion API is not established."
+      ],
+      "officialDocumentationUrl": "https://docs.stripe.com/treasury/convert-funds#stablecoin-conversions",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "stripe-convert-funds",
+          "url": "https://docs.stripe.com/treasury/convert-funds",
+          "title": "Stripe Treasury: Convert funds",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-12",
+          "supportedClaim": "Stablecoin-to-fiat conversion requires both balances in one financial account; USD/OUSD does not involve foreign exchange, and this flow cannot directly convert OUSD and USDC balances."
+        },
+        {
+          "id": "stripe-store-funds",
+          "url": "https://docs.stripe.com/treasury/store-funds",
+          "title": "Stripe Treasury: Store funds",
+          "publishedAt": null,
+          "reviewedAt": "2026-11-09",
+          "supportedClaim": "Only one stablecoin can be the financial account’s storage currency at a time."
+        }
+      ],
+      "tasks": [
+        "convert"
+      ],
+      "access": "onboarding_required",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "documented"
+    },
+    {
+      "id": "coinbase-ousd-retail-purchase",
+      "providerId": "coinbase",
+      "name": "Buying OUSD on Coinbase (U.S.)",
+      "capability": "Retail exchange purchase",
+      "assetScope": "Open USD purchase; U.S. retail exchange flow",
+      "networks": null,
+      "networkNote": "The buying guide does not establish deposit or withdrawal networks.",
+      "availability": "unknown",
+      "availabilityReason": "The U.S. guide documents purchase access without a product release-stage designation.",
+      "summary": "Coinbase’s U.S. guide documents buying Open USD on its centralized exchange.",
+      "accessRequirements": "Verified Coinbase account and an approved payment method; follow the U.S. buying guide.",
+      "limitations": [
+        "Purchase fees can apply and appear in the order preview.",
+        "This retail flow does not establish global availability, institutional 1:1 conversion, Prime custody, or developer API access."
+      ],
+      "officialDocumentationUrl": "https://www.coinbase.com/how-to-buy/ousd",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "coinbase-ousd-buy",
+          "url": "https://www.coinbase.com/how-to-buy/ousd",
+          "title": "Coinbase: Buy Open USD",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "Coinbase’s U.S. buying guide documents centralized-exchange purchase after account verification and adding a payment method; fees appear in the order preview."
+        }
+      ],
+      "tasks": [
+        "convert"
+      ],
+      "access": "onboarding_required",
+      "environment": "production",
+      "verification": "not_tested",
+      "ousdSupport": "documented"
+    },
+    {
+      "id": "bridge-ousd-cards",
+      "providerId": "bridge",
+      "name": "Wallet-funded card programs with Stripe",
+      "capability": "Stablecoin-backed card programs",
+      "assetScope": "General card integration; OUSD funding unresolved",
+      "networks": null,
+      "networkNote": "OUSD card-funding routes for the current Stripe Issuing flow are not established by the reviewed guide.",
+      "availability": "unknown",
+      "availabilityReason": "Current card documentation points to Stripe Issuing; this review does not establish an OUSD-specific release stage.",
+      "summary": "Bridge provides wallet and customer infrastructure for Stripe Issuing card programs. Confirm OUSD funding for the chosen program.",
+      "accessRequirements": "Product-specific Bridge and Stripe onboarding; confirm the funding asset with Bridge.",
+      "limitations": [
+        "Legacy Bridge card provisioning is deprecated; old OUSD examples do not establish current Stripe funding support.",
+        "Card issuance, wallet custody and OUSD funding have separate access requirements."
+      ],
+      "officialDocumentationUrl": "https://docs.stripe.com/issuing/bridge-stablecoin-cards",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-10-11",
+      "reviewedAt": "2026-10-11",
+      "sources": [
+        {
+          "id": "stripe-bridge-cards",
+          "url": "https://docs.stripe.com/issuing/bridge-stablecoin-cards",
+          "title": "Stripe: Stablecoin-backed cards for Bridge, Privy or third-party wallets",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "Wallet-based programs link Bridge customer onboarding with Stripe card creation and management; confirm the stablecoin with Bridge."
+        },
+        {
+          "id": "bridge-card-funding",
+          "url": "https://apidocs.bridge.xyz/platform/cards/overview/funding-strategies",
+          "title": "Bridge: Card funding strategies",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "Bridge documents wallet-based card-funding strategies and the Stripe integration."
+        },
+        {
+          "id": "bridge-card-legacy",
+          "url": "https://apidocs.bridge.xyz/api-reference/cards/provision-a-card-account",
+          "title": "Bridge: Deprecated card-account provisioning",
+          "publishedAt": null,
+          "reviewedAt": "2026-10-11",
+          "supportedClaim": "The legacy Bridge card-account provisioning endpoint is deprecated."
+        }
+      ],
+      "tasks": [
+        "issue-cards"
+      ],
+      "access": "onboarding_required",
+      "environment": "unknown",
+      "verification": "not_tested",
+      "ousdSupport": "unresolved"
+    },
+    {
+      "id": "bvnk-ousd-access",
+      "providerId": "bvnk",
+      "name": "Direct and embedded OUSD access",
+      "capability": "Business payments and treasury",
+      "assetScope": "Open USD",
+      "networks": null,
+      "networkNote": "Launch and technical documentation disagree on network and geographic scope; confirm the account-specific route. No Plasma deployment is verified here.",
+      "availability": "unknown",
+      "availabilityReason": "OUSD is launched, but a uniform release stage and account-specific access are not established.",
+      "summary": "BVNK lists OUSD business and embedded access. Network and eligibility documentation conflict.",
+      "accessRequirements": "BVNK onboarding and confirmation of the entity, operation and network.",
+      "limitations": [
+        "OUSD sandbox support is not established.",
+        "No live integration independently tested."
+      ],
+      "officialDocumentationUrl": "https://docs.bvnk.com/bvnk/references/currencies/",
+      "evidence": "source-backed",
+      "evidenceArtifact": null,
+      "modifiedAt": "2026-11-09",
+      "reviewedAt": "2026-11-09",
+      "sources": [
+        {
+          "id": "bvnk-ousd-launch",
+          "url": "https://www.bvnk.com/blog/open-usd-is-live-on-bvnk",
+          "title": "BVNK: Open USD is live on BVNK",
+          "publishedAt": "2026-11-06",
+          "reviewedAt": "2026-11-09",
+          "supportedClaim": "BVNK announces direct, embedded and wholesale OUSD access."
+        },
+        {
+          "id": "bvnk-currencies",
+          "url": "https://docs.bvnk.com/bvnk/references/currencies/",
+          "title": "BVNK: Currencies and network eligibility",
+          "publishedAt": null,
+          "reviewedAt": "2026-11-09",
+          "supportedClaim": "Network and eligibility details conflict with the newer launch announcement."
+        }
+      ],
+      "tasks": [
+        "hold-funds",
+        "send-payouts",
+        "mint-redeem",
+        "create-wallets",
+        "convert"
+      ],
+      "access": "onboarding_required",
+      "environment": "production",
+      "verification": "not_tested",
+      "ousdSupport": "documented"
+    }
+  ],
+  "tasks": {
+    "accept-payments": "Accept payments",
+    "send-payouts": "Send payouts",
+    "hold-funds": "Hold funds",
+    "create-wallets": "Create wallets",
+    "mint-redeem": "Mint / redeem",
+    "issue-cards": "Issue cards",
+    "convert": "Convert",
+    "custody": "Manage custody",
+    "development": "Development",
+    "api-access": "API access"
+  },
+  "sources": [
+    {
+      "id": "os-intro",
+      "url": "https://joinopenstandard.com/blog/introducing-open-usd",
+      "title": "Open Standard: Introducing Open USD",
+      "publishedAt": "2026-06-30",
+      "reviewedAt": "2026-09-10"
+    },
+    {
+      "id": "visa-product",
+      "url": "https://www.visa.com/en-us/products/visa-stablecoin-platform",
+      "title": "Visa Stablecoin Platform: availability and FAQ",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "visa-launch",
+      "url": "https://corporate.visa.com/en/sites/visa-perspectives/newsroom/visa-stablecoin-platform.html",
+      "title": "Visa introduces its Stablecoin Platform",
+      "publishedAt": "2026-07-16",
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "stripe-crypto",
+      "url": "https://stripe.com/en-sg/use-cases/crypto",
+      "title": "Stripe: Crypto and stablecoins",
+      "publishedAt": null,
+      "reviewedAt": "2026-09-10"
+    },
+    {
+      "id": "stripe-payments",
+      "url": "https://docs.stripe.com/payments/stablecoin-payments",
+      "title": "Stripe: Stablecoin payments",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "bridge-announcement",
+      "url": "https://www.linkedin.com/posts/bridge-apis_introducing-open-usd-open-standard-activity-7477759459944017920-F5nC",
+      "title": "Bridge: Open USD platform support announcement",
+      "publishedAt": null,
+      "reviewedAt": "2026-09-10"
+    },
+    {
+      "id": "bridge-sandbox",
+      "url": "https://apidocs.bridge.xyz/get-started/introduction/quick-start/setting-up-sandbox",
+      "title": "Bridge: Set up a sandbox environment",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "bridge-routes",
+      "url": "https://apidocs.bridge.xyz/get-started/introduction/what-we-support/payment-routes",
+      "title": "Bridge: Supported blockchains and fiat rails",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "bridge-overview",
+      "url": "https://apidocs.bridge.xyz/get-started/introduction/overview",
+      "title": "Bridge: Platform introduction",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "bridge-changelog",
+      "url": "https://apidocs.bridge.xyz/changelog/changelog",
+      "title": "Bridge: Developer changelog",
+      "publishedAt": null,
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "id": "tempo-announcement",
+      "url": "https://www.linkedin.com/posts/tempo_ousd-is-coming-to-tempo-issued-natively-activity-7477712200330031104--0AR",
+      "title": "Tempo: Native OUSD issuance announcement",
+      "publishedAt": null,
+      "reviewedAt": "2026-09-10"
+    },
+    {
+      "id": "solana-roundup",
+      "url": "https://solana.com/news/solana-ecosystem-roundup-june-2026",
+      "title": "Solana Foundation: June 2026 ecosystem roundup",
+      "publishedAt": "2026-07-06",
+      "reviewedAt": "2026-09-10"
+    },
+    {
+      "id": "open-issuance",
+      "url": "https://stripe.com/blog/introducing-open-issuance-from-bridge",
+      "title": "Stripe: Introducing Open Issuance from Bridge",
+      "publishedAt": "2025-09-30",
+      "reviewedAt": "2026-10-10"
+    },
+    {
+      "id": "circle-usdc",
+      "url": "https://developers.circle.com/stablecoins/what-is-usdc",
+      "title": "Circle: What is USDC?",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-10"
+    },
+    {
+      "id": "circle-transparency",
+      "url": "https://www.circle.com/transparency",
+      "title": "Circle: Reserve transparency and assurance",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-10"
+    },
+    {
+      "id": "graphics-usd",
+      "url": "https://openusd.org/release/intro.html",
+      "title": "OpenUSD: Introduction to Universal Scene Description",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-10"
+    },
+    {
+      "id": "origin-dollar",
+      "url": "https://docs.originprotocol.com/yield-bearing-tokens/origin-dollar-ousd",
+      "title": "Origin: Origin Dollar (OUSD)",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-10"
+    },
+    {
+      "id": "stripe-events",
+      "url": "https://docs.stripe.com/webhooks",
+      "title": "Stripe: Webhook delivery, signatures, and event ordering",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-10"
+    },
+    {
+      "id": "stripe-idempotency",
+      "url": "https://docs.stripe.com/api/idempotent_requests",
+      "title": "Stripe: Idempotent requests",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-10"
+    },
+    {
+      "id": "os-live",
+      "url": "https://joinopenstandard.com/blog/ousd-is-live",
+      "title": "Open Standard: OUSD is live",
+      "publishedAt": "2026-09-30",
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "id": "os-integrate",
+      "url": "https://joinopenstandard.com/integrate",
+      "title": "Open Standard: Build with Open USD",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "os-governance",
+      "url": "https://joinopenstandard.com/blog/company-structure-and-leadership",
+      "title": "Open Standard: Company structure and leadership",
+      "publishedAt": "2026-09-24",
+      "reviewedAt": "2026-10-10"
+    },
+    {
+      "id": "bridge-live",
+      "url": "https://withbridge.com/blog/ousd-is-live-issued-by-bridge",
+      "title": "Bridge: Open USD is live, issued by Bridge",
+      "publishedAt": "2026-09-30",
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "stripe-ousd",
+      "url": "https://docs.stripe.com/stablecoins/ecosystem/ousd",
+      "title": "Stripe: Open USD product integration overview",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "stripe-treasury",
+      "url": "https://docs.stripe.com/treasury/stablecoins",
+      "title": "Stripe Treasury: stablecoin balances",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "stripe-connect",
+      "url": "https://docs.stripe.com/connect/stablecoin-payouts",
+      "title": "Stripe Connect: stablecoin payouts",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "stripe-cards",
+      "url": "https://docs.stripe.com/issuing/stablecoin-cards",
+      "title": "Stripe: stablecoin-backed cards",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "privy-wallets",
+      "url": "https://docs.privy.io/wallets/overview/types",
+      "title": "Privy: wallet types",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "paxos-stablecoin-terms",
+      "url": "https://www.paxos.com/terms-and-conditions/stablecoin-terms-conditions",
+      "title": "Paxos: US dollar-backed stablecoin terms",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "usdg-arbitrum",
+      "url": "https://globaldollar.com/newsroom/arbitrum",
+      "title": "Global Dollar Network: USDG on Arbitrum One",
+      "publishedAt": "2026-10-05",
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "paxos-mint-redeem",
+      "url": "https://www.paxos.com/mint-and-redeem",
+      "title": "Paxos: Mint and redeem",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "usdg-network",
+      "url": "https://globaldollar.com/network",
+      "title": "Global Dollar Network: Partner rewards and terms",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "usdg-eu-whitepaper",
+      "url": "https://www.paxos.com/terms-and-conditions/usdg-eu-whitepaper",
+      "title": "Paxos: USDG EU whitepaper",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "usdg-transparency",
+      "url": "https://www.paxos.com/usdg-transparency",
+      "title": "Paxos: USDG reserve transparency",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "tether-terms",
+      "url": "https://tether.to/en/legal/",
+      "title": "Tether: Terms of service",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "tether-fees",
+      "url": "https://tether.to/en/fees/",
+      "title": "Tether: Direct acquisition, redemption and verification fees",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "tether-protocols",
+      "url": "https://tether.to/en/supported-protocols/",
+      "title": "Tether: Supported protocols and integration guidelines",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "tether-yield",
+      "url": "https://tether.io/news/where-do-stablecoin-yields-come-from/",
+      "title": "Tether: Where stablecoin yields come from",
+      "publishedAt": "2021-08-04",
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "ethereum-intro",
+      "url": "https://ethereum.org/developers/docs/intro-to-ethereum/",
+      "title": "Ethereum: Technical introduction",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "ethereum-networks",
+      "url": "https://ethereum.org/developers/docs/networks/",
+      "title": "Ethereum: Networks",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "ethereum-contracts",
+      "url": "https://ethereum.org/developers/docs/smart-contracts/",
+      "title": "Ethereum: Introduction to smart contracts",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "ethereum-erc20",
+      "url": "https://ethereum.org/developers/docs/standards/tokens/erc-20/",
+      "title": "Ethereum: ERC-20 token standard",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "solana-tokens",
+      "url": "https://solana.com/docs/tokens",
+      "title": "Solana: Tokens",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "ethereum-bridges",
+      "url": "https://ethereum.org/bridges/",
+      "title": "Ethereum: Blockchain bridges",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "circle-bridged",
+      "url": "https://www.circle.com/bridged-usdc",
+      "title": "Circle: Bridged USDC Standard",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "boe-money",
+      "url": "https://www.bankofengland.co.uk/explainers/what-is-money.",
+      "title": "Bank of England: What is money?",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "ethereum-stablecoins",
+      "url": "https://ethereum.org/stablecoins/",
+      "title": "Ethereum: Stablecoins",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "aicpa-stablecoins",
+      "url": "https://www.aicpa-cima.com/news/article/aicpa-publishes-comprehensive-criteria-for-reporting-on-stablecoins",
+      "title": "AICPA: Criteria for reporting on stablecoins",
+      "publishedAt": "2025-03-06",
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "bridge-mint-burn",
+      "url": "https://apidocs.bridge.xyz/platform/issuance/minting-and-burning",
+      "title": "Bridge: Minting and burning",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "ethereum-wallets",
+      "url": "https://ethereum.org/wallets/",
+      "title": "Ethereum: Wallets",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "bridge-wallets",
+      "url": "https://apidocs.bridge.xyz/platform/wallets/overview",
+      "title": "Bridge: Custodial wallets",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "bridge-payment-tracking",
+      "url": "https://apidocs.bridge.xyz/platform/orchestration/more/payment-tracking",
+      "title": "Bridge: Payment tracking",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "ethereum-gas",
+      "url": "https://ethereum.org/developers/docs/gas/",
+      "title": "Ethereum: Gas and fees",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "solana-fees",
+      "url": "https://solana.com/docs/core/fees",
+      "title": "Solana: Transaction fees",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "solana-commitment",
+      "url": "https://solana.com/docs/rpc#configuring-state-commitment",
+      "title": "Solana: State commitment",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "bridge-transfer-states",
+      "url": "https://apidocs.bridge.xyz/platform/orchestration/transfers/transfer-states",
+      "title": "Bridge: Transfer states",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "circle-cctp",
+      "url": "https://www.circle.com/cross-chain-transfer-protocol",
+      "title": "Circle: Cross-Chain Transfer Protocol",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "stripe-store-funds",
+      "url": "https://docs.stripe.com/treasury/store-funds",
+      "title": "Stripe Treasury: Store funds",
+      "publishedAt": null,
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "id": "stripe-add-funds",
+      "url": "https://docs.stripe.com/treasury/add-funds",
+      "title": "Stripe Treasury: Add funds",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "stripe-convert-funds",
+      "url": "https://docs.stripe.com/treasury/convert-funds",
+      "title": "Stripe Treasury: Convert funds",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "stripe-transfer-send",
+      "url": "https://docs.stripe.com/treasury/transfer",
+      "title": "Stripe Treasury: Transfer funds",
+      "publishedAt": null,
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "id": "stripe-global-payouts",
+      "url": "https://docs.stripe.com/global-payouts/send-money",
+      "title": "Stripe Global Payouts: Send money",
+      "publishedAt": null,
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "id": "stripe-treasury-cards",
+      "url": "https://docs.stripe.com/treasury/cards",
+      "title": "Stripe Treasury: Cards",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "stripe-accept-stablecoins",
+      "url": "https://docs.stripe.com/payments/accept-stablecoin-payments?payment-ui=checkout",
+      "title": "Stripe: Accept stablecoin payments with Checkout",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "bridge-card-funding",
+      "url": "https://apidocs.bridge.xyz/platform/cards/overview/funding-strategies",
+      "title": "Bridge: Card funding strategies",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "bridge-card-noncustodial",
+      "url": "https://apidocs.bridge.xyz/platform/cards/overview/noncustodial",
+      "title": "Bridge: Noncustodial card funding",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "bridge-card-legacy",
+      "url": "https://apidocs.bridge.xyz/api-reference/cards/provision-a-card-account",
+      "title": "Bridge: Deprecated card-account provisioning",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "bridge-card-kyc",
+      "url": "https://apidocs.bridge.xyz/platform/cards/overview/kyc",
+      "title": "Bridge: Card customer eligibility",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "bridge-ousd",
+      "url": "https://apidocs.bridge.xyz/overview",
+      "title": "Bridge: OUSD overview",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "bridge-ousd-migration",
+      "url": "https://apidocs.bridge.xyz/migrating-to-ousd",
+      "title": "Bridge: Migrating to OUSD",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "bridge-transfers",
+      "url": "https://apidocs.bridge.xyz/platform/orchestration/transfers/transfer",
+      "title": "Bridge: Transfers",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "privy-custodial-setup",
+      "url": "https://docs.privy.io/wallets/custodial-wallets/setup",
+      "title": "Privy: Set up custodial wallets",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "privy-custodial-create",
+      "url": "https://docs.privy.io/wallets/custodial-wallets/create-custodial-wallet",
+      "title": "Privy: Create a custodial wallet",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "privy-custodial-send",
+      "url": "https://docs.privy.io/wallets/custodial-wallets/sending-funds",
+      "title": "Privy: Send funds from custodial wallets",
+      "publishedAt": null,
+      "reviewedAt": "2026-11-02"
+    },
+    {
+      "id": "privy-custodial-lifecycle",
+      "url": "https://docs.privy.io/wallets/custodial-wallets/transaction-lifecycle",
+      "title": "Privy: Custodial transaction lifecycle",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "coinbase-ousd",
+      "url": "https://www.coinbase.com/price/ousd",
+      "title": "Coinbase: Open USD asset identity",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "coinbase-ousd-buy",
+      "url": "https://www.coinbase.com/how-to-buy/ousd",
+      "title": "Coinbase: Buy Open USD",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "coinbase-prime-support",
+      "url": "https://help.coinbase.com/en/prime/trading-and-funding/supported-cryptocurrencies-and-trading-pairs",
+      "title": "Coinbase Prime: Supported assets and trading pairs",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "bridge-wallet-offramp",
+      "url": "https://apidocs.bridge.xyz/get-started/guides/wallets/offramp",
+      "title": "Bridge: Wallet off-ramp",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "privy-create-wallet",
+      "url": "https://docs.privy.io/wallets/wallets/create/create-a-wallet",
+      "title": "Privy: Create a wallet",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "privy-custodial-overview",
+      "url": "https://docs.privy.io/wallets/custodial-wallets/overview",
+      "title": "Privy: Custodial wallets overview",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "mastercard-digital-assets",
+      "url": "https://www.mastercard.com/us/en/business/payments/consumer-payments/next-gen-payments/digital-asset-solutions.html",
+      "title": "Mastercard: Digital asset solutions and OUSD wholesale access",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "mastercard-bvnk-ousd",
+      "url": "https://www.mastercard.com/global/en/news-and-trends/stories/2026/mastercard-bvnk-open-usd-stablecoin.html",
+      "title": "Mastercard: Open USD access through BVNK",
+      "publishedAt": "2026-09-30",
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "mastercard-enrollment",
+      "url": "https://form.mastercard.com/jfe/form/SV_9uxcX9XTu2H5cSq",
+      "title": "Mastercard: Stablecoin enrollment form",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "stripe-bridge-acquisition",
+      "url": "https://stripe.com/newsroom/news/stripe-completes-bridge-acquisition",
+      "title": "Stripe: Bridge acquisition completed",
+      "publishedAt": "2025-02-04",
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "stripe-bridge-cards",
+      "url": "https://docs.stripe.com/issuing/bridge-stablecoin-cards",
+      "title": "Stripe: Stablecoin-backed cards for Bridge, Privy or third-party wallets",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "bridge-minimums",
+      "url": "https://apidocs.bridge.xyz/platform/orchestration/fees-and-mins/mins",
+      "title": "Bridge: Transaction minimums",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "base-connection",
+      "url": "https://docs.base.org/get-started/connect-to-base",
+      "title": "Base: Connect to Base",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "base-fees",
+      "url": "https://docs.base.org/specifications/transactions/network-fees",
+      "title": "Base: Network fees",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "base-rpc",
+      "url": "https://docs.base.org/base-chain/api-reference/rpc-overview",
+      "title": "Base: RPC overview",
+      "publishedAt": null,
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "id": "ethereum-rpc",
+      "url": "https://ethereum.org/developers/docs/apis/json-rpc/",
+      "title": "Ethereum: JSON-RPC API",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "solana-clusters",
+      "url": "https://solana.com/docs/references/clusters",
+      "title": "Solana: Clusters and public RPC endpoints",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "tempo-connection",
+      "url": "https://tempo.xyz/developers/docs/quickstart/connection-details",
+      "title": "Tempo: Network details",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "tempo-fees",
+      "url": "https://tempo.xyz/developers/docs/network/fees",
+      "title": "Tempo: Fees",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "tempo-sdk",
+      "url": "https://tempo.xyz/developers/docs/sdk",
+      "title": "Tempo: SDKs and developer tools",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "tempo-evm",
+      "url": "https://tempo.xyz/developers/docs/quickstart/evm-compatibility",
+      "title": "Tempo: EVM differences",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "tempo-receive-policies",
+      "url": "https://tempo.xyz/developers/docs/guide/payments/configure-receive-policies",
+      "title": "Tempo: Receive policies",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "stripe-financial-account-cards",
+      "url": "https://docs.stripe.com/issuing/stablecoin-cards-for-financial-accounts",
+      "title": "Stripe: Cards for financial accounts",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "bridge-wallet-movements",
+      "url": "https://apidocs.bridge.xyz/platform/wallets/move-money",
+      "title": "Bridge: Create, fund and reconcile wallets",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "privy-custodial-controls",
+      "url": "https://docs.privy.io/wallets/custodial-wallets/advanced/authorization-controls",
+      "title": "Privy: Custodial authorization controls",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "privy-custodial-funding",
+      "url": "https://docs.privy.io/wallets/custodial-wallets/advanced/funding",
+      "title": "Privy: Fund custodial wallets",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-11"
+    },
+    {
+      "id": "privy-custodial-webhooks",
+      "url": "https://docs.privy.io/wallets/custodial-wallets/advanced/webhooks",
+      "title": "Privy: Custodial wallet events",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "stripe-ousd-launch",
+      "url": "https://stripe.com/blog/ousd-now-live-on-stripe",
+      "title": "Stripe: OUSD is now live on Stripe",
+      "publishedAt": "2026-09-30",
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "privy-action-reference",
+      "url": "https://docs.privy.io/wallets/actions/reference-id",
+      "title": "Privy: Wallet action reference IDs",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "privy-idempotency",
+      "url": "https://docs.privy.io/api-reference/idempotency-keys",
+      "title": "Privy: Idempotency keys",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "id": "privy-action-status",
+      "url": "https://docs.privy.io/wallets/actions/status",
+      "title": "Privy: Get action status",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "privy-action-types",
+      "url": "https://github.com/privy-io/node-sdk/blob/main/src/resources/wallets/actions.ts",
+      "title": "Privy: Official wallet action types",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "privy-transfer-event",
+      "url": "https://docs.privy.io/api-reference/webhooks/wallet-action/transfer/succeeded",
+      "title": "Privy: Transfer succeeded webhook",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "privy-webhook-verification",
+      "url": "https://docs.privy.io/api-reference/webhooks/overview",
+      "title": "Privy: Verify and test webhooks",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "bridge-developer-fees",
+      "url": "https://apidocs.bridge.xyz/platform/orchestration/fees-and-mins/devfees",
+      "title": "Bridge: Developer fees",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "solana-ousd-launch",
+      "url": "https://solana.com/news/open-usd-is-live-on-solana",
+      "title": "Solana Foundation: OUSD and Token-2022",
+      "publishedAt": "2026-09-30",
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "id": "solana-ousd-observation",
+      "url": "https://openusd.dev/data/observations/ousd-solana-2026-10-12.json",
+      "title": "openusd.dev: Solana read-only RPC evidence, October 12",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "solana-genesis",
+      "url": "https://solana.com/docs/rpc/http/getgenesishash",
+      "title": "Solana: getGenesisHash",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "solana-account-info",
+      "url": "https://solana.com/docs/rpc/http/getaccountinfo",
+      "title": "Solana: getAccountInfo",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "solana-owner-accounts",
+      "url": "https://solana.com/docs/rpc/http/gettokenaccountsbyowner",
+      "title": "Solana: getTokenAccountsByOwner",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "solana-extensions",
+      "url": "https://solana.com/docs/tokens/extensions",
+      "title": "Solana: Token extensions",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "tempo-tip20",
+      "url": "https://tempo.xyz/developers/docs/protocol/tip20/spec",
+      "title": "Tempo: TIP-20 specification",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "evm-read-example",
+      "url": "https://openusd.dev/examples/read-ousd-evm.mjs",
+      "title": "Download: read-only EVM balance example",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "solana-read-example",
+      "url": "https://openusd.dev/examples/read-ousd-solana.mjs",
+      "title": "Download: read-only Solana balance example",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-12"
+    },
+    {
+      "id": "privy-transfer-api",
+      "url": "https://docs.privy.io/api-reference/wallets/transfer",
+      "title": "Privy: Transfer API request and response",
+      "publishedAt": null,
+      "reviewedAt": "2026-11-02"
+    },
+    {
+      "id": "startale-sbi-pilot",
+      "url": "https://www.startale.com/en/blog/openstandard-startale-sbi",
+      "title": "SBI and Startale: JPYSC–OUSD interoperability pilot exploration",
+      "publishedAt": "2026-10-16",
+      "reviewedAt": "2026-10-19"
+    },
+    {
+      "id": "bridge-rfi",
+      "url": "https://apidocs.bridge.xyz/platform/additional-information/rfi",
+      "title": "Bridge: transaction RFI API and responses",
+      "publishedAt": null,
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "id": "privy-custodial-sca",
+      "url": "https://docs.privy.io/wallets/custodial-wallets/advanced/strong-customer-authentication",
+      "title": "Privy: Strong customer authentication for custodial transfers",
+      "publishedAt": null,
+      "reviewedAt": "2026-11-02"
+    },
+    {
+      "id": "bvnk-ousd-launch",
+      "url": "https://www.bvnk.com/blog/open-usd-is-live-on-bvnk",
+      "title": "BVNK: Open USD is live on BVNK",
+      "publishedAt": "2026-11-06",
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "id": "bvnk-currencies",
+      "url": "https://docs.bvnk.com/bvnk/references/currencies/",
+      "title": "BVNK: Currencies and network eligibility",
+      "publishedAt": null,
+      "reviewedAt": "2026-11-09"
+    }
+  ]
+}

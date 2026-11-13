@@ -1,0 +1,31 @@
+{
+  "name": "openusd",
+  "version": "0.0.0-alpha.1",
+  "private": true,
+  "description": "Read-only provider directory companion to openusd.dev",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "docs"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/fix-declarations.mjs",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "node -e \"throw new Error('Publication is not authorized; complete the release checklist first.')\""
+  },
+  "devDependencies": {
+    "typescript": "5.9.2"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
