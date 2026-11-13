@@ -1,0 +1,877 @@
+[
+  {
+    "id": "os-intro",
+    "url": "https://joinopenstandard.com/blog/introducing-open-usd",
+    "title": "Open Standard: Introducing Open USD",
+    "publishedAt": "2026-06-30",
+    "reviewedAt": "2026-09-10"
+  },
+  {
+    "id": "visa-product",
+    "url": "https://www.visa.com/en-us/products/visa-stablecoin-platform",
+    "title": "Visa Stablecoin Platform: availability and FAQ",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "visa-launch",
+    "url": "https://corporate.visa.com/en/sites/visa-perspectives/newsroom/visa-stablecoin-platform.html",
+    "title": "Visa introduces its Stablecoin Platform",
+    "publishedAt": "2026-07-16",
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "stripe-crypto",
+    "url": "https://stripe.com/en-sg/use-cases/crypto",
+    "title": "Stripe: Crypto and stablecoins",
+    "publishedAt": null,
+    "reviewedAt": "2026-09-10"
+  },
+  {
+    "id": "stripe-payments",
+    "url": "https://docs.stripe.com/payments/stablecoin-payments",
+    "title": "Stripe: Stablecoin payments",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "bridge-announcement",
+    "url": "https://www.linkedin.com/posts/bridge-apis_introducing-open-usd-open-standard-activity-7477759459944017920-F5nC",
+    "title": "Bridge: Open USD platform support announcement",
+    "publishedAt": null,
+    "reviewedAt": "2026-09-10"
+  },
+  {
+    "id": "bridge-sandbox",
+    "url": "https://apidocs.bridge.xyz/get-started/introduction/quick-start/setting-up-sandbox",
+    "title": "Bridge: Set up a sandbox environment",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "bridge-routes",
+    "url": "https://apidocs.bridge.xyz/get-started/introduction/what-we-support/payment-routes",
+    "title": "Bridge: Supported blockchains and fiat rails",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "bridge-overview",
+    "url": "https://apidocs.bridge.xyz/get-started/introduction/overview",
+    "title": "Bridge: Platform introduction",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "bridge-changelog",
+    "url": "https://apidocs.bridge.xyz/changelog/changelog",
+    "title": "Bridge: Developer changelog",
+    "publishedAt": null,
+    "reviewedAt": "2026-11-09"
+  },
+  {
+    "id": "tempo-announcement",
+    "url": "https://www.linkedin.com/posts/tempo_ousd-is-coming-to-tempo-issued-natively-activity-7477712200330031104--0AR",
+    "title": "Tempo: Native OUSD issuance announcement",
+    "publishedAt": null,
+    "reviewedAt": "2026-09-10"
+  },
+  {
+    "id": "solana-roundup",
+    "url": "https://solana.com/news/solana-ecosystem-roundup-june-2026",
+    "title": "Solana Foundation: June 2026 ecosystem roundup",
+    "publishedAt": "2026-07-06",
+    "reviewedAt": "2026-09-10"
+  },
+  {
+    "id": "open-issuance",
+    "url": "https://stripe.com/blog/introducing-open-issuance-from-bridge",
+    "title": "Stripe: Introducing Open Issuance from Bridge",
+    "publishedAt": "2025-09-30",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "circle-usdc",
+    "url": "https://developers.circle.com/stablecoins/what-is-usdc",
+    "title": "Circle: What is USDC?",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "circle-transparency",
+    "url": "https://www.circle.com/transparency",
+    "title": "Circle: Reserve transparency and assurance",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "graphics-usd",
+    "url": "https://openusd.org/release/intro.html",
+    "title": "OpenUSD: Introduction to Universal Scene Description",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "origin-dollar",
+    "url": "https://docs.originprotocol.com/yield-bearing-tokens/origin-dollar-ousd",
+    "title": "Origin: Origin Dollar (OUSD)",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "stripe-events",
+    "url": "https://docs.stripe.com/webhooks",
+    "title": "Stripe: Webhook delivery, signatures, and event ordering",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "stripe-idempotency",
+    "url": "https://docs.stripe.com/api/idempotent_requests",
+    "title": "Stripe: Idempotent requests",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "os-live",
+    "url": "https://joinopenstandard.com/blog/ousd-is-live",
+    "title": "Open Standard: OUSD is live",
+    "publishedAt": "2026-09-30",
+    "reviewedAt": "2026-11-09"
+  },
+  {
+    "id": "os-integrate",
+    "url": "https://joinopenstandard.com/integrate",
+    "title": "Open Standard: Build with Open USD",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "os-governance",
+    "url": "https://joinopenstandard.com/blog/company-structure-and-leadership",
+    "title": "Open Standard: Company structure and leadership",
+    "publishedAt": "2026-09-24",
+    "reviewedAt": "2026-10-10"
+  },
+  {
+    "id": "bridge-live",
+    "url": "https://withbridge.com/blog/ousd-is-live-issued-by-bridge",
+    "title": "Bridge: Open USD is live, issued by Bridge",
+    "publishedAt": "2026-09-30",
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "stripe-ousd",
+    "url": "https://docs.stripe.com/stablecoins/ecosystem/ousd",
+    "title": "Stripe: Open USD product integration overview",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "stripe-treasury",
+    "url": "https://docs.stripe.com/treasury/stablecoins",
+    "title": "Stripe Treasury: stablecoin balances",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "stripe-connect",
+    "url": "https://docs.stripe.com/connect/stablecoin-payouts",
+    "title": "Stripe Connect: stablecoin payouts",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "stripe-cards",
+    "url": "https://docs.stripe.com/issuing/stablecoin-cards",
+    "title": "Stripe: stablecoin-backed cards",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "privy-wallets",
+    "url": "https://docs.privy.io/wallets/overview/types",
+    "title": "Privy: wallet types",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "paxos-stablecoin-terms",
+    "url": "https://www.paxos.com/terms-and-conditions/stablecoin-terms-conditions",
+    "title": "Paxos: US dollar-backed stablecoin terms",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "usdg-arbitrum",
+    "url": "https://globaldollar.com/newsroom/arbitrum",
+    "title": "Global Dollar Network: USDG on Arbitrum One",
+    "publishedAt": "2026-10-05",
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "paxos-mint-redeem",
+    "url": "https://www.paxos.com/mint-and-redeem",
+    "title": "Paxos: Mint and redeem",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "usdg-network",
+    "url": "https://globaldollar.com/network",
+    "title": "Global Dollar Network: Partner rewards and terms",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "usdg-eu-whitepaper",
+    "url": "https://www.paxos.com/terms-and-conditions/usdg-eu-whitepaper",
+    "title": "Paxos: USDG EU whitepaper",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "usdg-transparency",
+    "url": "https://www.paxos.com/usdg-transparency",
+    "title": "Paxos: USDG reserve transparency",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "tether-terms",
+    "url": "https://tether.to/en/legal/",
+    "title": "Tether: Terms of service",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "tether-fees",
+    "url": "https://tether.to/en/fees/",
+    "title": "Tether: Direct acquisition, redemption and verification fees",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "tether-protocols",
+    "url": "https://tether.to/en/supported-protocols/",
+    "title": "Tether: Supported protocols and integration guidelines",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "tether-yield",
+    "url": "https://tether.io/news/where-do-stablecoin-yields-come-from/",
+    "title": "Tether: Where stablecoin yields come from",
+    "publishedAt": "2021-08-04",
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "ethereum-intro",
+    "url": "https://ethereum.org/developers/docs/intro-to-ethereum/",
+    "title": "Ethereum: Technical introduction",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "ethereum-networks",
+    "url": "https://ethereum.org/developers/docs/networks/",
+    "title": "Ethereum: Networks",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "ethereum-contracts",
+    "url": "https://ethereum.org/developers/docs/smart-contracts/",
+    "title": "Ethereum: Introduction to smart contracts",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "ethereum-erc20",
+    "url": "https://ethereum.org/developers/docs/standards/tokens/erc-20/",
+    "title": "Ethereum: ERC-20 token standard",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "solana-tokens",
+    "url": "https://solana.com/docs/tokens",
+    "title": "Solana: Tokens",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "ethereum-bridges",
+    "url": "https://ethereum.org/bridges/",
+    "title": "Ethereum: Blockchain bridges",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "circle-bridged",
+    "url": "https://www.circle.com/bridged-usdc",
+    "title": "Circle: Bridged USDC Standard",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "boe-money",
+    "url": "https://www.bankofengland.co.uk/explainers/what-is-money.",
+    "title": "Bank of England: What is money?",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "ethereum-stablecoins",
+    "url": "https://ethereum.org/stablecoins/",
+    "title": "Ethereum: Stablecoins",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "aicpa-stablecoins",
+    "url": "https://www.aicpa-cima.com/news/article/aicpa-publishes-comprehensive-criteria-for-reporting-on-stablecoins",
+    "title": "AICPA: Criteria for reporting on stablecoins",
+    "publishedAt": "2025-03-06",
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "bridge-mint-burn",
+    "url": "https://apidocs.bridge.xyz/platform/issuance/minting-and-burning",
+    "title": "Bridge: Minting and burning",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "ethereum-wallets",
+    "url": "https://ethereum.org/wallets/",
+    "title": "Ethereum: Wallets",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "bridge-wallets",
+    "url": "https://apidocs.bridge.xyz/platform/wallets/overview",
+    "title": "Bridge: Custodial wallets",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "bridge-payment-tracking",
+    "url": "https://apidocs.bridge.xyz/platform/orchestration/more/payment-tracking",
+    "title": "Bridge: Payment tracking",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "ethereum-gas",
+    "url": "https://ethereum.org/developers/docs/gas/",
+    "title": "Ethereum: Gas and fees",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "solana-fees",
+    "url": "https://solana.com/docs/core/fees",
+    "title": "Solana: Transaction fees",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "solana-commitment",
+    "url": "https://solana.com/docs/rpc#configuring-state-commitment",
+    "title": "Solana: State commitment",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "bridge-transfer-states",
+    "url": "https://apidocs.bridge.xyz/platform/orchestration/transfers/transfer-states",
+    "title": "Bridge: Transfer states",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "circle-cctp",
+    "url": "https://www.circle.com/cross-chain-transfer-protocol",
+    "title": "Circle: Cross-Chain Transfer Protocol",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "stripe-store-funds",
+    "url": "https://docs.stripe.com/treasury/store-funds",
+    "title": "Stripe Treasury: Store funds",
+    "publishedAt": null,
+    "reviewedAt": "2026-11-09"
+  },
+  {
+    "id": "stripe-add-funds",
+    "url": "https://docs.stripe.com/treasury/add-funds",
+    "title": "Stripe Treasury: Add funds",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "stripe-convert-funds",
+    "url": "https://docs.stripe.com/treasury/convert-funds",
+    "title": "Stripe Treasury: Convert funds",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "stripe-transfer-send",
+    "url": "https://docs.stripe.com/treasury/transfer",
+    "title": "Stripe Treasury: Transfer funds",
+    "publishedAt": null,
+    "reviewedAt": "2026-11-09"
+  },
+  {
+    "id": "stripe-global-payouts",
+    "url": "https://docs.stripe.com/global-payouts/send-money",
+    "title": "Stripe Global Payouts: Send money",
+    "publishedAt": null,
+    "reviewedAt": "2026-11-09"
+  },
+  {
+    "id": "stripe-treasury-cards",
+    "url": "https://docs.stripe.com/treasury/cards",
+    "title": "Stripe Treasury: Cards",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "stripe-accept-stablecoins",
+    "url": "https://docs.stripe.com/payments/accept-stablecoin-payments?payment-ui=checkout",
+    "title": "Stripe: Accept stablecoin payments with Checkout",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "bridge-card-funding",
+    "url": "https://apidocs.bridge.xyz/platform/cards/overview/funding-strategies",
+    "title": "Bridge: Card funding strategies",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "bridge-card-noncustodial",
+    "url": "https://apidocs.bridge.xyz/platform/cards/overview/noncustodial",
+    "title": "Bridge: Noncustodial card funding",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "bridge-card-legacy",
+    "url": "https://apidocs.bridge.xyz/api-reference/cards/provision-a-card-account",
+    "title": "Bridge: Deprecated card-account provisioning",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "bridge-card-kyc",
+    "url": "https://apidocs.bridge.xyz/platform/cards/overview/kyc",
+    "title": "Bridge: Card customer eligibility",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "bridge-ousd",
+    "url": "https://apidocs.bridge.xyz/overview",
+    "title": "Bridge: OUSD overview",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "bridge-ousd-migration",
+    "url": "https://apidocs.bridge.xyz/migrating-to-ousd",
+    "title": "Bridge: Migrating to OUSD",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "bridge-transfers",
+    "url": "https://apidocs.bridge.xyz/platform/orchestration/transfers/transfer",
+    "title": "Bridge: Transfers",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "privy-custodial-setup",
+    "url": "https://docs.privy.io/wallets/custodial-wallets/setup",
+    "title": "Privy: Set up custodial wallets",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "privy-custodial-create",
+    "url": "https://docs.privy.io/wallets/custodial-wallets/create-custodial-wallet",
+    "title": "Privy: Create a custodial wallet",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "privy-custodial-send",
+    "url": "https://docs.privy.io/wallets/custodial-wallets/sending-funds",
+    "title": "Privy: Send funds from custodial wallets",
+    "publishedAt": null,
+    "reviewedAt": "2026-11-02"
+  },
+  {
+    "id": "privy-custodial-lifecycle",
+    "url": "https://docs.privy.io/wallets/custodial-wallets/transaction-lifecycle",
+    "title": "Privy: Custodial transaction lifecycle",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "coinbase-ousd",
+    "url": "https://www.coinbase.com/price/ousd",
+    "title": "Coinbase: Open USD asset identity",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "coinbase-ousd-buy",
+    "url": "https://www.coinbase.com/how-to-buy/ousd",
+    "title": "Coinbase: Buy Open USD",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "coinbase-prime-support",
+    "url": "https://help.coinbase.com/en/prime/trading-and-funding/supported-cryptocurrencies-and-trading-pairs",
+    "title": "Coinbase Prime: Supported assets and trading pairs",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "bridge-wallet-offramp",
+    "url": "https://apidocs.bridge.xyz/get-started/guides/wallets/offramp",
+    "title": "Bridge: Wallet off-ramp",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "privy-create-wallet",
+    "url": "https://docs.privy.io/wallets/wallets/create/create-a-wallet",
+    "title": "Privy: Create a wallet",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "privy-custodial-overview",
+    "url": "https://docs.privy.io/wallets/custodial-wallets/overview",
+    "title": "Privy: Custodial wallets overview",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "mastercard-digital-assets",
+    "url": "https://www.mastercard.com/us/en/business/payments/consumer-payments/next-gen-payments/digital-asset-solutions.html",
+    "title": "Mastercard: Digital asset solutions and OUSD wholesale access",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "mastercard-bvnk-ousd",
+    "url": "https://www.mastercard.com/global/en/news-and-trends/stories/2026/mastercard-bvnk-open-usd-stablecoin.html",
+    "title": "Mastercard: Open USD access through BVNK",
+    "publishedAt": "2026-09-30",
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "mastercard-enrollment",
+    "url": "https://form.mastercard.com/jfe/form/SV_9uxcX9XTu2H5cSq",
+    "title": "Mastercard: Stablecoin enrollment form",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "stripe-bridge-acquisition",
+    "url": "https://stripe.com/newsroom/news/stripe-completes-bridge-acquisition",
+    "title": "Stripe: Bridge acquisition completed",
+    "publishedAt": "2025-02-04",
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "stripe-bridge-cards",
+    "url": "https://docs.stripe.com/issuing/bridge-stablecoin-cards",
+    "title": "Stripe: Stablecoin-backed cards for Bridge, Privy or third-party wallets",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "bridge-minimums",
+    "url": "https://apidocs.bridge.xyz/platform/orchestration/fees-and-mins/mins",
+    "title": "Bridge: Transaction minimums",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "base-connection",
+    "url": "https://docs.base.org/get-started/connect-to-base",
+    "title": "Base: Connect to Base",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "base-fees",
+    "url": "https://docs.base.org/specifications/transactions/network-fees",
+    "title": "Base: Network fees",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "base-rpc",
+    "url": "https://docs.base.org/base-chain/api-reference/rpc-overview",
+    "title": "Base: RPC overview",
+    "publishedAt": null,
+    "reviewedAt": "2026-11-09"
+  },
+  {
+    "id": "ethereum-rpc",
+    "url": "https://ethereum.org/developers/docs/apis/json-rpc/",
+    "title": "Ethereum: JSON-RPC API",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "solana-clusters",
+    "url": "https://solana.com/docs/references/clusters",
+    "title": "Solana: Clusters and public RPC endpoints",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "tempo-connection",
+    "url": "https://tempo.xyz/developers/docs/quickstart/connection-details",
+    "title": "Tempo: Network details",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "tempo-fees",
+    "url": "https://tempo.xyz/developers/docs/network/fees",
+    "title": "Tempo: Fees",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "tempo-sdk",
+    "url": "https://tempo.xyz/developers/docs/sdk",
+    "title": "Tempo: SDKs and developer tools",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "tempo-evm",
+    "url": "https://tempo.xyz/developers/docs/quickstart/evm-compatibility",
+    "title": "Tempo: EVM differences",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "tempo-receive-policies",
+    "url": "https://tempo.xyz/developers/docs/guide/payments/configure-receive-policies",
+    "title": "Tempo: Receive policies",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "stripe-financial-account-cards",
+    "url": "https://docs.stripe.com/issuing/stablecoin-cards-for-financial-accounts",
+    "title": "Stripe: Cards for financial accounts",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "bridge-wallet-movements",
+    "url": "https://apidocs.bridge.xyz/platform/wallets/move-money",
+    "title": "Bridge: Create, fund and reconcile wallets",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "privy-custodial-controls",
+    "url": "https://docs.privy.io/wallets/custodial-wallets/advanced/authorization-controls",
+    "title": "Privy: Custodial authorization controls",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "privy-custodial-funding",
+    "url": "https://docs.privy.io/wallets/custodial-wallets/advanced/funding",
+    "title": "Privy: Fund custodial wallets",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-11"
+  },
+  {
+    "id": "privy-custodial-webhooks",
+    "url": "https://docs.privy.io/wallets/custodial-wallets/advanced/webhooks",
+    "title": "Privy: Custodial wallet events",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "stripe-ousd-launch",
+    "url": "https://stripe.com/blog/ousd-now-live-on-stripe",
+    "title": "Stripe: OUSD is now live on Stripe",
+    "publishedAt": "2026-09-30",
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "privy-action-reference",
+    "url": "https://docs.privy.io/wallets/actions/reference-id",
+    "title": "Privy: Wallet action reference IDs",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "privy-idempotency",
+    "url": "https://docs.privy.io/api-reference/idempotency-keys",
+    "title": "Privy: Idempotency keys",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-26"
+  },
+  {
+    "id": "privy-action-status",
+    "url": "https://docs.privy.io/wallets/actions/status",
+    "title": "Privy: Get action status",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "privy-action-types",
+    "url": "https://github.com/privy-io/node-sdk/blob/main/src/resources/wallets/actions.ts",
+    "title": "Privy: Official wallet action types",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "privy-transfer-event",
+    "url": "https://docs.privy.io/api-reference/webhooks/wallet-action/transfer/succeeded",
+    "title": "Privy: Transfer succeeded webhook",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "privy-webhook-verification",
+    "url": "https://docs.privy.io/api-reference/webhooks/overview",
+    "title": "Privy: Verify and test webhooks",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "bridge-developer-fees",
+    "url": "https://apidocs.bridge.xyz/platform/orchestration/fees-and-mins/devfees",
+    "title": "Bridge: Developer fees",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "solana-ousd-launch",
+    "url": "https://solana.com/news/open-usd-is-live-on-solana",
+    "title": "Solana Foundation: OUSD and Token-2022",
+    "publishedAt": "2026-09-30",
+    "reviewedAt": "2026-11-09"
+  },
+  {
+    "id": "solana-ousd-observation",
+    "url": "https://openusd.dev/data/observations/ousd-solana-2026-10-12.json",
+    "title": "openusd.dev: Solana read-only RPC evidence, October 12",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "solana-genesis",
+    "url": "https://solana.com/docs/rpc/http/getgenesishash",
+    "title": "Solana: getGenesisHash",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "solana-account-info",
+    "url": "https://solana.com/docs/rpc/http/getaccountinfo",
+    "title": "Solana: getAccountInfo",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "solana-owner-accounts",
+    "url": "https://solana.com/docs/rpc/http/gettokenaccountsbyowner",
+    "title": "Solana: getTokenAccountsByOwner",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "solana-extensions",
+    "url": "https://solana.com/docs/tokens/extensions",
+    "title": "Solana: Token extensions",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "tempo-tip20",
+    "url": "https://tempo.xyz/developers/docs/protocol/tip20/spec",
+    "title": "Tempo: TIP-20 specification",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "evm-read-example",
+    "url": "https://openusd.dev/examples/read-ousd-evm.mjs",
+    "title": "Download: read-only EVM balance example",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "solana-read-example",
+    "url": "https://openusd.dev/examples/read-ousd-solana.mjs",
+    "title": "Download: read-only Solana balance example",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-12"
+  },
+  {
+    "id": "privy-transfer-api",
+    "url": "https://docs.privy.io/api-reference/wallets/transfer",
+    "title": "Privy: Transfer API request and response",
+    "publishedAt": null,
+    "reviewedAt": "2026-11-02"
+  },
+  {
+    "id": "startale-sbi-pilot",
+    "url": "https://www.startale.com/en/blog/openstandard-startale-sbi",
+    "title": "SBI and Startale: JPYSC–OUSD interoperability pilot exploration",
+    "publishedAt": "2026-10-16",
+    "reviewedAt": "2026-10-19"
+  },
+  {
+    "id": "bridge-rfi",
+    "url": "https://apidocs.bridge.xyz/platform/additional-information/rfi",
+    "title": "Bridge: transaction RFI API and responses",
+    "publishedAt": null,
+    "reviewedAt": "2026-10-26"
+  },
+  {
+    "id": "privy-custodial-sca",
+    "url": "https://docs.privy.io/wallets/custodial-wallets/advanced/strong-customer-authentication",
+    "title": "Privy: Strong customer authentication for custodial transfers",
+    "publishedAt": null,
+    "reviewedAt": "2026-11-02"
+  },
+  {
+    "id": "bvnk-ousd-launch",
+    "url": "https://www.bvnk.com/blog/open-usd-is-live-on-bvnk",
+    "title": "BVNK: Open USD is live on BVNK",
+    "publishedAt": "2026-11-06",
+    "reviewedAt": "2026-11-09"
+  },
+  {
+    "id": "bvnk-currencies",
+    "url": "https://docs.bvnk.com/bvnk/references/currencies/",
+    "title": "BVNK: Currencies and network eligibility",
+    "publishedAt": null,
+    "reviewedAt": "2026-11-09"
+  }
+]

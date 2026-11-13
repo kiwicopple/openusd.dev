@@ -1,0 +1,23 @@
+---
+import {networks,source} from '../lib/registry';
+import CopyText from './CopyText.astro';
+---
+<p>Open USD (OUSD) is available on Base, Ethereum, Solana, and Tempo. A <a href="/guides/concepts/#network">network</a> connects the computers that maintain a <a href="/guides/concepts/#blockchain">blockchain</a>, a shared record of transactions and token balances. Each network keeps its own records, so the network matters as much as the token address.</p>
+
+<h2 id="what-is-a-contract-address">What is a contract address?</h2>
+<p>A <a href="/guides/concepts/#smart-contract">smart contract</a> is a program that runs on a blockchain. <a href="https://ethereum.org/developers/docs/standards/tokens/erc-20/">Token contracts keep track of balances and apply rules for transfers.</a></p>
+<p>A <a href="/guides/concepts/#token-address">token address</a> is the exact identifier used to find OUSD on a particular network. On Base, Ethereum, and Tempo, the addresses below identify OUSD token contracts. On Solana, the address identifies OUSD’s <a href="/guides/concepts/#mint-account">mint account</a>: the record defining the token, with individual balances held in separate token accounts.</p>
+
+<h2 id="official-ousd-addresses">Official OUSD addresses</h2>
+<p>These entries identify <a href="/guides/concepts/#native-and-bridged-tokens">native OUSD</a>, meaning OUSD issued directly on each blockchain. The <a href="https://joinopenstandard.com/blog/ousd-is-live">launch announcement</a> confirms native issuance. Addresses and explorer links come from <a href={source('os-integrate').url}>Open Standard</a>; address review dates: {[...new Set(networks.map(n=>n.reviewedAt))].sort().join(', ')}.</p>
+{networks.map(n=><section id={n.id}><h3><a href={`/networks/${n.id}/`}>{n.name}</a></h3><p>OUSD token {n.id === 'solana' ? 'mint' : 'contract'} on {n.name}</p><CopyText text={n.address} label={`Copy ${n.name} address`} /><p><a href={n.explorerUrl}>View on explorer ↗</a> · <a href={`/networks/${n.id}/`}>Setup, fees and operational limits →</a></p></section>)}
+
+<h2 id="how-you-use-these-addresses">How you use these addresses</h2>
+<ul>
+  <li><strong>Check identity:</strong> compare the network and full address when a wallet or service shows OUSD.</li>
+  <li><strong>Inspect activity:</strong> open the explorer to look up token details, holders, and transfers.</li>
+  <li><strong>Build an integration:</strong> use the network and token address together to identify OUSD when reading balances or tracking transfers.</li>
+</ul>
+<p><strong>These are token identifiers, not your personal receiving addresses.</strong> Don’t send funds directly to the listed addresses. Provider support, account eligibility, and onboarding are separate; check your chosen provider’s documentation. A native deployment does not establish <a href="/guides/concepts/#minting-and-redemption">minting</a> permission or a <a href="/guides/concepts/#mainnet-testnet-and-sandbox">testnet</a>.</p>
+<p><a href="/ecosystem/">Find a provider</a> · <a href="/data/">Use the network data as JSON</a></p>
+<p><small>This reference has not tested transfers.</small></p>

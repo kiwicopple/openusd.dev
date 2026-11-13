@@ -1,0 +1,21 @@
+name: Manual source review
+on:
+  workflow_dispatch:
+# A maintainer may add a weekly schedule after editorial ownership is assigned.
+# Scheduled execution is intentionally disabled.
+permissions:
+  contents: read
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/check-sources.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-review-report
+          path: reports/

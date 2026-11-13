@@ -1,0 +1,1225 @@
+[
+  {
+    "id": "visa",
+    "name": "Visa",
+    "kind": "Payments infrastructure",
+    "description": "OUSD portal access in restricted beta; API access coming soon.",
+    "detail": true,
+    "modifiedAt": "2026-10-12",
+    "reviewedAt": "2026-10-11",
+    "profile": {
+      "title": "Visa OUSD integration",
+      "introduction": {
+        "text": "Visa operates a global digital-payments network connecting businesses, consumers and financial institutions. Its Visa Stablecoin Platform (VSP) brings OUSD and wallet operations into institutional treasury and settlement workflows.",
+        "sourceIds": [
+          "visa-launch"
+        ]
+      },
+      "sections": [
+        {
+          "id": "hold-ousd",
+          "heading": "Holding OUSD",
+          "paragraphs": [
+            {
+              "text": "VSP supports OUSD balances for selected institutional clients in beta.",
+              "sourceIds": [
+                "visa-launch"
+              ]
+            },
+            {
+              "text": "Start through your Visa representative, then connect bank accounts and configure users and approvals. Use the portal to manage OUSD holdings within the limits agreed for your business.",
+              "sourceIds": [
+                "visa-launch"
+              ]
+            },
+            {
+              "text": "Geographic and volume limits apply. Confirm the OUSD network and funding instructions for your account before depositing.",
+              "sourceIds": [
+                "visa-product"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "send-payouts",
+          "heading": "Sending payouts from OUSD",
+          "paragraphs": [
+            {
+              "text": "VSP supports OUSD transfers; the wallet arrangement determines where they are executed.",
+              "sourceIds": [
+                "visa-launch"
+              ]
+            },
+            {
+              "text": "With Visa Wallet-as-a-Service, configure permitted destinations and approval roles before transferring through VSP. With Bring Your Own Wallet, carry out ongoing transfers through your existing wallet provider.",
+              "sourceIds": [
+                "visa-product"
+              ]
+            },
+            {
+              "text": "Confirm the destination, OUSD network and beta volume limits with Visa. VSP’s general network list is not an operation-by-operation OUSD support matrix.",
+              "sourceIds": [
+                "visa-product"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mint-and-redeem-ousd",
+          "heading": "Minting and redeeming OUSD",
+          "paragraphs": [
+            {
+              "text": "Eligible VSP clients can mint and redeem OUSD through the portal.",
+              "sourceIds": [
+                "visa-launch"
+              ]
+            },
+            {
+              "text": "Obtain the account’s dedicated virtual-account instructions for ACH or wire funding. For redemption, use the linked bank account and approved off-ramp instructions.",
+              "sourceIds": [
+                "visa-product"
+              ]
+            },
+            {
+              "text": "Arrange onboarding and bank-account controls with Visa first. These beta flows remain subject to your approved geography and volume.",
+              "sourceIds": [
+                "visa-launch"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "create-wallets",
+          "heading": "Creating OUSD wallets",
+          "paragraphs": [
+            {
+              "text": "VSP offers Wallet-as-a-Service or a connection to your existing wallet provider.",
+              "sourceIds": [
+                "visa-product"
+              ]
+            },
+            {
+              "text": "For the Visa-managed stack, onboard through Visa and configure users, linked bank accounts and policies. For an existing wallet, agree the connection and on/off-ramp setup with your representative.",
+              "sourceIds": [
+                "visa-launch"
+              ]
+            },
+            {
+              "text": "Access requires a Visa Access ID and Visa-issued Business Identification (BID) number. Wallet-as-a-Service is currently offered alongside beta OUSD access.",
+              "sourceIds": [
+                "visa-product"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "custody-ousd",
+          "heading": "Managing OUSD custody",
+          "paragraphs": [
+            {
+              "text": "Visa supplies key-management technology for Wallet-as-a-Service; the client remains its own custodian.",
+              "sourceIds": [
+                "visa-product"
+              ]
+            },
+            {
+              "text": "Configure destination allowlists, dual approval and passkey signing in the Visa wallet model. With your existing wallet provider, retain its custody arrangement and confirm which controls apply.",
+              "sourceIds": [
+                "visa-product"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "accessing-apis",
+          "heading": "Accessing APIs",
+          "paragraphs": [
+            {
+              "text": "The VSP portal and documentation are available; API access is still described as coming soon.",
+              "sourceIds": [
+                "visa-product"
+              ]
+            },
+            {
+              "text": "Ask your representative for specifications and timing before planning an automated integration. No public release date or self-service API access is established by the product page.",
+              "sourceIds": [
+                "visa-product"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "stripe",
+    "name": "Stripe",
+    "kind": "Payments platform",
+    "description": "OUSD balances and product-specific integration docs. External transfer assets vary by product.",
+    "detail": true,
+    "modifiedAt": "2026-11-09",
+    "reviewedAt": "2026-10-12",
+    "profile": {
+      "title": "Stripe OUSD integration",
+      "introduction": {
+        "text": "Stripe provides payment processing and financial tools for businesses, including Treasury balances, payouts and card issuing. It completed its acquisition of stablecoin infrastructure company Bridge in February 2025. OUSD support depends on the individual Stripe product.",
+        "sourceIds": [
+          "stripe-treasury",
+          "stripe-cards",
+          "stripe-bridge-acquisition"
+        ]
+      },
+      "sections": [
+        {
+          "id": "hold-ousd",
+          "heading": "Holding OUSD",
+          "paragraphs": [
+            {
+              "text": "Can an account hold OUSD? An eligible Treasury financial account can store OUSD, with Bridge custody. It holds one stablecoin storage currency at a time.",
+              "sourceIds": [
+                "stripe-store-funds",
+                "stripe-treasury"
+              ]
+            },
+            {
+              "text": "In Dashboard Settings, open Linked accounts and payouts → Settlement and transfer rules. Under Manage financial account currencies, select OUSD and save. Each account holds one stablecoin storage currency at a time; it cannot store OUSD and USDC simultaneously.",
+              "sourceIds": [
+                "stripe-store-funds"
+              ]
+            },
+            {
+              "text": "To fund from a wallet, open Balances → Add funds → Crypto transfer, choose the network and use its deposit instructions. This requires administrator access. The documented incoming asset is USDC, or USDC.e on Tempo, converted into the storage currency; these are not native OUSD deposit instructions.",
+              "sourceIds": [
+                "stripe-add-funds",
+                "stripe-store-funds"
+              ]
+            },
+            {
+              "text": "US businesses have public-preview access; the other listed eligible countries require private-preview access. Bank funding first enters a supported fiat balance before conversion to OUSD.",
+              "sourceIds": [
+                "stripe-treasury",
+                "stripe-add-funds"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "send-payouts",
+          "heading": "Sending payouts from OUSD",
+          "paragraphs": [
+            {
+              "text": "What reaches the recipient? Treasury can fund payouts from OUSD, but the documented external assets are supported fiat, USDC or USDC.e. Native OUSD recipient delivery is not established by this product guide.",
+              "sourceIds": [
+                "stripe-transfer-send"
+              ]
+            },
+            {
+              "text": "For your own wallet, open Treasury → Transfer, select or add the external account, review the costs and destination, then select Review → Transfer. For a third party, use Treasury → Payouts → Send money, choose or onboard a recipient, enter the amount and method, select Review → Send, then track the payout.",
+              "sourceIds": [
+                "stripe-transfer-send",
+                "stripe-global-payouts"
+              ]
+            },
+            {
+              "text": "Crypto delivery uses USDC on Arbitrum, Avalanche C-Chain, Base, Ethereum, Optimism, Polygon, Solana and Stellar; Tempo uses USDC.e. Bank payouts convert to the destination currency. Sender, recipient and payout-method eligibility must each be checked; US access is public preview and other listed countries use private preview.",
+              "sourceIds": [
+                "stripe-transfer-send"
+              ]
+            },
+            {
+              "text": "Which interface? Use Treasury transfers for accounts you own and Global Payouts for third-party recipients. Global Payouts recommends Payout Intents for US and UK senders; each attempt is an OutboundPayment. UK cross-border payouts require Payout Intents. These generic API examples do not independently establish an OUSD funding route; confirm account and payout-method eligibility.",
+              "sourceIds": [
+                "stripe-global-payouts",
+                "stripe-transfer-send"
+              ]
+            },
+            {
+              "text": "Connect is a separate, fiat-funded USDC flow. A US platform must obtain private-preview approval and complete due diligence, enable the crypto method and Express Dashboard, then use the Transfers API. Recipients must be eligible individuals or sole proprietors; companies, nonprofits, and US recipients in New York or Hawaii are excluded. This does not establish OUSD delivery.",
+              "sourceIds": [
+                "stripe-connect"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "issue-cards",
+          "heading": "Issuing OUSD-funded cards",
+          "paragraphs": [
+            {
+              "text": "Stripe’s customer Issuing card programs are in private preview; confirm OUSD funding for the chosen integration.",
+              "sourceIds": [
+                "stripe-cards"
+              ]
+            },
+            {
+              "text": "For wallet-funded consumer cards, complete Stripe and Bridge program onboarding and connect the accounts using Bridge’s installation link. Request the Bridge customer’s cards endorsement, then use the returned cardholder ID with Stripe Issuing. Create a card within 24 hours before the consumer endorsement expires. Confirm OUSD and the chain with Bridge; configure the approved funding wallet and custody type. Noncustodial funding also needs spending approval.",
+              "sourceIds": [
+                "stripe-bridge-cards"
+              ]
+            },
+            {
+              "text": "For commercial wallet-funded programs, Bridge returns a connected-account ID after business endorsement approval. Create authorized cardholders and cards under that account.",
+              "sourceIds": [
+                "stripe-bridge-cards"
+              ]
+            },
+            {
+              "text": "For financial-account customer cards, request preview access and configure an eligible US or European Connect platform. Onboard connected accounts in approved markets, activate storage and card capabilities, then create and fund USDC financial accounts before issuing cards. This separate recipe does not establish OUSD funding.",
+              "sourceIds": [
+                "stripe-cards",
+                "stripe-financial-account-cards"
+              ]
+            },
+            {
+              "text": "For cards spending your own business’s Treasury stablecoin balance, open Cards → Create card and follow the cardholder, card-type and activation steps. This is a separate product: US public preview, with country-specific invitation access elsewhere.",
+              "sourceIds": [
+                "stripe-treasury-cards"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "convert-ousd",
+          "heading": "Converting OUSD",
+          "paragraphs": [
+            {
+              "text": "Which conversion is available? Treasury converts OUSD to or from supported fiat balances in the same eligible financial account. The Dashboard flow is documented; the general currency-conversion API is private preview.",
+              "sourceIds": [
+                "stripe-convert-funds"
+              ]
+            },
+            {
+              "text": "Open Treasury → Convert. Select the source and destination balances, enter the amount, review the displayed terms and submit. Both currencies must be supported in that account.",
+              "sourceIds": [
+                "stripe-convert-funds"
+              ]
+            },
+            {
+              "text": "USD/OUSD conversion does not involve foreign exchange; other fiat pairs use the current rate. This does not imply zero fees. The account cannot directly switch between OUSD and USDC storage balances through this flow. The documented stablecoin steps use the Dashboard; the general conversion API is private preview.",
+              "sourceIds": [
+                "stripe-convert-funds"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "custody-ousd",
+          "heading": "Managing OUSD custody",
+          "paragraphs": [
+            {
+              "text": "Bridge custodies OUSD held in Stripe Treasury financial accounts.",
+              "sourceIds": [
+                "stripe-store-funds"
+              ]
+            },
+            {
+              "text": "Enable OUSD in the financial account, then review movements in Transactions → All activity → Financial account. Filter to OUSD and export transactions for reconciliation when an accounting integration cannot read them. This is managed financial-account custody, not a self-custody wallet-creation API.",
+              "sourceIds": [
+                "stripe-store-funds"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "accept-payments",
+          "heading": "Accepting OUSD payments",
+          "paragraphs": [
+            {
+              "text": "Can customers pay in OUSD? Stripe’s September 30, 2026 launch announcement explicitly includes OUSD payment acceptance, and its OUSD overview links to Payments. The detailed accepted-token table still names only USDC, USDP and USDG. This conflict remained unresolved on October 12, 2026; confirm the merchant, network and integration with Stripe before implementation.",
+              "sourceIds": [
+                "stripe-ousd-launch",
+                "stripe-ousd",
+                "stripe-payments"
+              ]
+            },
+            {
+              "text": "Get OUSD-specific confirmation for your merchant, network and integration before enabling it in your product. After approval, request Stablecoins and Crypto in payment-method settings and wait until it is active. The documented Checkout flow uses USD line items; dynamic payment methods display eligible options.",
+              "sourceIds": [
+                "stripe-payments",
+                "stripe-accept-stablecoins"
+              ]
+            },
+            {
+              "text": "The setup guide excludes New York; the product overview lists additional markets in private preview. Its published customer limit is USD 10,000 per transaction. Payments settle to fiat; refunds return as stablecoins to the original wallet. Confirm the exact settlement currency for your account. The documented USDC test flow cannot validate OUSD acceptance.",
+              "sourceIds": [
+                "stripe-payments",
+                "stripe-accept-stablecoins"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "bridge",
+    "name": "Bridge",
+    "kind": "Payments infrastructure",
+    "description": "OUSD issuance, custodial wallets and transfers; production access requires onboarding.",
+    "detail": true,
+    "modifiedAt": "2026-11-09",
+    "reviewedAt": "2026-10-12",
+    "profile": {
+      "title": "Bridge OUSD integration",
+      "introduction": {
+        "text": "Bridge builds stablecoin APIs for moving funds, creating custodial wallets and issuing tokens. Stripe acquired Bridge in February 2025. Bridge Building Inc. currently issues OUSD; the separate Bridge National Trust Bank remains in organization and is not the issuer.",
+        "sourceIds": [
+          "stripe-bridge-acquisition",
+          "bridge-live"
+        ]
+      },
+      "sections": [
+        {
+          "id": "hold-ousd",
+          "heading": "Holding OUSD",
+          "paragraphs": [
+            {
+              "text": "Bridge custodial wallets explicitly support OUSD on Base, Ethereum, Solana and Tempo.",
+              "sourceIds": [
+                "bridge-wallets"
+              ]
+            },
+            {
+              "text": "Create the beneficiary’s wallet, then fund it using an approved orchestration route or a supported direct deposit. Read balances and wallet history, and process bridge_wallet.activity events for deposits and withdrawals. Keep a company treasury under the company’s own customer ID.",
+              "sourceIds": [
+                "bridge-wallet-movements",
+                "bridge-wallets"
+              ]
+            },
+            {
+              "text": "Wallet accounting uses whole US cents. Production fund flows need Legal & Compliance approval; wallet geography restrictions and the EEA restriction described under Creating OUSD wallets apply before funding.",
+              "sourceIds": [
+                "bridge-wallets",
+                "bridge-routes"
+              ]
+            },
+            {
+              "text": "Prepare deposit handling before November 16, 2026: Bridge says incoming RTP deposits may return rtp in Transfer source payment_received_rail, Virtual Account source payment_rail, and wallet activity/history. Accept that response value in parsers and webhooks. When creating transfers or configuring virtual accounts, keep using fednow; rtp is a response value, not a request rail. This upcoming rail change does not establish an additional OUSD route.",
+              "sourceIds": [
+                "bridge-changelog"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "send-payouts",
+          "heading": "Sending payouts from OUSD",
+          "paragraphs": [
+            {
+              "text": "Bridge Transfers can deliver OUSD or another supported destination asset; check each route direction.",
+              "sourceIds": [
+                "bridge-transfers",
+                "bridge-routes"
+              ]
+            },
+            {
+              "text": "1. Create a transfer with the amount, customer, source, destination and idempotency key.",
+              "sourceIds": [
+                "bridge-transfers"
+              ]
+            },
+            {
+              "text": "2. For external funding, follow source_deposit_instructions, including the deposit reference. For a Bridge-wallet source, retrieve the wallet and supply initiation context when initiation_required is true; Bridge pulls the wallet balance.",
+              "sourceIds": [
+                "bridge-transfers"
+              ]
+            },
+            {
+              "text": "3. Track the transfer to payment_processed and retain the final transaction hash. Reconcile refunds and exception states separately.",
+              "sourceIds": [
+                "bridge-transfer-states"
+              ]
+            },
+            {
+              "text": "Handle transaction compliance reviews through Bridge’s RFI API (beta). Retrieve GET /v0/rfis/{id}, inspect requested_items and their response_types, then submit answers to POST /v0/rfis/{id}/responses with customer:write scope. This API covers transaction RFIs, not customer RFIs; Dashboard Support and email responses remain available. An RFI response is not confirmation that a paused transfer completed.",
+              "sourceIds": [
+                "bridge-rfi",
+                "bridge-changelog"
+              ]
+            },
+            {
+              "text": "The guide’s Tempo/OUSD request conflicts with Polygon and Stellar in other examples; those examples do not prove OUSD support on those chains.",
+              "sourceIds": [
+                "bridge-transfers",
+                "bridge-transfer-states"
+              ]
+            },
+            {
+              "text": "The reviewed routes list OUSD destinations on Base, Ethereum, Solana and Tempo, and OUSD sources on Base, Ethereum, Solana and Bridge Wallet; the reviewed route-explorer matrix did not establish a Tempo-source route. USD ACH-to-OUSD has a USD 1 minimum; listed Base/Ethereum/Solana OUSD-to-USD ACH or wire routes have a 1 OUSD minimum, after developer fees. Recheck the current route and minimum before submission. EEA users are limited to USDC and EURC.",
+              "sourceIds": [
+                "bridge-routes",
+                "bridge-minimums"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "issue-cards",
+          "heading": "Issuing OUSD-funded cards",
+          "paragraphs": [
+            {
+              "text": "Bridge wallet-funded cards use Stripe Issuing; current OUSD card funding still needs confirmation.",
+              "sourceIds": [
+                "stripe-bridge-cards"
+              ]
+            },
+            {
+              "text": "1. Complete coordinated Bridge and Stripe program onboarding and connect the accounts using Bridge’s installation link.",
+              "sourceIds": [
+                "stripe-bridge-cards"
+              ]
+            },
+            {
+              "text": "2. Request the cards endorsement for the Bridge customer. Consumer onboarding returns a Stripe cardholder ID for creating the Issuing card; create it within 24 hours before the endorsement expires, or renew the KYC confirmation.",
+              "sourceIds": [
+                "stripe-bridge-cards",
+                "bridge-card-kyc"
+              ]
+            },
+            {
+              "text": "3. Configure the approved funding wallet with the current Stripe integration. Noncustodial wallets need the required onchain spending approval; Bridge wallets need sufficient funds.",
+              "sourceIds": [
+                "bridge-card-funding",
+                "stripe-bridge-cards"
+              ]
+            },
+            {
+              "text": "Confirm OUSD, the chain and the program’s geographic eligibility. The legacy Bridge card-account provisioning endpoint is deprecated; use the current Stripe Issuing integration.",
+              "sourceIds": [
+                "bridge-card-funding",
+                "bridge-card-legacy"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mint-and-redeem-ousd",
+          "heading": "Minting and redeeming OUSD",
+          "paragraphs": [
+            {
+              "text": "Open Standard network partners can arrange direct OUSD access through Bridge.",
+              "sourceIds": [
+                "bridge-live"
+              ]
+            },
+            {
+              "text": "Complete the applicable onboarding and agree the funding and destination route. Bridge handles minting and reserve allocation, or burning and release of funds, within the approved issuance flow. The public issuance overview does not provide a universally available OUSD mint endpoint.",
+              "sourceIds": [
+                "bridge-live",
+                "bridge-mint-burn"
+              ]
+            },
+            {
+              "text": "Follow the transfer’s actual deposit instructions and reconcile the destination credit. For bank redemption, the wallet off-ramp requires a verified customer, funded wallet and external bank-account reference; its USDB example must not be copied as an OUSD request.",
+              "sourceIds": [
+                "bridge-transfers",
+                "bridge-wallet-offramp"
+              ]
+            },
+            {
+              "text": "Access and cost: partner onboarding and approval apply to each route; the issuance overview does not establish one global API release stage. Bridge announces no Bridge minting or redemption fee. Developer charges, network costs, funding/payout rail charges and conversion costs still need a quote for the chosen operation.",
+              "sourceIds": [
+                "bridge-live",
+                "bridge-mint-burn",
+                "bridge-developer-fees"
+              ]
+            },
+            {
+              "text": "Route checks: the current matrix lists USD ACH into OUSD on Base, Ethereum, Solana and Tempo, and OUSD from Base, Ethereum or Solana into USD ACH or Wire. Each listed minimum is 1 in the source currency, after developer fees. No OUSD@Tempo source entry was established; EEA users are limited to USDC and EURC.",
+              "sourceIds": [
+                "bridge-routes",
+                "bridge-minimums"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "create-wallets",
+          "heading": "Creating OUSD wallets",
+          "paragraphs": [
+            {
+              "text": "Bridge provides a direct custodial-wallet API with explicit OUSD support on four networks.",
+              "sourceIds": [
+                "bridge-wallets"
+              ]
+            },
+            {
+              "text": "After onboarding and production fund-flow approval, create the beneficiary customer with country and, where applicable, US state. Create a wallet through POST /v0/customers/{customerId}/wallets with the selected chain; save its wallet ID and receiving address.",
+              "sourceIds": [
+                "bridge-wallet-movements",
+                "bridge-wallets"
+              ]
+            },
+            {
+              "text": "The OUSD wallet matrix lists Base, Ethereum, Solana and Tempo. Wallets exclude New York, Texas, Kenya, Australia, Japan, Singapore, Malaysia, Vietnam and Indonesia. Broader eligibility rules also apply; EEA users are limited to USDC and EURC. Check both the business and beneficiary before provisioning and funding.",
+              "sourceIds": [
+                "bridge-wallets",
+                "bridge-routes"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "convert-ousd",
+          "heading": "Converting OUSD",
+          "paragraphs": [
+            {
+              "text": "Bridge documents conversion into and out of OUSD using approved transfer routes.",
+              "sourceIds": [
+                "bridge-ousd-migration"
+              ]
+            },
+            {
+              "text": "Access and route: confirm the source asset, destination asset and both chains in the Route Explorer, plus account and beneficiary eligibility. USDC sources on Base, Ethereum, Solana, Tempo or in Bridge Wallet are listed into OUSD on its four native networks. Do not infer reverse routes, all-pairs support or a Tempo OUSD source route. EEA routes do not support OUSD.",
+              "sourceIds": [
+                "bridge-routes"
+              ]
+            },
+            {
+              "text": "1. Inventory wallets, liquidation addresses, reusable transfer templates and virtual accounts. In the migration guide, USDx includes USDC; it is a placeholder for the existing asset, not a token identifier. Upgrade legacy Prefunded Account integrations to Wallet APIs first.",
+              "sourceIds": [
+                "bridge-ousd-migration"
+              ]
+            },
+            {
+              "text": "2. Schedule downtime, pause deposits and withdrawals, and let in-flight transfers finish. Change destination currency on liquidation addresses, reusable templates and virtual accounts. Only close eligible awaiting-funds transfers; later-stage transfers must settle.",
+              "sourceIds": [
+                "bridge-ousd-migration"
+              ]
+            },
+            {
+              "text": "3. Convert each wallet balance with a unique idempotency key for that operation. Wait for payment_processed, reconcile OUSD balances and late USDC deposits, then resume. Cross-chain migration needs new destination wallets/accounts and routes. Prepare rollback only after verifying its reverse route.",
+              "sourceIds": [
+                "bridge-ousd-migration"
+              ]
+            },
+            {
+              "text": "Cost and limits: inspect the route quote, developer fees and post-fee minimums before migrating. A no-mint/redemption-fee announcement does not establish zero total conversion or network cost. Generic migration examples must not expand OUSD beyond Base, Ethereum, Solana and Tempo.",
+              "sourceIds": [
+                "bridge-developer-fees",
+                "bridge-minimums",
+                "bridge-live",
+                "bridge-ousd"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "custody-ousd",
+          "heading": "Managing OUSD custody",
+          "paragraphs": [
+            {
+              "text": "Bridge offers custodial OUSD wallets, subject to approved production fund flows and geographic restrictions.",
+              "sourceIds": [
+                "bridge-wallets"
+              ]
+            },
+            {
+              "text": "Identify the beneficiary and obtain Bridge Legal & Compliance approval for the fund flow before accepting deposits. Use Bridge Orchestration APIs for transfers; direct deposits require a supported token and chain. Apply the same customer and geographic checks described under Creating OUSD wallets.",
+              "sourceIds": [
+                "bridge-wallets"
+              ]
+            },
+            {
+              "text": "Reconcile wallet balances and history in whole US cents, rather than treating that accounting precision as the token’s onchain decimals. Retain the wallet and customer references for each movement.",
+              "sourceIds": [
+                "bridge-wallets",
+                "bridge-wallet-movements"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "testing-integrations",
+          "heading": "Testing integrations",
+          "paragraphs": [
+            {
+              "text": "Bridge Sandbox supports simulated payment activity and associated webhooks. It does not submit transactions to live banks or blockchains, so simulated completion is not evidence of OUSD settlement.",
+              "sourceIds": [
+                "bridge-sandbox"
+              ]
+            },
+            {
+              "text": "1. Obtain sandbox access, create a sandbox customer and simulate its compliance state. Configure and activate a sandbox webhook endpoint for the event categories you need.",
+              "sourceIds": [
+                "bridge-sandbox"
+              ]
+            },
+            {
+              "text": "2. Run a supported simulation: liquidation deposits produce liquidation_address.drain; virtual-account deposits produce virtual_account.activity and applicable transfer events; wallet deposits produce bridge_wallet.activity.",
+              "sourceIds": [
+                "bridge-sandbox"
+              ]
+            },
+            {
+              "text": "3. Retrieve the resulting resource or wallet history and compare it with received events. Exercise duplicates, delays and failures in your application separately. Event coverage and timing may differ from production; do not assume blockchain-testnet or every OUSD route support.",
+              "sourceIds": [
+                "bridge-sandbox"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "coinbase",
+    "name": "Coinbase",
+    "kind": "Exchange and infrastructure",
+    "description": "U.S. exchange purchases are documented. Business conversion, custody and wallet access need product-specific checks.",
+    "detail": true,
+    "modifiedAt": "2026-10-12",
+    "reviewedAt": "2026-10-11",
+    "profile": {
+      "title": "Coinbase OUSD integration",
+      "introduction": {
+        "text": "Coinbase operates a cryptocurrency exchange and offers business, institutional custody and developer products. Its Open USD asset page identifies the Open Standard token. The US exchange purchase flow is documented; business integrations need product-specific confirmation.",
+        "sourceIds": [
+          "coinbase-ousd",
+          "coinbase-ousd-buy"
+        ]
+      },
+      "sections": [
+        {
+          "id": "hold-ousd",
+          "heading": "Holding OUSD",
+          "paragraphs": [
+            {
+              "text": "Coinbase documents buying and managing Open USD on its US exchange; business holding arrangements need confirmation.",
+              "sourceIds": [
+                "coinbase-ousd-buy"
+              ]
+            },
+            {
+              "text": "For an application treasury or customer balances, first identify the Coinbase product and account entity. Confirm OUSD holding, deposit and withdrawal support in that account before designing the funding flow. Exchange buying access does not establish Prime or API eligibility.",
+              "sourceIds": [
+                "coinbase-prime-support",
+                "coinbase-ousd-buy"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "create-wallets",
+          "heading": "Creating OUSD wallets",
+          "paragraphs": [
+            {
+              "text": "Open Standard lists Coinbase as a wallet integration path but does not identify an OUSD wallet API.",
+              "sourceIds": [
+                "os-integrate"
+              ]
+            },
+            {
+              "text": "Ask Coinbase which wallet product fits the intended controller and beneficiary. Obtain its OUSD network support and provisioning documentation before creating a funding flow. The native token addresses on Coinbase’s asset page identify OUSD; they are not a product deposit or withdrawal matrix.",
+              "sourceIds": [
+                "os-integrate",
+                "coinbase-ousd"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "convert-ousd",
+          "heading": "Converting OUSD",
+          "paragraphs": [
+            {
+              "text": "Coinbase documents a US exchange purchase flow; institutional 1:1 conversion is a separate listed path.",
+              "sourceIds": [
+                "coinbase-ousd-buy",
+                "os-integrate"
+              ]
+            },
+            {
+              "text": "For the documented exchange flow, verify the Coinbase account and add an approved payment method. Open Buy & Sell, choose OpenUSD, enter the amount and review the quote and fees before placing the order. Fees can apply and appear in the preview.",
+              "sourceIds": [
+                "coinbase-ousd-buy"
+              ]
+            },
+            {
+              "text": "For a business conversion integration, confirm the product, pair, account access and API with Coinbase. The US buying instructions do not establish worldwide availability or a 1:1 conversion API.",
+              "sourceIds": [
+                "os-integrate",
+                "coinbase-ousd-buy"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "custody-ousd",
+          "heading": "Managing OUSD custody",
+          "paragraphs": [
+            {
+              "text": "Open Standard lists Coinbase custody; exact OUSD institutional support depends on the chosen account.",
+              "sourceIds": [
+                "os-integrate"
+              ]
+            },
+            {
+              "text": "If using Prime, inspect asset availability in its authenticated interface or supported-products endpoint; prospective customers can contact Prime about their geography. Confirm OUSD custody and transfer support with the relevant custody entity before depositing.",
+              "sourceIds": [
+                "coinbase-prime-support"
+              ]
+            },
+            {
+              "text": "Prime availability varies by geography and custody entity. A retail OUSD purchase or a generic asset list does not establish institutional custody approval.",
+              "sourceIds": [
+                "coinbase-prime-support"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "mastercard",
+    "name": "Mastercard",
+    "kind": "Payments infrastructure",
+    "description": "Wholesale OUSD minting and redemption, plus directory-listed integration paths with separate access requirements.",
+    "detail": true,
+    "modifiedAt": "2026-11-09",
+    "reviewedAt": "2026-10-11",
+    "profile": {
+      "title": "Mastercard OUSD integration",
+      "introduction": {
+        "text": "Mastercard provides payments-network and digital-asset infrastructure for financial institutions, merchants and platforms. It announced OUSD access through BVNK in September 2026; its product page describes wholesale OUSD minting and redemption.",
+        "sourceIds": [
+          "mastercard-digital-assets",
+          "mastercard-bvnk-ousd"
+        ]
+      },
+      "sections": [
+        {
+          "id": "send-payouts",
+          "heading": "Sending payouts from OUSD",
+          "paragraphs": [
+            {
+              "text": "Open Standard lists Mastercard for sending funds, but does not specify an OUSD payout API or network matrix.",
+              "sourceIds": [
+                "os-integrate"
+              ]
+            },
+            {
+              "text": "Use the official enrollment route to request the intended payout flow. Confirm recipient markets, delivered asset, settlement timing and the account-specific integration before implementing. An OUSD listing alone does not establish those details.",
+              "sourceIds": [
+                "os-integrate",
+                "mastercard-enrollment"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mint-and-redeem-ousd",
+          "heading": "Minting and redeeming OUSD",
+          "paragraphs": [
+            {
+              "text": "Mastercard documents wholesale OUSD minting and redemption for exchanges, distributors and institutions.",
+              "sourceIds": [
+                "mastercard-digital-assets"
+              ]
+            },
+            {
+              "text": "Begin with the stablecoin enrollment form linked from its OUSD offer. Agree the approved workflow, funding instructions and redemption destination with Mastercard before sending funds. Its BVNK announcement identifies the infrastructure path, rather than a public self-service API recipe.",
+              "sourceIds": [
+                "mastercard-digital-assets",
+                "mastercard-bvnk-ousd",
+                "mastercard-enrollment"
+              ]
+            },
+            {
+              "text": "BVNK now documents direct OUSD access, but its launch announcement and currencies reference disagree on network and geographic scope. Confirm the BVNK route for your entity; this does not establish Mastercard-wide API or sandbox availability. Mastercard’s own pages still leave exact pricing and transaction limits unestablished.",
+              "sourceIds": [
+                "bvnk-ousd-launch",
+                "bvnk-currencies",
+                "mastercard-digital-assets"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "create-wallets",
+          "heading": "Creating OUSD wallets",
+          "paragraphs": [
+            {
+              "text": "Mastercard is listed as an OUSD wallet integration path; product-level provisioning details still need confirmation.",
+              "sourceIds": [
+                "os-integrate"
+              ]
+            },
+            {
+              "text": "Describe the wallet owner, beneficiary and custody requirements during enrollment. Obtain the approved product documentation and OUSD network scope before provisioning. Mastercard’s general blockchain list is not an OUSD wallet support matrix.",
+              "sourceIds": [
+                "mastercard-enrollment",
+                "mastercard-digital-assets"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "convert-ousd",
+          "heading": "Converting OUSD",
+          "paragraphs": [
+            {
+              "text": "Open Standard lists Mastercard for buying, selling and swaps through API or portal access.",
+              "sourceIds": [
+                "os-integrate"
+              ]
+            },
+            {
+              "text": "Request the conversion product through enrollment and confirm the source/destination pair, available interface, fees and limits. The directory listing does not establish self-service credentials or a release stage for that operation.",
+              "sourceIds": [
+                "os-integrate",
+                "mastercard-enrollment"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "privy",
+    "name": "Privy",
+    "kind": "Wallet infrastructure",
+    "description": "Embedded wallet infrastructure and Bridge-backed custodial OUSD transfers; configuration and access differ.",
+    "detail": true,
+    "modifiedAt": "2026-11-02",
+    "reviewedAt": "2026-10-12",
+    "profile": {
+      "title": "Privy OUSD integration",
+      "introduction": {
+        "text": "Privy provides wallet infrastructure for applications, including embedded wallets, external-wallet connections and custodial wallets backed by Bridge. Its wallet model determines who can authorize transactions; its custodial transfer guide explicitly includes OUSD.",
+        "sourceIds": [
+          "privy-wallets",
+          "privy-custodial-overview",
+          "privy-custodial-send"
+        ]
+      },
+      "sections": [
+        {
+          "id": "hold-ousd",
+          "heading": "Holding OUSD",
+          "paragraphs": [
+            {
+              "text": "Privy can expose a Bridge-custodied OUSD wallet and its balance inside an application.",
+              "sourceIds": [
+                "privy-custodial-overview",
+                "privy-custodial-send"
+              ]
+            },
+            {
+              "text": "After provisioning, fund through the supported deposit address or an approved Bridge virtual-account or transfer route. Confirm the actual OUSD asset and chain with Bridge before sending; these funding methods are not universal asset support.",
+              "sourceIds": [
+                "privy-custodial-funding",
+                "privy-custodial-overview"
+              ]
+            },
+            {
+              "text": "Subscribe to balance notifications and reconcile movements. Use bridge_metadata to distinguish deposits from refunds of failed off-ramps. Enterprise enablement and the custodian’s beneficiary and regional requirements apply before funding.",
+              "sourceIds": [
+                "privy-custodial-webhooks",
+                "privy-custodial-setup"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "send-payouts",
+          "heading": "Sending payouts from OUSD",
+          "paragraphs": [
+            {
+              "text": "Privy documents custodial OUSD transfers, including an OUSD-on-Tempo example. This is a wallet-to-wallet transfer, not a bank-payout API.",
+              "sourceIds": [
+                "privy-custodial-send"
+              ]
+            },
+            {
+              "text": "Prerequisites: Privy Enterprise, custodial-wallet enablement, Bridge onboarding and beneficiary KYC. Use an existing funded Tempo mainnet custodial wallet. Setup uses a Bridge production integration; the example below is documentation, not a sandbox transfer or an independently executed payment. Confirm route, fees and limits before use.",
+              "sourceIds": [
+                "privy-custodial-setup",
+                "privy-custodial-create",
+                "privy-custodial-send"
+              ]
+            },
+            {
+              "text": "When the wallet requires Strong Customer Authentication (SCA), your app authenticates the customer; Privy forwards the attestation to Bridge. Set initiation.channel and initiation.subchannel to the actual payment flow. Use sca_used only after SCA occurred, or the applicable eligible exemption/non-applicability outcome—not a placeholder chosen to make a request pass.",
+              "sourceIds": [
+                "privy-custodial-sca",
+                "privy-custodial-send"
+              ]
+            },
+            {
+              "text": "Optional auth_factors may accompany sca_used. If supplied, include at least two factors from distinct categories, each with its authentication time and internal reference; omit auth_factors for other outcomes. Confirm requirements for the specific wallet. These fields do not establish regional OUSD eligibility.",
+              "sourceIds": [
+                "privy-custodial-send"
+              ]
+            },
+            {
+              "text": "1. Before submission, persist an application payment ID, app/environment, wallet ID, Bridge customer ID, approved recipient, asset, chain and exact amount. Store one immutable request fingerprint, reference_id and idempotency key for that attempt. These are recommended application records, not additional Privy API fields.",
+              "sourceIds": [
+                "privy-custodial-send",
+                "privy-action-reference",
+                "privy-idempotency"
+              ]
+            },
+            {
+              "text": "2. The request uses amount in standard units: 10.0 means ten OUSD. Supply the authorization signature when an owner or additional signer requires it; include custody_options.initiation when required by the wallet’s strong-customer-authentication flow. The destination must be the approved recipient’s address, never the OUSD token contract.",
+              "sourceIds": [
+                "privy-custodial-send",
+                "privy-transfer-api"
+              ]
+            },
+            {
+              "text": "3. Save the returned action id, wallet_id, type, status, transfer fields and observation time. If the response is lost, recover with GET /v1/actions?reference_id=invoice-1042-attempt-1. reference_id is unique per app, at most 64 characters, and is not an idempotency key.",
+              "sourceIds": [
+                "privy-action-reference",
+                "privy-action-status"
+              ]
+            },
+            {
+              "text": "4. Retrieve GET /v1/wallets/{wallet_id}/actions/{action_id}?include=steps. Poll with backoff until terminal; a local timeout remains unresolved work. For this custodial flow, succeeded reports onchain confirmation; rejected has no onchain effect; failed can include prior effects and needs inspection before retrying.",
+              "sourceIds": [
+                "privy-action-status",
+                "privy-custodial-lifecycle"
+              ]
+            },
+            {
+              "text": "5. Verify webhook signatures before use. Transfer events identify wallet_action_id, while the action resource uses id; neither is the delivery ID used for deduplication. Treat events as triggers to retrieve authoritative state. Compare wallet, exact amount, asset, chain and recipient against the approved intent, then post a matching succeeded effect once in the ledger. Preserve mismatches and failed steps for review.",
+              "sourceIds": [
+                "privy-transfer-event",
+                "privy-webhook-verification",
+                "privy-custodial-lifecycle"
+              ]
+            },
+            {
+              "text": "Keep returned evidence and any available settlement receipt. The documented custodian_transaction step exposes status and failure_reason, but does not guarantee a transaction_hash field; do not invent one. Fees are separate reconciliation fields, not assumed to be zero.",
+              "sourceIds": [
+                "privy-action-types",
+                "privy-custodial-send"
+              ]
+            },
+            {
+              "text": "Retry boundary: reuse the same privy-idempotency-key and identical request body within its 24-hour window; expired keys can execute a new operation. For /transfer, synchronous 5xx responses delete the idempotency record, so the same key can retry a fresh attempt. POLICY_VIOLATION also clears the record; correct the policy issue before retrying. These exceptions do not make an ambiguous timeout or asynchronously failed action safe to repeat: reconcile through reference/action lookup before another payment.",
+              "sourceIds": [
+                "privy-idempotency",
+                "privy-action-reference",
+                "privy-custodial-lifecycle"
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "id": "tempo-transfer-request",
+              "title": "Worked request: ten OUSD on Tempo",
+              "language": "http",
+              "description": "Documentation-only HTTP request with placeholders. It has not been submitted. Use only in an authorized server integration; keep secrets out of browser code and logs. This minimal body omits custody_options.initiation. Add the wallet’s required authentication context described above and required authorization signatures before use.",
+              "code": "POST https://api.privy.io/v1/wallets/{wallet_id}/transfer\nContent-Type: application/json\nprivy-app-id: {app_id}\nAuthorization: Basic {base64(app_id:app_secret)}\nprivy-idempotency-key: {persisted_uuid_for_this_attempt}\nprivy-authorization-signature: {required_authorization_signature}\n\n{\n  \"reference_id\": \"invoice-1042-attempt-1\",\n  \"amount\": \"10.0\",\n  \"source\": { \"asset\": \"ousd\", \"chain\": \"tempo\" },\n  \"destination\": { \"address\": \"{approved_recipient_hex_address}\" }\n}",
+              "sourceIds": [
+                "privy-custodial-send",
+                "privy-action-reference",
+                "privy-idempotency",
+                "privy-transfer-api"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "create-wallets",
+          "heading": "Creating OUSD wallets",
+          "paragraphs": [
+            {
+              "text": "Privy offers embedded wallets and a separate Bridge-backed custodial route with documented OUSD transfers.",
+              "sourceIds": [
+                "privy-wallets",
+                "privy-custodial-send"
+              ]
+            },
+            {
+              "text": "1. For the custodial route, obtain a Privy Enterprise plan and app enablement. Complete Bridge onboarding and beneficiary KYC.",
+              "sourceIds": [
+                "privy-custodial-setup"
+              ]
+            },
+            {
+              "text": "2. Register the Bridge production API key under Configuration → Integrations, then enable Custodial wallets under Wallets → Advanced and select Bridge.",
+              "sourceIds": [
+                "privy-custodial-setup"
+              ]
+            },
+            {
+              "text": "3. Create the wallet with POST /v1/custodial_wallets. Set provider to bridge and provider_user_id to the beneficiary’s Bridge customer ID. Configure the chain, owner and policies, then save the returned wallet ID and address.",
+              "sourceIds": [
+                "privy-custodial-create"
+              ]
+            },
+            {
+              "text": "Custodial creation lists Tempo, Base and Solana mainnet; the explicit OUSD transfer example is on Tempo. Confirm other asset/chain combinations and regional access with Bridge rather than combining separate asset and chain lists.",
+              "sourceIds": [
+                "privy-custodial-create",
+                "privy-custodial-send"
+              ]
+            },
+            {
+              "text": "For an embedded wallet, choose user or application control, configure the owner and policies, then use the documented client or server SDK creation flow. The owner controls authorization; an entity association does not grant control. This general wallet flow does not establish every OUSD payment or issuer service.",
+              "sourceIds": [
+                "privy-create-wallet",
+                "privy-wallets"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "custody-ousd",
+          "heading": "Managing OUSD custody",
+          "paragraphs": [
+            {
+              "text": "Bridge is the custodian for Privy custodial wallets; Privy configures who may request actions.",
+              "sourceIds": [
+                "privy-custodial-overview",
+                "privy-custodial-controls"
+              ]
+            },
+            {
+              "text": "Complete the Enterprise and Bridge setup, then assign the owner, policies and additional signers needed for the application. A custodial wallet owner cannot export private keys or transact without custodian approval.",
+              "sourceIds": [
+                "privy-custodial-setup",
+                "privy-custodial-controls"
+              ]
+            },
+            {
+              "text": "Bridge screens transactions before execution. Enforce the beneficiary’s geographic and route restrictions, track each action, and inspect failed steps before retrying because partial onchain effects are possible. Fees and transaction limits remain to be confirmed for the account.",
+              "sourceIds": [
+                "privy-custodial-lifecycle",
+                "privy-custodial-send"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "bvnk",
+    "name": "BVNK",
+    "kind": "Payments infrastructure",
+    "description": "Direct and embedded OUSD access, with conflicting network and eligibility documentation to resolve before funding.",
+    "detail": true,
+    "modifiedAt": "2026-11-09",
+    "reviewedAt": "2026-11-09",
+    "profile": {
+      "title": "BVNK OUSD integration",
+      "introduction": {
+        "text": "BVNK provides business payment infrastructure and is part of Mastercard. Its November 6 announcement adds a direct OUSD integration path.",
+        "sourceIds": [
+          "bvnk-ousd-launch"
+        ]
+      },
+      "sections": [
+        {
+          "id": "access-and-networks",
+          "heading": "Confirming account and network access",
+          "paragraphs": [
+            {
+              "text": "The launch lists Ethereum, Solana, Base and Tempo for eligible businesses outside the EEA. The currencies reference instead describes US eligibility and Plasma, with Tempo forthcoming. Confirm your entity, network and operation before funding; this reference does not establish a Plasma deployment or OUSD sandbox.",
+              "sourceIds": [
+                "bvnk-ousd-launch",
+                "bvnk-currencies"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hold-ousd",
+          "heading": "Holding OUSD",
+          "paragraphs": [
+            {
+              "text": "BVNK offers OUSD storage through its platform and API.",
+              "sourceIds": [
+                "bvnk-ousd-launch"
+              ]
+            },
+            {
+              "text": "Resolve the account and network discrepancy above before adding funds. The reduced currency list for non-MTL US states does not list OUSD.",
+              "sourceIds": [
+                "bvnk-currencies"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "send-payouts",
+          "heading": "Sending payouts from OUSD",
+          "paragraphs": [
+            {
+              "text": "BVNK lists direct business transfers and embedded payouts.",
+              "sourceIds": [
+                "bvnk-ousd-launch"
+              ]
+            },
+            {
+              "text": "Confirm the recipient asset, rail, fees and timing for your account. The currencies reference requires transactions to meet a EUR 1-equivalent minimum; a generic network list does not prove an OUSD route.",
+              "sourceIds": [
+                "bvnk-currencies"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mint-and-redeem-ousd",
+          "heading": "Minting and redeeming OUSD",
+          "paragraphs": [
+            {
+              "text": "Wholesale users can mint and burn OUSD at 1:1 against USD.",
+              "sourceIds": [
+                "bvnk-ousd-launch"
+              ]
+            },
+            {
+              "text": "Confirm access terms and total fees before funding.",
+              "sourceIds": [
+                "bvnk-ousd-launch"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "create-wallets",
+          "heading": "Creating OUSD wallets",
+          "paragraphs": [
+            {
+              "text": "Existing BVNK customers can open a network-specific OUSD wallet in the portal; embedded wallets are also offered.",
+              "sourceIds": [
+                "bvnk-ousd-launch"
+              ]
+            },
+            {
+              "text": "Wallet creation alone does not resolve the conflicting network and eligibility documentation.",
+              "sourceIds": [
+                "bvnk-currencies",
+                "bvnk-ousd-launch"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "convert-ousd",
+          "heading": "Converting OUSD",
+          "paragraphs": [
+            {
+              "text": "BVNK offers OUSD conversion through its platform and API.",
+              "sourceIds": [
+                "bvnk-ousd-launch"
+              ]
+            },
+            {
+              "text": "Before depositing, check the currency response’s supportsDeposits flag and exact network. This flag does not prove a withdrawal route.",
+              "sourceIds": [
+                "bvnk-currencies"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

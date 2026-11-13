@@ -1,0 +1,18 @@
+---
+import DefaultHeader from '@astrojs/starlight/components/Header.astro';
+
+const { hasSidebar } = Astro.locals.starlightRoute;
+---
+
+<div class:list={['header-wrapper', { 'sidebar-theme': hasSidebar }]}>
+  <DefaultHeader><slot /></DefaultHeader>
+</div>
+
+<style>
+  .header-wrapper { display: contents; }
+  /* Sidebar pages expose the same built-in picker below their navigation.
+     Splash pages keep the header picker because they have no sidebar. */
+  .sidebar-theme :global(starlight-theme-select),
+  .sidebar-theme :global(.social-icons:empty),
+  .sidebar-theme :global(.social-icons::after) { display: none; }
+</style>

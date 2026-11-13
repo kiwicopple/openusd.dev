@@ -1,0 +1,100 @@
+---
+title: "OUSD ecosystem dataset"
+description: "Use the OUSD provider, product, and network dataset in your own tools. Download the JSON, query it with JavaScript, and look up its fields."
+modifiedAt: '2026-10-12'
+---
+
+import DatasetDownload from "../../components/DatasetDownload.astro";
+
+Download the provider, product, and network data used by openusd.dev. Use it to build a provider comparison, find products for a task, or look up OUSD [token addresses](/guides/concepts/#token-address). The [directory](/ecosystem/), provider profiles, and [network pages](/networks/) use these same records.
+
+<DatasetDownload />
+
+## Reuse and license
+
+The original dataset compilation and descriptions are dedicated to the public domain under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/), to the extent of the rights held by Paul Copplestone. You can copy, change, redistribute and use that material commercially without permission or attribution.
+
+This dedication does not cover cited third-party documentation, third-party code, provider logos or trademarks. Those retain their own rights. Source citations remain useful for checking claims; keeping them is not a CC0 condition. Read the [dataset license notice](/data/LICENSE.txt) and [CC0 legal code](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en).
+
+## Fetch and query
+
+This JavaScript example finds payout products whose documentation names OUSD, then joins each product to its provider. Run it in a Node.js ES module (18 or later), or in this site's browser console:
+
+```js
+const response = await fetch("https://openusd.dev/data/ecosystem.json");
+if (!response.ok) throw new Error(`Dataset request failed: ${response.status}`);
+const data = await response.json();
+
+const providers = new Map(data.providers.map(p => [p.id, p.name]));
+const payouts = data.capabilities
+  .filter(p => p.tasks.includes("send-payouts") && p.ousdSupport === "documented")
+  .map(p => ({
+    provider: providers.get(p.providerId),
+    product: p.name,
+    access: p.access,
+    assetScope: p.assetScope,
+    docs: p.officialDocumentationUrl,
+  }));
+
+console.table(payouts);
+```
+
+The result is a shortlist for further reading. `assetScope` explains where OUSD fits in each product. `access` summarizes how the product is offered; read `accessRequirements` and the product docs for eligibility and onboarding details. A task match alone can include products whose OUSD support is unresolved; the example filters those out.
+
+<span id="contract" />
+
+## Data structure
+
+The dataset is **0.1 alpha**, identified by `schemaVersion: "0.1.0-alpha"`. Fields may change during alpha. Validate downloaded records against the [JSON Schema](/data/ecosystem.schema.json), generated from the same definitions used by this site's build.
+
+| Field | Type | Meaning |
+| --- | --- | --- |
+| `license` | object | CC0 identifier, canonical license URL, scope, notice URL and application date. An additive alpha field; stable record IDs are unchanged. |
+| `schemaVersion` | string | The data format version, currently `0.1.0-alpha`. |
+| `providers` | array | Provider identities and profiles. Join a product's `providerId` to a provider's `id`. |
+| `capabilities` | array | Product records: tasks, OUSD support, access, documentation, and limitations. |
+| `networks` | array | Native OUSD deployments with token addresses, explorer links, and profiles. |
+| `tasks` | object | Task IDs, such as `send-payouts`, mapped to display labels. |
+| `sources` | array | Shared source records. Resolve profile statements' `sourceIds` against these IDs. Product sources are already expanded. |
+| `modifiedAt` | date string | Latest recorded content change. |
+| `reviewCoverage` | object | Oldest and newest record review dates and the number of records covered. Individual records retain their own dates. |
+
+Provider and network profiles contain an introduction and sections. Each statement has `text` and `sourceIds`, so you can keep the evidence link when displaying it elsewhere. A section can also contain optional `examples`: documented code with a stable `id`, title, language, description and source IDs. These additive alpha fields do not change existing record IDs.
+
+### Product fields
+
+Each entry in `capabilities` describes a product or integration path. A provider can have several entries with different access requirements and OUSD support.
+
+| Field | Type | Meaning |
+| --- | --- | --- |
+| `id` / `providerId` | strings | Product identifier and its provider's ID. |
+| `name` / `capability` | strings | Product name and a short description of its function. |
+| `tasks` | string array | Activity categories used by the directory filters. |
+| `ousdSupport` | optional enum | `documented`, `listed`, `unresolved`, or `generic`; see below. |
+| `assetScope` | string | How OUSD is used in the product, including any other assets involved. |
+| `access` | enum | `self_service`, `onboarding_required`, `restricted_beta`, `announced`, or `not_established`. |
+| `accessRequirements` | string | Account eligibility and onboarding details. |
+| `availability` | enum | Normalized release stage: `announced`, `private_beta`, `public_beta`, `generally_available`, `deprecated`, or `unknown`. Separate from account eligibility. |
+| `availabilityReason` | string | Source detail behind the release-stage category, including why it is unknown. |
+| `environment` | enum | `production`, `sandbox`, or `unknown`. |
+| `verification` | enum | `not_tested` or `tested`. A tested record requires an independent test evidence artifact. |
+| `networks` | array or null | Network names documented for this product. `null` means unknown. The top-level network list does not establish a product's network support. |
+| `networkNote` | string | Details or gaps in the product's network evidence. |
+| `officialDocumentationUrl` | URL or null | Product docs. `null` means product-specific public docs have not been established. |
+| `summary` / `limitations` | string / string array | What the product does and its known restrictions or unresolved details. |
+| `sources` | array | Source URLs, supported claims, publication dates, and source review dates. |
+| `evidence` / `evidenceArtifact` | enum / URL or null | `source-backed`, `provider-reviewed`, or `independently tested`, with an artifact required for the latter two. |
+| `reviewedAt` / `modifiedAt` | date strings | When the record was reviewed and when its content changed. |
+
+### OUSD support labels
+
+- `documented`: product documentation names OUSD for this capability.
+- `listed`: an OUSD overview or integration directory names the path, with some product details still unconfirmed.
+- `unresolved`: the reviewed sources leave OUSD support unclear or conflicting.
+- `generic`: the capability is documented for the provider's general platform, without OUSD-specific evidence.
+
+## Freshness
+
+The dataset is a manually reviewed snapshot. Provider docs and account eligibility can change between updates, so check a record's `reviewedAt` and linked sources before choosing an integration. No product in the dataset has been independently tested.
+
+Dates use `YYYY-MM-DD`; a `null` publication date means the publication date is unknown. Downloading the file does not refresh its review dates.
