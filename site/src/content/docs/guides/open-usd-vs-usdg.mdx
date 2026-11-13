@@ -1,0 +1,65 @@
+---
+title: "Open USD vs USDG"
+description: "Compare OUSD and Global Dollar (USDG): partner rewards, issuers, native networks, reserves, and redemption access."
+modifiedAt: '2026-11-09'
+reviewedAt: '2026-10-11'
+draft: false
+sources:
+  - id: bridge-live
+    reviewedAt: '2026-10-11'
+    claim: Bridge Building Inc. currently issues OUSD; the proposed national trust bank is not its issuer. Bridge advertises no mint/redemption fees.
+  - id: os-integrate
+    reviewedAt: '2026-10-11'
+    claim: OUSD has four native networks, provider-specific onboarding and restrictions, and partner registration for supply/activity rewards.
+  - id: os-live
+    reviewedAt: '2026-11-09'
+    claim: Open Standard identifies reserve holders and a portal for monthly attestations; an individual report was not reviewed here.
+  - id: paxos-stablecoin-terms
+    claim: The terms, last modified June 30, 2026, identify USDG's two issuing entities and separate token holding from distributor incentives.
+  - id: usdg-arbitrum
+    claim: The October 5 announcement confirms native USDG on Arbitrum One and lists six other live networks.
+  - id: paxos-mint-redeem
+    claim: Paxos describes institutional onboarding, zero mint/redemption fees, 1:1 redemption and USDG reserve asset categories.
+  - id: usdg-network
+    claim: Global Dollar Network rewards partner minting, custody and acceptance, subject to agreements and law.
+  - id: usdg-eu-whitepaper
+    claim: The whitepaper, updated June 24, 2026, describes the Finnish issuer and institutional and retail redemption processes, including identity checks.
+  - id: usdg-transparency
+    claim: Paxos publishes monthly USDG reserve attestations; an individual report was not reviewed here.
+related: [what-is-open-usd, open-usd-vs-usdc, open-usd-vs-usdt]
+---
+
+import GuideNotes from "../../../components/GuideNotes.astro";
+
+**OUSD and Global Dollar (USDG) both reward participating businesses.** The practical differences are who issues the token, which networks it uses, and how your business obtains it and exchanges it back for dollars. Neither partner program means every token holder automatically earns a return.
+
+## At a glance
+
+| Question | Open USD (OUSD) | Global Dollar (USDG) |
+| --- | --- | --- |
+| [Issuer](/guides/concepts/#issuer) | [Bridge Building Inc.](https://withbridge.com/blog/ousd-is-live-issued-by-bridge) | [Paxos Digital Singapore and Paxos Issuance Europe](https://www.paxos.com/terms-and-conditions/stablecoin-terms-conditions), in Singapore and Finland. |
+| [Native](/guides/concepts/#native-and-bridged-tokens) networks | Base, Ethereum, Solana and Tempo. [Contracts](/networks/) | Arbitrum One, Ethereum, Ink, Mantle, Robinhood Chain, Solana and X Layer. [Latest addition](https://globaldollar.com/newsroom/arbitrum) |
+| [Create tokens or redeem for dollars](/guides/concepts/#minting-and-redemption) | Onboard with an [OUSD provider](/start/). Bridge advertises no mint/redemption fees. | An onboarded [Paxos institutional account](https://www.paxos.com/mint-and-redeem) offers 1:1 redemption with no mint/redemption fees. |
+| Partner rewards | Open Standard rewards qualifying supply and activity. | Global Dollar Network rewards minting, [custody](/guides/concepts/#wallets-and-custody) and acceptance. |
+
+Account eligibility and geography still apply. A zero issuer fee does not remove network, bank, FX or provider charges. Bridge's proposed national trust bank is not yet operational and does not currently issue OUSD.
+
+## Who receives rewards?
+
+For OUSD, [Open Standard requires partner registration](https://joinopenstandard.com/integrate) to earn supply/activity rewards. For USDG, [Global Dollar Network](https://globaldollar.com/network) sets partner incentives through commercial agreements; its calculator is not a guaranteed payout.
+
+[Paxos's terms](https://www.paxos.com/terms-and-conditions/stablecoin-terms-conditions) distinguish the token from distributor incentives. If a wallet or exchange offers customers rewards, check that separate program's eligibility and terms. Do not model an advertised partner return as automatic interest on every customer balance.
+
+## Reserves and redemption
+
+[Open Standard’s launch announcement](https://joinopenstandard.com/blog/ousd-is-live) names BlackRock, Lead Bank and other large financial institutions as OUSD [reserve](/guides/concepts/#reserves) holders and links to [Bridge's monthly attestation portal](https://reserves.bridge.xyz/ousd). Paxos describes USDG backing as dollar deposits, US Treasuries and cash equivalents and publishes [monthly attestations](https://www.paxos.com/usdg-transparency). No individual attestation report or reserve balance was independently verified for this comparison.
+
+USDG's [EU whitepaper](https://www.paxos.com/terms-and-conditions/usdg-eu-whitepaper) also provides EU retail holders a redemption process through partners or Paxos support, with identity checks. Holding a token is different from having an issuer account; residence and the applicable issuer determine the redemption route.
+
+## Choose an integration path
+
+For either asset, first confirm that your provider supports the exact token, network and operation you need. Then compare onboarding, [settlement](/guides/concepts/#finality-and-settlement) time, total fees and any reward agreement. Native deployment alone does not establish provider API access or a cross-chain transfer route.
+
+Start with the [OUSD directory](/ecosystem/) or the [USDG developer toolkit](https://globaldollar.com/build-with-usdg). This page compares Open Standard's OUSD, not Origin Dollar or the 3D graphics OpenUSD project.
+
+<GuideNotes id="guides/open-usd-vs-usdg" />

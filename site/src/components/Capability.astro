@@ -1,0 +1,19 @@
+---
+import {source,availabilityLabels,supportLabels,accessLabels,type capabilities} from '../lib/registry';
+interface Props {record:(typeof capabilities)[number];}
+const {record:c}=Astro.props;
+---
+<section class="capability-detail">
+ <h3 id={c.id}>{c.name}</h3>
+ <p><span class="badge">{supportLabels[c.ousdSupport||'unresolved']}</span> <span class="badge">{accessLabels[c.access]}</span></p>
+ <p>{c.summary}</p>
+ <dl class="capability-facts">
+  <div><dt>Eligibility and access</dt><dd>{c.accessRequirements}</dd></div>
+  <div><dt>Asset and network</dt><dd>{c.assetScope}. {c.networks?.join(', ')||'Product networks not established'}. {c.networkNote}</dd></div>
+  <div><dt>Release and environment</dt><dd>{availabilityLabels[c.availability]} · {c.environment}. {c.availabilityReason}</dd></div>
+ </dl>
+ <ul>{c.limitations.map(l=><li>{l}</li>)}</ul>
+ <p>{c.officialDocumentationUrl&&<><a href={c.officialDocumentationUrl}>Official documentation ↗</a> · </>}<a href={`/ecosystem/#${c.id}`}>Directory record</a></p>
+ <div class="claim-evidence"><h4>Source evidence</h4><ul>{c.sources.map(s=>{const ref=source(s.sourceId);return <li><a href={ref.url}>{ref.title} ↗</a> — {s.claim}<br/><small>Published {ref.publishedAt||'date unknown'} · Reviewed {ref.reviewedAt}</small></li>})}</ul></div>
+ <p class="source-note">Product reviewed {c.reviewedAt} · Modified {c.modifiedAt} · No live integration independently tested.</p>
+</section>

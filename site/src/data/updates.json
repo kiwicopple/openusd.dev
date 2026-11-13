@@ -1,0 +1,162 @@
+[
+  {
+    "id": "first-edition",
+    "date": "2026-09-10",
+    "modifiedAt": "2026-09-10",
+    "type": "site",
+    "title": "The first developer reference is ready for review",
+    "description": "Initial handbook, evidence registry and versioned dataset prepared as a private first edition. Public launch pending.",
+    "sourceId": null,
+    "draft": false
+  },
+  {
+    "id": "visa-platform",
+    "date": "2026-07-16",
+    "modifiedAt": "2026-09-10",
+    "type": "ecosystem",
+    "title": "Visa introduces its Stablecoin Platform",
+    "description": "Visa announces selected-client beta testing with Open USD access. The announcement does not establish public API availability.",
+    "sourceId": "visa-launch",
+    "draft": false
+  },
+  {
+    "id": "solana-native",
+    "date": "2026-07-06",
+    "modifiedAt": "2026-09-10",
+    "type": "ecosystem",
+    "title": "Solana Foundation records native OUSD launch plans",
+    "description": "The June ecosystem roundup describes a native launch planned for later in 2026. This is a publication date, not a confirmed token launch date.",
+    "sourceId": "solana-roundup",
+    "draft": false
+  },
+  {
+    "id": "open-usd-announced",
+    "date": "2026-06-30",
+    "modifiedAt": "2026-09-10",
+    "type": "ecosystem",
+    "title": "Open Standard announces Open USD",
+    "description": "The initiative introduces a shared stablecoin with partner governance and reserve economics, targeting availability later in 2026.",
+    "sourceId": "os-intro",
+    "draft": false
+  },
+  {
+    "id": "open-issuance",
+    "date": "2025-09-30",
+    "modifiedAt": "2026-09-10",
+    "type": "ecosystem",
+    "title": "Bridge introduces Open Issuance",
+    "description": "Stripe announces Bridge's platform for businesses to create their own stablecoins. Open Issuance is a separate offering from the later OUSD initiative.",
+    "sourceId": "open-issuance",
+    "draft": false
+  },
+  {
+    "id": "ousd-live",
+    "date": "2026-09-30",
+    "modifiedAt": "2026-10-10",
+    "type": "ecosystem",
+    "title": "OUSD launches on four networks",
+    "description": "Open Standard launches OUSD on Base, Ethereum, Solana and Tempo, publishes official contract links and names provider integration paths. Provider onboarding and access limits still apply.",
+    "sourceId": "os-live",
+    "draft": false
+  },
+  {
+    "id": "open-standard-governance",
+    "date": "2026-09-24",
+    "modifiedAt": "2026-10-10",
+    "type": "ecosystem",
+    "title": "Open Standard names founding partners and equity model",
+    "description": "Coinbase, Mastercard, Shopify, Stripe and Visa are named founding partners. Participating partners can earn equity based on supply and activity; Zach Abrams will focus full-time on Open Standard.",
+    "sourceId": "os-governance",
+    "draft": false
+  },
+  {
+    "id": "launch-review",
+    "date": "2026-10-10",
+    "modifiedAt": "2026-10-10",
+    "type": "site",
+    "title": "Launch evidence added to the developer reference",
+    "description": "Updated native-network and issuer records, expanded integration coverage, and retained Visa API restrictions and the Stripe payment-acceptance documentation mismatch. No integrations independently tested.",
+    "sourceId": null,
+    "draft": false
+  },
+  {
+    "id": "ecosystem-profiles",
+    "date": "2026-10-11",
+    "modifiedAt": "2026-10-11",
+    "type": "site",
+    "title": "Provider profiles and task-specific OUSD evidence",
+    "description": "A compact directory links to six provider profiles with Handbook task matrices, eligibility and source evidence. The dataset includes explicit OUSD evidence scope while preserving record IDs and the four token addresses.",
+    "sourceId": null,
+    "draft": false
+  },
+  {
+    "id": "network-reference-pages",
+    "date": "2026-10-11",
+    "modifiedAt": "2026-10-11",
+    "type": "site",
+    "title": "Network setup and operational references",
+    "description": "Added distinct Base, Ethereum, Solana and Tempo pages covering setup, fee models, tools and OUSD-specific limits. The shared address overview and its four exact identifiers remain unchanged.",
+    "sourceId": null,
+    "draft": false
+  },
+  {
+    "id": "developer-examples-and-data-reuse",
+    "date": "2026-10-12",
+    "modifiedAt": "2026-10-12",
+    "type": "site",
+    "title": "Integration examples and open dataset reuse",
+    "description": "Corrected Bridge sandbox guidance; added documented Privy and read-only balance examples, clearer OUSD task titles, migration checks, significant-change sitemap dates and scoped CC0 dataset reuse. No live provider payment integration was tested.",
+    "sourceId": null,
+    "draft": false
+  },
+  {
+    "id": "jpysc-ousd-pilot",
+    "date": "2026-10-16",
+    "modifiedAt": "2026-10-19",
+    "type": "ecosystem",
+    "title": "SBI and Startale explore JPYSC–OUSD interoperability",
+    "description": "SBI Holdings and Startale joined Open Standard and are considering a pilot connecting JPYSC and OUSD for yen–dollar settlement. This is pilot exploration, not a launched service or production settlement route.",
+    "sourceId": "startale-sbi-pilot",
+    "draft": false
+  },
+  {
+    "id": "provider-operations-oct26",
+    "date": "2026-10-26",
+    "modifiedAt": "2026-10-26",
+    "type": "site",
+    "title": "Bridge compliance responses and Privy retry boundaries clarified",
+    "description": "Added Bridge’s beta transaction-RFI response API to the payout guide and clarified Privy /transfer idempotency exceptions. No new OUSD network or route support is implied.",
+    "sourceId": null,
+    "draft": false
+  },
+  {
+    "id": "privy-sca-context-nov02",
+    "date": "2026-11-02",
+    "modifiedAt": "2026-11-02",
+    "type": "site",
+    "title": "Privy custodial-transfer authentication context clarified",
+    "description": "Explained app-owned customer authentication, truthful SCA attestations and optional factor metadata; marked the worked request’s omitted conditional context. OUSD network, eligibility and access claims are unchanged.",
+    "sourceId": null,
+    "draft": false
+  },
+  {
+    "id": "bvnk-ousd-live",
+    "date": "2026-11-06",
+    "modifiedAt": "2026-11-09",
+    "type": "ecosystem",
+    "title": "BVNK launches direct OUSD access",
+    "description": "BVNK announces business, embedded and wholesale access. Its technical currency matrix conflicts with the launch on networks and eligibility; confirm the account-specific route before funding.",
+    "sourceId": "bvnk-ousd-launch",
+    "draft": false
+  },
+  {
+    "id": "provider-network-review-nov09",
+    "date": "2026-11-09",
+    "modifiedAt": "2026-11-09",
+    "type": "site",
+    "title": "BVNK added; Bridge, Stripe and Base guidance updated",
+    "description": "Added BVNK with its documentation conflict, Bridge’s November 16 RTP response-value warning, current Stripe setup and payout API guidance, and Base’s revised pending-block behavior. Corrected reserve-source attribution and source metadata; no new native OUSD network is verified.",
+    "sourceId": null,
+    "draft": false
+  }
+]

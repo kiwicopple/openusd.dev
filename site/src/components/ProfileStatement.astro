@@ -1,0 +1,12 @@
+---
+import {source} from '../lib/registry';
+interface Props {statement:{text:string;sourceIds:string[]};concepts?:boolean;mintConcept?:'mint-account'|'minting-and-redemption';references?:string[];networkLinks?:boolean}
+const {statement,concepts=false,mintConcept='minting-and-redemption',references,networkLinks=false}=Astro.props;
+const targets:Record<string,string>={stablecoin:'stablecoin',stablecoins:'stablecoin',wallet:'wallets-and-custody',wallets:'wallets-and-custody',custody:'wallets-and-custody',api:'api',apis:'api',mint:mintConcept,minting:'minting-and-redemption',redemption:'minting-and-redemption',network:'network',networks:'network'};
+const seen=new Set<string>();
+const conceptParts=concepts?statement.text.split(/\b(stablecoins?|wallets?|custody|APIs?|minting|mint|redemption|networks?)\b/gi).map(text=>{const target=targets[text.toLowerCase()];const link=target&&!seen.has(target)&&seen.size<3;if(link)seen.add(target);return {text,target:link?target:null};}):[{text:statement.text,target:null}];
+const networkNames:Record<string,string>={Base:'base',Ethereum:'ethereum',Solana:'solana',Tempo:'tempo'};
+const linkedNetworks=new Set<string>();
+const parts=conceptParts.flatMap<{text:string;target:string|null;network:string|null}>(part=>networkLinks&&!part.target?part.text.split(/\b(Base|Ethereum|Solana|Tempo)\b/g).map(text=>{const network=networkNames[text];const link=network&&!linkedNetworks.has(network);if(link)linkedNetworks.add(network);return {text,target:null,network:link?network:null};}):[{...part,network:null}]);
+---
+<p>{parts.map(p=>p.network?<a href={`/networks/${p.network}/#network-setup`}>{p.text}</a>:p.target?<a href={`/guides/concepts/#${p.target}`}>{p.text}</a>:p.text)} <span class:list={[references?'profile-source-links':'profile-citations']}>{statement.sourceIds.map((id,i)=><>{i>0?' ':''}<a href={source(id).url} aria-label={references?source(id).title:undefined}>{references?`[${references.indexOf(id)+1}]`:`${source(id).title} ↗`}</a></>)}</span></p>

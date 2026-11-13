@@ -1,0 +1,171 @@
+{
+  "title": "OUSD Solana read-only RPC verification",
+  "verificationDate": "2026-10-12",
+  "scope": "Public mainnet metadata and system-program address visible balance only. No wallet, account access, keys, signature or transaction.",
+  "observations": [
+    {
+      "endpoint": "https://api.mainnet.solana.com",
+      "requestedAt": "2026-10-12T22:45:43.306061Z",
+      "receivedAt": "2026-10-12T22:45:46.309941Z",
+      "httpStatus": 200,
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "getGenesisHash",
+        "params": []
+      },
+      "response": {
+        "jsonrpc": "2.0",
+        "result": "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d",
+        "id": 1
+      }
+    },
+    {
+      "endpoint": "https://api.mainnet.solana.com",
+      "requestedAt": "2026-10-12T22:45:46.309970Z",
+      "receivedAt": "2026-10-12T22:45:49.571755Z",
+      "httpStatus": 200,
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "getAccountInfo",
+        "params": [
+          "ousd2mJsPEckLHcSCDxyKD7NDGARZcfLbDZkKiatYHB",
+          {
+            "encoding": "jsonParsed",
+            "commitment": "finalized"
+          }
+        ]
+      },
+      "response": {
+        "jsonrpc": "2.0",
+        "result": {
+          "context": {
+            "apiVersion": "4.3.0",
+            "slot": 456215899
+          },
+          "value": {
+            "data": {
+              "parsed": {
+                "info": {
+                  "decimals": 6,
+                  "extensions": [
+                    {
+                      "extension": "mintCloseAuthority",
+                      "state": {
+                        "closeAuthority": "E7JdFMP5AqdndJKstZV2mHdekLwAQbNWRHMpoozyB3qw"
+                      }
+                    },
+                    {
+                      "extension": "permanentDelegate",
+                      "state": {
+                        "delegate": "Aj2gxCSQ7A7eTnUL2VnyT3KQa79AcZi5x15rPRSnw6RA"
+                      }
+                    },
+                    {
+                      "extension": "defaultAccountState",
+                      "state": {
+                        "accountState": "initialized"
+                      }
+                    },
+                    {
+                      "extension": "confidentialTransferMint",
+                      "state": {
+                        "auditorElgamalPubkey": null,
+                        "authority": "E7JdFMP5AqdndJKstZV2mHdekLwAQbNWRHMpoozyB3qw",
+                        "autoApproveNewAccounts": false
+                      }
+                    },
+                    {
+                      "extension": "transferHook",
+                      "state": {
+                        "authority": "E7JdFMP5AqdndJKstZV2mHdekLwAQbNWRHMpoozyB3qw",
+                        "programId": null
+                      }
+                    },
+                    {
+                      "extension": "metadataPointer",
+                      "state": {
+                        "authority": "E7JdFMP5AqdndJKstZV2mHdekLwAQbNWRHMpoozyB3qw",
+                        "metadataAddress": "ousd2mJsPEckLHcSCDxyKD7NDGARZcfLbDZkKiatYHB"
+                      }
+                    },
+                    {
+                      "extension": "pausableConfig",
+                      "state": {
+                        "authority": "E7JdFMP5AqdndJKstZV2mHdekLwAQbNWRHMpoozyB3qw",
+                        "paused": false
+                      }
+                    },
+                    {
+                      "extension": "tokenMetadata",
+                      "state": {
+                        "additionalMetadata": [],
+                        "mint": "ousd2mJsPEckLHcSCDxyKD7NDGARZcfLbDZkKiatYHB",
+                        "name": "OpenUSD",
+                        "symbol": "OUSD",
+                        "updateAuthority": "E7JdFMP5AqdndJKstZV2mHdekLwAQbNWRHMpoozyB3qw",
+                        "uri": "https://token-metadata.bridge.xyz/solana/ousd.json"
+                      }
+                    }
+                  ],
+                  "freezeAuthority": "H2UbwLLJAen1W2z6oRCYqZCFo6BidkU4QFDw2eWxL9W4",
+                  "isInitialized": true,
+                  "mintAuthority": "EBArgZpd8iv7QRgUFhCasaHxck5oujhHNCkonoa1kEKA",
+                  "supply": "70357151610000"
+                },
+                "type": "mint"
+              },
+              "program": "spl-token-2022",
+              "space": 630
+            },
+            "executable": false,
+            "lamports": 5275680,
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+            "rentEpoch": 18446744073709551615,
+            "space": 630
+          }
+        },
+        "id": 2
+      }
+    },
+    {
+      "endpoint": "https://api.mainnet.solana.com",
+      "requestedAt": "2026-10-12T22:45:49.571783Z",
+      "receivedAt": "2026-10-12T22:45:53.559758Z",
+      "httpStatus": 200,
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "method": "getTokenAccountsByOwner",
+        "params": [
+          "11111111111111111111111111111111",
+          {
+            "mint": "ousd2mJsPEckLHcSCDxyKD7NDGARZcfLbDZkKiatYHB"
+          },
+          {
+            "encoding": "jsonParsed",
+            "commitment": "finalized"
+          }
+        ]
+      },
+      "response": {
+        "jsonrpc": "2.0",
+        "result": {
+          "context": {
+            "slot": 456215919,
+            "apiVersion": "4.3.0-beta.2"
+          },
+          "value": []
+        },
+        "id": 3
+      }
+    }
+  ],
+  "limits": [
+    "RPC observations are time-bounded, not an audit or transfer test.",
+    "11111111111111111111111111111111 is a public system-program address used only for the empty-account response smoke check, not a customer address.",
+    "Visible token amounts do not decrypt confidential balances.",
+    "An empty token-account result is not an RPC failure or proof of provider account eligibility."
+  ]
+}

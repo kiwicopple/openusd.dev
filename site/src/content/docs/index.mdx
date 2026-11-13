@@ -1,0 +1,44 @@
+---
+title: "Open USD (OUSD) stablecoin for developers"
+description: "Independent developer guides to Open Standard's OUSD stablecoin: payments, payouts, wallets, balances, providers, and network contracts."
+modifiedAt: '2026-10-12'
+template: splash
+tableOfContents: false
+prev: false
+next: false
+hero:
+  title: Open USD for developers
+  tagline: >-
+    Open USD (OUSD) is a dollar stablecoin created by Open Standard.
+    openusd.dev provides independent guides for building payments, payouts, wallets and balances.
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import Updates from '../../components/Updates.astro';
+
+## Get started
+
+New to OUSD? Start with [What is OUSD?](/guides/what-is-open-usd/) and [Concepts](/guides/concepts/).
+
+<CardGrid>
+  <LinkCard title="Accepting OUSD payments" description=" Check OUSD checkout support and plan payment confirmation." href="/guides/accept-payments/" />
+  <LinkCard title="Sending payouts from OUSD" description=" Choose the recipient asset, delivery route, and confirmation flow." href="/guides/send-payouts/" />
+  <LinkCard title="Creating OUSD wallets" description=" Choose who controls funds and provision wallets for users." href="/guides/create-wallets/" />
+  <LinkCard title="Holding OUSD" description=" Plan balances, funding, and withdrawals for your business." href="/guides/hold-ousd/" />
+</CardGrid>
+
+[All integration paths](/start/)
+
+## Integration references
+
+- [Providers by task](/ecosystem/): product docs, account requirements, and support limits
+- [Networks and contracts](/networks/): official OUSD token addresses and explorer links
+- [Open USD vs USDC](/guides/open-usd-vs-usdc/): compare issuers and integration options
+
+<span id="changelog" />
+
+## Latest ecosystem updates
+
+<Updates limit={2} type="ecosystem" compact />
+
+[Full changelog](/changelog/) · [JSON dataset](/data/)

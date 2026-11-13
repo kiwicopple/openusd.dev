@@ -1,0 +1,65 @@
+---
+title: "Open USD vs USDC"
+description: "Compare OUSD and USDC issuers, networks, onboarding, and integration documentation."
+modifiedAt: '2026-10-12'
+reviewedAt: '2026-10-10'
+draft: false
+sources:
+  - id: bridge-live
+    claim: Bridge identifies Bridge Building Inc. as current OUSD issuer and confirms the September 30 launch.
+  - id: os-live
+    claim: Open Standard publishes integration paths, official contracts and monthly reserve-attestation plans.
+  - id: circle-usdc
+    claim: Circle identifies itself as USDC's issuer and documents qualified-business access through Circle Mint and public developer integration paths.
+  - id: circle-transparency
+    claim: Circle publishes reserve disclosures and monthly third-party assurance reports.
+  - id: stripe-ousd-launch
+    reviewedAt: '2026-10-12'
+    claim: Stripe’s OUSD launch announcement includes Payments acceptance, while detailed documentation omits OUSD.
+  - id: stripe-payments
+    claim: Stripe documents accepted token/network pairs; a stablecoin symbol is not a generic interchangeable payment-method setting.
+related: [what-is-open-usd, integration-architecture]
+sidebar:
+  order: 2
+---
+
+import GuideNotes from "../../../components/GuideNotes.astro";
+
+**OUSD and USDC have different issuers and integration paths.** Choose based on the operation and account access you need, not the shared dollar denomination.
+
+| Question | OUSD | USDC |
+| --- | --- | --- |
+| [Issuer](/guides/concepts/#issuer) | Bridge Building Inc. | Circle. |
+| Networks | Base, Ethereum, Solana, Tempo at launch. | Multiple networks; use Circle's current contract directory. |
+| Direct [mint/redemption](/guides/concepts/#minting-and-redemption) access | Provider onboarding; see [OUSD paths](/start/). | Qualified businesses can apply for Circle Mint. |
+| Developer resources | Provider-specific docs; access varies by product. | Smart contracts, developer services, CCTP, and a testnet faucet. |
+| Reserve reporting | Open Standard points to Bridge's monthly [attestation](/guides/concepts/#attestation) portal; no report reviewed here. | Circle publishes reserve disclosures and monthly third-party assurance. |
+
+Sources: [Bridge issuer announcement](https://withbridge.com/blog/ousd-is-live-issued-by-bridge), [Open Standard launch](https://joinopenstandard.com/blog/ousd-is-live), [Circle docs](https://developers.circle.com/stablecoins/what-is-usdc), [Circle reserve reporting](https://www.circle.com/transparency).
+
+## What changes in code?
+
+Keep the [token address](/guides/concepts/#token-address), network, [decimals](/guides/concepts/#decimals), and provider product explicit. Do not replace a symbol string and assume the route still works. [Native and bridged tokens](/guides/concepts/#native-and-bridged-tokens) may have different identifiers and support.
+
+Check the exact accepted-token list for payment products. Stripe’s launch announcement explicitly includes OUSD acceptance, while its detailed token list omits OUSD. Read the [unresolved source conflict and account checks](/providers/stripe/#accept-payments) before treating either asset as a checkout option.
+
+## USDC-to-OUSD implementation checklist
+
+1. **Resolve the exact token on each network.** Replace contract or mint allowlists deliberately, not just the ticker. Use [Base](/networks/base/#ousd-address), [Ethereum](/networks/ethereum/#ousd-address), [Solana](/networks/solana/#ousd-address) or [Tempo](/networks/tempo/#ousd-address), and keep USDC history under its original asset ID.
+2. **Check amount precision and balance reads.** Query the deployed decimals/program and preserve integer or exact-decimal accounting. Wallet-provider cents and token base units are different interfaces. Use the [read-only Solana example](/networks/solana/#read-only-balance) or [EVM example](/networks/ethereum/#read-only-balance) before changing formatting.
+3. **Approve custody and funding routes.** Identify who controls transfers, which customers may hold the asset, and the exact deposit instructions. An OUSD holding option can still require USDC funding. Read [custody](/guides/custody-ousd/) and [holding OUSD](/guides/hold-ousd/).
+4. **Confirm the delivered asset.** Recheck checkout acceptance, payout recipient currency, supported networks, fees and account access. [Sending payouts from OUSD](/guides/send-payouts/) may deliver fiat or USDC; a stored OUSD balance does not settle this question.
+5. **Plan the cutover.** Inventory wallets, deposit routes and pending transfers; pause activity, let in-flight work finish, convert approved balances and handle late USDC deposits. Use the [conversion workflow](/guides/convert-ousd/) and [Bridge's provider-specific migration steps](/providers/bridge/#convert-ousd). Verify the reverse route before relying on rollback.
+6. **Reconcile before reopening.** Retain old and new provider references, exact amounts, fees and destination credits. Exercise [duplicates, timeouts and failed operations](/guides/integration-architecture/#worked-failure-sequence). Sandbox success does not establish a production OUSD route or settlement.
+
+Circle's [USDC developer resources](https://developers.circle.com/stablecoins/what-is-usdc) and [Bridge's migration guide](https://apidocs.bridge.xyz/migrating-to-ousd) describe different products; neither makes them drop-in substitutes. This checklist is application-design guidance, not an executed migration.
+
+## Compare terms separately
+
+Ask your provider about fees, account eligibility, redemption, and [settlement](/guides/concepts/#finality-and-settlement) timing. An issuer's mint/redemption terms do not cover every network, bank, FX, or service fee. Rewards eligibility is also separate from the ability to hold or transfer a token.
+
+For other issuer and access models, compare [OUSD with USDG](/guides/open-usd-vs-usdg/) or [USDT](/guides/open-usd-vs-usdt/).
+
+This is an integration comparison, not a recommendation to buy or hold either asset. Missing reporting in this review is not evidence that reserves are absent.
+
+<GuideNotes id="guides/open-usd-vs-usdc" />

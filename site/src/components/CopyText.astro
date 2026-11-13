@@ -1,0 +1,19 @@
+---
+interface Props { text: string; label: string }
+const { text, label } = Astro.props;
+---
+<div class="copy-text">
+  <pre><code>{text}</code></pre>
+  <button type="button" class="button" data-copy-text={text}>{label}</button>
+  <p role="status" aria-live="polite"></p>
+</div>
+<script>
+for (const button of document.querySelectorAll<HTMLButtonElement>('[data-copy-text]')) {
+  button.addEventListener('click', async () => {
+    const status = button.nextElementSibling!;
+    status.textContent = 'Copying…';
+    try { await Promise.race([navigator.clipboard.writeText(button.dataset.copyText!), new Promise((_, reject) => setTimeout(() => reject(new Error('Clipboard unavailable')), 2000))]); status.textContent = 'Copied.'; }
+    catch { status.textContent = 'Clipboard unavailable. Select and copy the text above.'; }
+  });
+}
+</script>

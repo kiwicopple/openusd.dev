@@ -1,0 +1,14 @@
+---
+import ProfileStatement from './ProfileStatement.astro';
+type Statement={text:string;sourceIds:string[]};
+interface Props {paragraphs:Statement[];references:string[]}
+const {paragraphs,references}=Astro.props;
+const groups:{ordered:boolean;items:Statement[]}[]=[];
+for(const statement of paragraphs){
+ const ordered=/^\d+\. /.test(statement.text);
+ const item={...statement,text:ordered?statement.text.replace(/^\d+\. /,''):statement.text};
+ const previous=groups.at(-1);
+ if(ordered&&previous?.ordered)previous.items.push(item);else groups.push({ordered,items:[item]});
+}
+---
+{groups.map(group=>group.ordered?<ol>{group.items.map(statement=><li><ProfileStatement statement={statement} references={references} networkLinks/></li>)}</ol>:group.items.map(statement=><ProfileStatement statement={statement} references={references} networkLinks/>))}

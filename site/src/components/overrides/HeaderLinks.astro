@@ -1,0 +1,23 @@
+---
+import DefaultSocialIcons from '@astrojs/starlight/components/SocialIcons.astro';
+---
+
+<nav aria-label="Primary">
+  <a class="docs-link" href="/guides/what-is-open-usd/">Docs</a>
+</nav>
+<DefaultSocialIcons />
+
+<style>
+  .docs-link {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--ousd-control-border);
+    border-radius: var(--ousd-radius);
+    padding: 0.35rem 0.8rem;
+    color: var(--sl-color-text);
+    font-size: var(--sl-text-sm);
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .docs-link:hover { background: var(--sl-color-gray-6); }
+</style>

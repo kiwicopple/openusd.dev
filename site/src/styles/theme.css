@@ -1,0 +1,225 @@
+/* One self-hosted Latin font, limited to the weights used here. See docs/fonts.md. */
+@font-face {
+  font-family: 'Geist';
+  src: url('../assets/fonts/geist-latin-400-700.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+/* Weight-specific metrics keep fallback wrapping close during the font swap. */
+@font-face {
+  font-family: 'Geist Fallback';
+  src: local('Arial'), local('ArialMT');
+  font-style: normal;
+  font-weight: 400;
+  size-adjust: 104.76%;
+  ascent-override: 95.94%;
+  descent-override: 28.16%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Geist Fallback';
+  src: local('Arial'), local('ArialMT');
+  font-style: normal;
+  font-weight: 500;
+  size-adjust: 107.22%;
+  ascent-override: 93.73%;
+  descent-override: 27.51%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Geist Fallback';
+  src: local('Arial Bold'), local('Arial-BoldMT');
+  font-style: normal;
+  font-weight: 600;
+  size-adjust: 101.67%;
+  ascent-override: 98.85%;
+  descent-override: 29.02%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Geist Fallback';
+  src: local('Arial Bold'), local('Arial-BoldMT');
+  font-style: normal;
+  font-weight: 700;
+  size-adjust: 103.96%;
+  ascent-override: 96.67%;
+  descent-override: 28.38%;
+  line-gap-override: 0%;
+}
+
+/* A light-touch visual layer. Starlight still owns layout and interactions. */
+:root {
+  --sl-font: 'Geist', 'Geist Fallback';
+  --sl-color-white: #f9fafc;
+  --sl-color-gray-1: #e2e6ed;
+  --sl-color-gray-2: #b4bdcb;
+  --sl-color-gray-3: #9da6b6;
+  --sl-color-gray-4: #697386;
+  --sl-color-gray-5: #303949;
+  --sl-color-gray-6: #1d232d;
+  --sl-color-black: #03050a;
+  --sl-color-text: #e2e6ed;
+  --sl-color-bg: #03050a;
+  --sl-color-bg-nav: #090d15;
+  --sl-color-bg-sidebar: #090d15;
+  --sl-color-bg-inline-code: #1d232d;
+  --sl-color-hairline: #1d232d;
+  --sl-color-hairline-light: #1d232d;
+  --sl-color-hairline-shade: #1d232d;
+  --sl-color-accent-low: #151d46;
+  --sl-color-accent: #8b9dff;
+  --sl-color-accent-high: #b7c2ff;
+  --sl-color-text-accent: #8b9dff;
+  --sl-color-bg-accent: #8b9dff;
+  --sl-color-text-invert: #03050a;
+  --ousd-surface: #090d15;
+  --ousd-hover: #101725;
+  --ousd-control-border: #697386;
+  --ousd-radius: 0;
+}
+
+:root[data-theme='light'] {
+  --sl-color-white: #161616;
+  --sl-color-gray-1: #282c33;
+  --sl-color-gray-2: #4e5663;
+  --sl-color-gray-3: #626a77;
+  --sl-color-gray-4: #858c98;
+  --sl-color-gray-5: #d7dadf;
+  --sl-color-gray-6: #e7e9ed;
+  --sl-color-gray-7: #f0f2f5;
+  --sl-color-black: #f6f7f9;
+  --sl-color-text: #161616;
+  --sl-color-bg: #f6f7f9;
+  --sl-color-bg-nav: #f6f7f9;
+  --sl-color-bg-sidebar: #f6f7f9;
+  --sl-color-bg-inline-code: #e7e9ed;
+  --sl-color-hairline: #d7dadf;
+  --sl-color-hairline-light: #d7dadf;
+  --sl-color-hairline-shade: #d7dadf;
+  --sl-color-accent-low: #e6e8ff;
+  --sl-color-accent: #2626ff;
+  --sl-color-accent-high: #2020bf;
+  --sl-color-text-accent: #2626ff;
+  --sl-color-bg-accent: #2626ff;
+  --sl-color-text-invert: #ffffff;
+  --ousd-surface: #ffffff;
+  --ousd-hover: #f0f2f5;
+  --ousd-control-border: #858c98;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 {
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+/* Retain the existing responsive hero size and generous section spacing. */
+.site-title img {
+  width: 210px;
+  height: auto;
+}
+@media (max-width: 40rem) {
+  .site-title img { width: 180px; }
+}
+
+[data-has-hero] .sl-markdown-content h2 {
+  font-size: var(--sl-text-3xl);
+}
+
+.sl-link-card {
+  border-color: var(--sl-color-hairline);
+  padding: 1.5rem;
+  background: var(--ousd-surface);
+  box-shadow: none;
+}
+.sl-link-card .title { font-weight: 500; }
+.sl-link-card .description { color: var(--sl-color-gray-2); }
+
+/* Square cards with CSS-only corner ticks. The overlay never takes pointer
+   events or changes geometry, so Starlight's full-card links keep working. */
+.sl-link-card, .provider-card {
+  position: relative;
+  border-radius: 0;
+  --ousd-card-tick: var(--sl-color-gray-3);
+  transition: border-color 140ms ease-out;
+}
+.sl-link-card::after, .provider-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  color: var(--ousd-card-tick);
+  background:
+    linear-gradient(currentColor, currentColor) left top / 1px 7px,
+    linear-gradient(currentColor, currentColor) left top / 7px 1px,
+    linear-gradient(currentColor, currentColor) right top / 1px 7px,
+    linear-gradient(currentColor, currentColor) right top / 7px 1px,
+    linear-gradient(currentColor, currentColor) left bottom / 1px 7px,
+    linear-gradient(currentColor, currentColor) left bottom / 7px 1px,
+    linear-gradient(currentColor, currentColor) right bottom / 1px 7px,
+    linear-gradient(currentColor, currentColor) right bottom / 7px 1px;
+  background-repeat: no-repeat;
+  transition: color 140ms ease-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  .sl-link-card:hover, .provider-card:hover {
+    border-color: var(--sl-color-text-accent);
+    --ousd-card-tick: var(--sl-color-text-accent);
+  }
+  .sl-link-card:hover { background: var(--ousd-hover); }
+}
+.sl-link-card:focus-within, .provider-card:focus-within {
+  border-color: var(--sl-color-text-accent);
+  --ousd-card-tick: var(--sl-color-text-accent);
+}
+.sl-link-card:focus-within {
+  outline: 2px solid var(--sl-color-text-accent);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sl-link-card, .provider-card,
+  .sl-link-card::after, .provider-card::after { transition: none; }
+}
+
+site-search button[data-open-modal],
+site-search dialog,
+#starlight__search .pagefind-ui__search-input {
+  border-radius: var(--ousd-radius);
+  box-shadow: none;
+}
+site-search button[data-open-modal] { border-color: var(--ousd-control-border); }
+site-search dialog { background: var(--ousd-surface); }
+#starlight__search { --sl-search-corners: var(--ousd-radius); }
+
+/* Match the square cards across native, shadcn, and Starlight controls.
+   Keep native checkbox/radio/range shapes and every control's state styling. */
+button, .button, .sl-link-button, [role='button'], summary,
+mobile-starlight-toc .toggle,
+:root .expressive-code .copy button,
+input:not(:where([type='checkbox'], [type='radio'], [type='range'])),
+select, textarea, input::file-selector-button {
+  border-radius: var(--ousd-radius);
+}
+
+.filters [data-slot='input'], .filters [data-slot='native-select'] {
+  border-color: var(--ousd-control-border);
+  border-radius: var(--ousd-radius);
+  background: var(--ousd-surface);
+  box-shadow: none;
+}
+.filters [data-slot='input']:focus-visible,
+.filters [data-slot='native-select']:focus-visible {
+  border-color: var(--sl-color-text-accent);
+  outline: 2px solid var(--sl-color-text-accent);
+  outline-offset: 2px;
+}
+a:focus-visible, button:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--sl-color-text-accent);
+  outline-offset: 3px;
+}

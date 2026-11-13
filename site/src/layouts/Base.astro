@@ -1,0 +1,9 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import type { MarkdownHeading } from 'astro';
+interface Props { title: string; description: string; headings: MarkdownHeading[]; noindex?: boolean }
+const { title, description, headings, noindex = false } = Astro.props;
+---
+<StarlightPage headings={headings} frontmatter={{ title, description, head: noindex ? [{tag:'meta',attrs:{name:'robots',content:'noindex,follow'}}] : [] }}>
+  <slot />
+</StarlightPage>

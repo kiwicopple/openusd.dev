@@ -1,0 +1,56 @@
+---
+import DirectoryFilters from './DirectoryFilters';
+import {providers,networks,dataset} from '../lib/registry';
+import {directoryActivities,directoryUtilities,directoryTaskLabels,directoryAccessLabels,directoryTagReference,activityStatusGroups} from '../lib/directory';
+import {capabilityActivityAnchor} from '../lib/provider-guides';
+---
+<div class="ecosystem-browser not-content">
+<p>Choose an activity to find provider-specific setup, eligibility and documentation. Each card links to that activity on the provider’s profile.</p>
+<DirectoryFilters tasks={directoryTaskLabels} providers={[...providers].sort((a,b)=>a.name.localeCompare(b.name))} networks={networks.map(n=>n.name)} access={directoryAccessLabels}/>
+<noscript><p>Filters require JavaScript. All {directoryActivities.length} activities are listed below, with links to provider instructions.</p></noscript>
+<div class="directory-summary"><span id="result-count" role="status" aria-live="polite" aria-atomic="true">Showing {directoryActivities.length} of {directoryActivities.length} activities</span><button class="button" type="button" id="reset">Reset filters</button><a href="/data/">JSON & schema</a></div>
+<div class="directory-grid">{directoryActivities.map(activity=>{
+ const groups=activityStatusGroups(activity.records);
+ return <article class="provider-card activity-card" id={activity.id} data-activity={JSON.stringify({task:activity.task.id,provider:activity.provider.id,records:activity.records.map(c=>({id:c.id,access:c.access,networks:c.networks}))})} aria-labelledby={`${activity.id}-title`}>
+  {activity.legacyIds.map(id=><span id={id} class="anchor-alias" data-capability-anchor aria-hidden="true"></span>)}
+  <h2 id={`${activity.id}-title`}><a href={activity.href} aria-label={`${activity.task.title} with ${activity.provider.name}`}>{activity.task.title}</a></h2>
+  <p class="activity-provider">{activity.provider.name}</p>
+  <p>{activity.description}</p>
+  <div class="activity-status">{groups.map(group=><div class="activity-status-group">
+   {groups.length>1&&<p class="activity-product">{group.records.map(c=>c.name).join(' · ')}</p>}
+   <div class="activity-badges">{[group.access,group.support].map(tag=><><a class="directory-tag" href={`#${tag.id}`} aria-label={`${tag.label}: read definition`}>{tag.label}</a>{' '}</>)}</div>
+  </div>)}</div>
+ </article>;
+})}</div>
+<div id="empty" hidden><h2>No matching activities</h2><p>Try a broader task, another provider, or include unconfirmed networks. No match does not mean a provider cannot support the operation.</p></div>
+<h2 id="developer-tools">API access and testing</h2>
+<ul class="directory-utilities">{directoryUtilities.map(c=><li id={c.id}><a href={`/providers/${c.providerId}/#${capabilityActivityAnchor(c)}`}>{providers.find(p=>p.id===c.providerId)!.name}: {c.name}</a><p>{c.summary}</p></li>)}</ul>
+<h2 id="networks">Native networks</h2>
+<p>Token deployment is separate from provider support. <a href="/networks/">View official contracts and explorer links.</a></p>
+<ul>{networks.map(n=><li id={n.legacyRecordId}><a href={`/networks/#${n.id}`}>OUSD on {n.name}</a> — native token deployed.</li>)}</ul>
+<span id="availability" class="anchor-alias" aria-hidden="true"></span>
+<h2 id="tag-reference">Tag reference</h2>
+<p id="tag-reference-description">Access tags describe availability and onboarding. OUSD tags describe asset-specific evidence. Different products within an activity can have different tags. None means we have independently tested an integration.</p>
+<table class="tag-reference" aria-labelledby="tag-reference" aria-describedby="tag-reference-description">
+ <thead><tr><th scope="col">Tag</th><th scope="col">Meaning</th></tr></thead>
+ <tbody>{directoryTagReference.map(tag=><tr id={tag.id} tabindex="-1"><th scope="row">{tag.label}</th><td>{tag.definition}</td></tr>)}</tbody>
+</table>
+<h2 id="references">References and last updated</h2>
+<p class="directory-caveat">Based on provider docs. We haven’t tested these integrations. Each activity links to its sources and limits. Record reviews: {dataset.reviewCoverage.oldestRecordReview}–{dataset.reviewCoverage.newestRecordReview}. <a href="/about/">Review method</a></p>
+</div>
+<script>
+import {matchesDirectory,directoryFiltersFromUrl,directoryFilterUrl,directoryFilterKeys,type DirectoryActivity,type DirectoryFilter} from '../lib/directory-filter';
+const form=document.querySelector<HTMLFormElement>('#filters')!;
+const cards=[...document.querySelectorAll<HTMLElement>('[data-activity]')].map(element=>({element,activity:JSON.parse(element.dataset.activity!) as DirectoryActivity}));
+const anchors=[...document.querySelectorAll<HTMLElement>('[data-capability-anchor]')];
+const field=(name:string)=>form.elements.namedItem(name) as HTMLInputElement|HTMLSelectElement;
+function read():DirectoryFilter{return {task:field('task').value,provider:field('provider').value,access:field('access').value,network:field('network').value,includeUnknown:(field('includeUnknown') as HTMLInputElement).checked};}
+function render(){const filter=read();let count=0;for(const {element,activity} of cards){const show=matchesDirectory(activity,filter);element.hidden=!show;if(show)count++;}for(const anchor of anchors){const target=cards.find(c=>!c.element.hidden&&c.activity.records.some(r=>r.id===anchor.id));if(target&&anchor.parentElement!==target.element)target.element.prepend(anchor);}
+document.querySelector('#result-count')!.textContent=`Showing ${count} of ${cards.length} activities`;document.querySelector<HTMLElement>('#empty')!.hidden=count!==0;}
+function revealFragment(){let id:string;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}const anchor=anchors.find(a=>a.id===id);if(anchor&&!anchor.parentElement?.hidden)anchor.scrollIntoView();}
+function restore(){const filter=directoryFiltersFromUrl(new URL(location.href));for(const key of directoryFilterKeys){const select=field(key) as HTMLSelectElement;select.value=[...select.options].some(option=>option.value===filter[key])?filter[key]:'';}(field('includeUnknown') as HTMLInputElement).checked=filter.includeUnknown;render();revealFragment();}
+function update(){const url=directoryFilterUrl(new URL(location.href),read());if(url.href!==location.href)history.pushState(null,'',url);render();}
+form.addEventListener('change',update);form.addEventListener('submit',e=>{e.preventDefault();update();});
+document.querySelector('#reset')!.addEventListener('click',()=>{form.reset();update();field('task').focus();});
+window.addEventListener('popstate',restore);window.addEventListener('hashchange',revealFragment);restore();
+</script>
