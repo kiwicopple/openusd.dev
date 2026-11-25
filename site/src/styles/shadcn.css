@@ -1,0 +1,15 @@
+/* shadcn/ui utilities without Tailwind preflight: Starlight owns document styles. */
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@theme inline {
+  --color-background: var(--sl-color-bg);
+  --color-foreground: var(--sl-color-text);
+  --color-muted-foreground: var(--sl-color-gray-2);
+  --color-input: var(--sl-color-gray-5);
+  --color-ring: var(--sl-color-gray-3);
+  --color-primary: var(--sl-color-white);
+  --color-primary-foreground: var(--sl-color-black);
+  --color-destructive: #dc2626;
+}

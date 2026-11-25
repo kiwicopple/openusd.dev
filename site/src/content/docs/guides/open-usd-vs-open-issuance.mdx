@@ -1,0 +1,42 @@
+---
+title: "Open USD vs Open Issuance"
+description: "Use an existing stablecoin or create a custom stablecoin with Bridge."
+modifiedAt: '2026-10-12'
+reviewedAt: '2026-10-10'
+draft: false
+sources:
+  - id: bridge-live
+    claim: Bridge identifies Bridge Building Inc. as current OUSD issuer and confirms the September 30 launch.
+  - id: open-issuance
+    claim: Bridge's Open Issuance enables businesses to launch and manage custom stablecoins; Stripe announced it on September 30, 2025.
+  - id: bridge-sandbox
+    reviewedAt: '2026-10-12'
+    claim: Bridge Sandbox simulations do not establish live OUSD issuance or settlement.
+related: [what-is-open-usd, integration-architecture]
+sidebar:
+  order: 3
+---
+
+import GuideNotes from "../../../components/GuideNotes.astro";
+
+**Open USD is a [stablecoin](/guides/concepts/#stablecoin). Open Issuance is Bridge's platform for creating custom stablecoins.**
+
+| | Open USD | Open Issuance |
+| --- | --- | --- |
+| What you use | An existing asset: OUSD. | A platform to launch and manage your own asset. |
+| Main decision | Which provider and operation to integrate. | How to configure and operate a custom stablecoin. |
+| Start here | [OUSD integration paths](/start/). | [Bridge's Open Issuance announcement](https://stripe.com/blog/introducing-open-issuance-from-bridge). |
+
+Bridge confirms that **Bridge Building Inc. issues OUSD**. [Issuer announcement](https://withbridge.com/blog/ousd-is-live-issued-by-bridge).
+
+## When custom issuance matters
+
+Open Issuance offers choices for [networks](/guides/concepts/#network), [contract](/guides/concepts/#smart-contract) functionality, and reserve allocation. It also describes swaps among participating coins. Those platform features do not establish the configuration or availability of a particular OUSD service.
+
+If you only need to accept, hold, or send OUSD, start with an existing provider. If you need a distinct asset, discuss issuance terms, operational responsibilities, and supported jurisdictions with Bridge.
+
+## Development environment
+
+Bridge's [sandbox](https://apidocs.bridge.xyz/get-started/introduction/quick-start/setting-up-sandbox) simulates payment activity and webhooks without live bank or blockchain transactions. A successful simulation does not establish a working production issuance or OUSD settlement flow.
+
+<GuideNotes id="guides/open-usd-vs-open-issuance" />

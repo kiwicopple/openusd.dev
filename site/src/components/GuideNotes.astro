@@ -1,0 +1,12 @@
+---
+import { getEntry } from 'astro:content';
+import Sources from './Sources.astro';
+interface Props { id: string }
+const entry = await getEntry('docs', Astro.props.id);
+if (!entry) throw new Error(`Missing guide: ${Astro.props.id}`);
+const related = await Promise.all(entry.data.related.map(id => getEntry('docs', `guides/${id}`)));
+---
+<p><small>Page reviewed: {entry.data.reviewedAt} · Modified: {entry.data.modifiedAt}. Individual sources retain their own review dates.</small></p>
+<Sources items={entry.data.sources}/>
+<h2 id="related-reading">Related reading</h2>
+<ul>{related.filter(Boolean).map(g => g && <li><a href={`/${g.id}/`}>{g.data.title}</a></li>)}</ul>

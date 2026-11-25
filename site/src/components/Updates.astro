@@ -1,0 +1,17 @@
+---
+import {updates,source} from '../lib/registry';
+interface Props {limit?:number; type?: "site" | "ecosystem"; compact?:boolean}
+const items=updates.filter(u=>!Astro.props.type || u.type===Astro.props.type).slice(0,Astro.props.limit||updates.length);
+---
+{Astro.props.compact ? (
+  <ul class="compact-updates">
+    {items.map(u=><li id={u.id}><time datetime={u.date}>{u.date}</time>{' '}<a href={`/changelog/#${u.id}`}>{u.title}</a></li>)}
+  </ul>
+) : items.map(u=><article id={u.id} class="update-row"><time datetime={u.date}>{u.date}</time><div><h3>{u.sourceId?<a href={source(u.sourceId).url}>{u.title} ↗</a>:u.title}</h3><p>{u.description}</p>{u.sourceId&&<small class="source-note">Source: {source(u.sourceId).title} · Reviewed {source(u.sourceId).reviewedAt}</small>}</div><span class="update-type">{u.type==='site'?'SITE NOTE':'ECOSYSTEM'}</span></article>)}
+
+<style>
+  .compact-updates { list-style:none; padding:0; }
+  .compact-updates li { display:flex; flex-wrap:wrap; align-items:baseline; column-gap:1.25rem; row-gap:.25rem; border-bottom:1px solid var(--sl-color-hairline); padding-block:.75rem; }
+  .compact-updates time { color:var(--sl-color-gray-2); font-size:var(--sl-text-sm); white-space:nowrap; }
+  .compact-updates a { min-width:0; }
+</style>

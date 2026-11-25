@@ -1,0 +1,6 @@
+---
+import {source} from '../lib/registry';
+interface Props {items:{id:string;claim:string;reviewedAt?:string}[]}
+const {items}=Astro.props;
+---
+<section class="sources" aria-label="Sources and review notes"><h2>Sources & review notes</h2>{items.map(item=>{const s=source(item.id);return <div class="source-row" id={`source-${s.id}`}><a href={s.url}>{s.title} ↗</a><p>{item.claim}</p><small>Published: {s.publishedAt||'Unknown (undated source)'} · Reviewed: {item.reviewedAt ?? s.reviewedAt} · Source-backed</small></div>})}</section>

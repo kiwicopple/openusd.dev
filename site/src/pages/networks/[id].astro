@@ -1,0 +1,27 @@
+---
+import Base from '../../layouts/Base.astro';
+import {networks,source,capabilities,provider} from '../../lib/registry';
+import ProfileExamples from '../../components/ProfileExamples.astro';
+import CopyText from '../../components/CopyText.astro';
+import ProfileStatement from '../../components/ProfileStatement.astro';
+export function getStaticPaths(){return networks.filter(n=>n.profile).map(n=>({params:{id:n.id},props:{n}}));}
+const {n}=Astro.props;const profile=n.profile!;
+const documented=capabilities.filter(c=>c.ousdSupport==='documented'&&c.networks?.includes(n.name));
+const addressHeading={depth:2,slug:'ousd-address',text:`Official OUSD ${n.id==='solana'?'mint':'contract'}`};
+const routesHeading={depth:2,slug:'provider-routes',text:`Provider routes involving ${n.name}`};
+const relatedHeading={depth:2,slug:'next-steps',text:'Related references'};
+const headings=[addressHeading,...profile.sections.flatMap(s=>[{depth:2,slug:s.id,text:s.heading},...(s.examples||[]).map(e=>({depth:3,slug:e.id,text:e.title}))]),routesHeading,relatedHeading];
+---
+<Base title={profile.title} description={`Identify OUSD on ${n.name}: exact token address, network setup, fee model, developer tools and operational limits.`} headings={headings}>
+<ProfileStatement statement={profile.introduction} concepts mintConcept={n.id==='solana'?'mint-account':undefined}/>
+<p class="source-note">Reviewed {n.reviewedAt}. Token identity is source-backed; no OUSD transfer or provider integration independently tested.</p>
+<h2 id={addressHeading.slug}>{addressHeading.text}</h2>
+<CopyText text={n.address} label={`Copy ${n.name} OUSD address`}/>
+<p><a href={n.explorerUrl}>View OUSD on {n.name} explorer ↗</a> · <a href={source(n.sourceId).url}>Official address listing ↗</a></p>
+<p>This <a href={`/guides/concepts/#${n.id==='solana'?'mint-account':'token-address'}`}>{n.id==='solana'?'mint address':'token address'}</a> identifies OUSD on {n.name}. It is not a customer receiving address. Do not send funds directly to it.</p>
+{profile.sections.map(s=><section><h2 id={s.id}>{s.heading}</h2>{s.paragraphs.map(statement=><ProfileStatement statement={statement}/>)}<ProfileExamples examples={s.examples||[]}/></section>)}
+<h2 id={routesHeading.slug}>{routesHeading.text}</h2>
+<p>These records name {n.name} in an OUSD-specific documented operation. Read the direction, delivered asset and eligibility limits; this is not a claim that every provider operation supports the network.</p>
+{documented.length?<ul>{documented.map(c=><li><a href={`/providers/${c.providerId}/#${c.id}`}>{provider(c.providerId).name}: {c.name}</a> — {c.networkNote}</li>)}</ul>:<p>No product-specific route is established in this reference. <a href={`/ecosystem/?network=${encodeURIComponent(n.name)}`}>Find providers and include unconfirmed routes</a>.</p>}
+<h2 id={relatedHeading.slug}>{relatedHeading.text}</h2><ul><li><a href="/networks/">All OUSD networks and exact addresses</a></li><li><a href="/guides/concepts/#network-fees">How network fees work</a></li><li><a href="/guides/concepts/#finality-and-settlement">Finality and settlement</a></li><li><a href="/guides/integration-architecture/">Payment events, retries and reconciliation</a></li><li><a href="/data/">Network records as JSON</a></li></ul>
+</Base>

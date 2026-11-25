@@ -1,0 +1,31 @@
+---
+import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
+import AnalyticsConsent from '../AnalyticsConsent.astro';
+import logoLight from '../../assets/logo-light.svg';
+import logoDark from '../../assets/logo-dark.svg';
+// Descriptor verified against https://joinopenstandard.com/ on 2026-10-11.
+---
+<DefaultFooter />
+<footer class="site-footer" aria-label="Site footer">
+  <div class="footer-brand"><a href="/" aria-label="openusd.dev home">
+    <img class="light:sl-hidden print:hidden" src={logoDark.src} alt="" width={logoDark.width} height={logoDark.height} loading="lazy" />
+    <img class="dark:sl-hidden print:block" src={logoLight.src} alt="" width={logoLight.width} height={logoLight.height} loading="lazy" />
+  </a><p>Independent reference for Open USD, a shared stablecoin for global financial activity.</p></div>
+  <nav aria-label="Footer"><a href="/about/">About</a><a href="/privacy/">Privacy Policy</a><a href="/sitemap-index.xml">Sitemap</a><a href="/llms.txt">llms.txt</a><button type="button" id="analytics-settings" aria-controls="analytics-consent" aria-expanded="false" hidden>Analytics settings</button></nav>
+</footer>
+<AnalyticsConsent />
+<style>
+#analytics-settings { padding:0; border:0; background:none; color:inherit; font:inherit; cursor:pointer; text-underline-offset:.2em; }
+#analytics-settings:hover { color:var(--sl-color-white); text-decoration:underline; }
+#analytics-settings[hidden] { display:none; }
+#analytics-settings:focus-visible { outline:2px solid var(--sl-color-text-accent); outline-offset:3px; }
+.site-footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--sl-color-hairline); display:flex; flex-wrap:wrap; align-items:start; gap:1.5rem 2rem; font-size:.8125rem; color:var(--sl-color-gray-2); }
+a { color:inherit; text-decoration:none; text-underline-offset:.2em; }
+a:hover { color:var(--sl-color-white); text-decoration:underline; }
+.footer-brand { margin-right:auto; }
+.footer-brand > a { display:inline-flex; align-items:center; padding-block:.5rem; }
+.footer-brand img { width:160px; height:auto; }
+p { margin:.375rem 0 0; line-height:1.6; }
+nav { display:flex; flex-wrap:wrap; gap:.75rem 1.25rem; }
+@media(max-width:40rem) { .footer-brand { flex-basis:100%; } }
+</style>

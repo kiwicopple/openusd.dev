@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.env
+reports/
+.env.*
+!.env.example
+.sites-checkout/
+*.pem
+*.key
+.npmrc

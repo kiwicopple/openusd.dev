@@ -1,0 +1,107 @@
+---
+title: "Payment events, retries, and reconciliation"
+description: "A provider-neutral payment design for safe retries, event processing, and reconciliation."
+modifiedAt: '2026-10-12'
+reviewedAt: '2026-10-10'
+draft: false
+sources:
+  - id: stripe-events
+    claim: Stripe documents signature verification, duplicate events, asynchronous processing and non-guaranteed event ordering. These illustrate general concerns, not OUSD behavior.
+  - id: stripe-idempotency
+    claim: Stripe documents idempotency keys for safe request retries; provider-specific details must not be assumed for OUSD.
+  - id: bridge-sandbox
+    reviewedAt: '2026-10-12'
+    claim: Bridge Sandbox supports simulated payment webhooks without live bank or blockchain transactions.
+related: [what-is-open-usd, open-usd-vs-usdc]
+sidebar:
+  order: 4
+---
+
+import {Code} from '@astrojs/starlight/components';
+import fixture from '../../../../public/examples/reconciliation-fixture.mjs?raw';
+import GuideNotes from "../../../components/GuideNotes.astro";
+
+Use a durable payment record, an event inbox, and a ledger. Keep request submission separate from [settlement](/guides/concepts/#finality-and-settlement).
+
+This is **illustrative application architecture**, not a tested OUSD integration. The adapter must follow your provider's real [API](/guides/concepts/#api) and event specification.
+
+## Record the payment intent
+
+Give each user-approved operation a durable ID. Store the provider, account, asset, network, environment, and exact amount. Use integers in the documented [smallest unit](/guides/concepts/#decimals) or exact decimals, never floating-point balances.
+
+Keep application user IDs, provider customer IDs, and wallet addresses separate. Check authorization on the server before accepting a request and again before a queued operation is sent. Keep credentials and identity documents out of browser code and routine logs.
+
+## Make retries safe
+
+Use one provider [idempotency key](/guides/concepts/#idempotency) for retries of the same operation. A changed intent needs a new decision, not silent reuse of the old key. A timeout after submission means the outcome is uncertain: retrieve the existing operation before sending another transfer.
+
+Deduplicate incoming [events](/guides/concepts/#webhook) by provider, environment, and event ID. Save the event and durable processing job before acknowledging it. Stripe documents [request idempotency](https://docs.stripe.com/api/idempotent_requests) and [duplicate-event handling](https://docs.stripe.com/webhooks); other providers may use different retention and retry rules.
+
+## Process events
+
+Illustrative pseudocode:
+
+```text
+receive_event(raw_body, headers):
+  event = adapter.verify_and_parse(raw_body, headers)
+  require event.environment == configured_environment
+
+  transaction:
+    inserted = inbox.insert_if_absent(
+      provider, environment, event.id, raw_body
+    )
+    if inserted:
+      durable_jobs.enqueue("reconcile_payment", event.resource_id)
+
+  acknowledge_receipt()
+
+reconcile_payment(resource_id):
+  latest = adapter.fetch_authoritative_state(resource_id)
+  transaction:
+    payment = payments.lock_by_provider_reference(resource_id)
+    transition = rules.evaluate(payment, latest)
+    ledger.apply_once(transition.business_key, transition.entries)
+    payments.record_evidence(payment.id, latest, transition)
+```
+
+Verify the signature and replay rules before trusting the event. Events may arrive twice or out of order; retrieve authoritative state rather than treating arrival order as the payment history. [Stripe event ordering](https://docs.stripe.com/webhooks#event-ordering).
+
+## Reconcile settlement
+
+Track application state and provider state separately. Request acceptance does not prove recipient credit or bank settlement. Define the evidence needed to mark a payment settled.
+
+[Reconciliation](/guides/concepts/#reconciliation) compares payment intent, provider transaction, ledger entries, and settlement records. Preserve mismatches for review, including partial amounts, fees, returns, and late failures. Replaying an event must not create another financial effect. Refunds and compensating transfers are separate deliberate operations.
+
+## Test failure cases
+
+| Case | Expected behavior |
+| --- | --- |
+| Duplicate request or event | One business effect. |
+| Timeout after provider acceptance | Retrieve or reconcile the existing operation. |
+| Out-of-order delivery | State follows authoritative evidence. |
+| Worker interruption | Durable work resumes without another transfer. |
+| Unknown status or amount mismatch | Preserve evidence and queue review. |
+
+Test these with synthetic events first. Then test the adapter in the provider's supported environment and record the result. Bridge's [sandbox](https://apidocs.bridge.xyz/get-started/introduction/quick-start/setting-up-sandbox) supports simulated payment activity and associated webhooks, without live bank or blockchain transactions. Use its [documented simulation flow](/providers/bridge/#testing-integrations) for adapter tests; simulated completion cannot prove OUSD settlement.
+
+## Worked failure sequence
+
+An illustrative application records payment P and submits one provider operation. Its response times out. Recovery looks up the stored reference instead of creating another payment. A completion event arrives, is verified and saved to an event inbox, then the worker crashes before posting the ledger entry.
+
+After restart, the durable job fetches current provider state, checks the amount, asset, network and recipient against P, and posts once under a unique business key. A duplicate completion event or an older pending event triggers the same authoritative lookup; neither creates a second posting or reverses completion. An intent mismatch or a failed operation with possible prior effects stops automatic completion and goes to review.
+
+The [synthetic fixture](/examples/reconciliation-fixture.mjs) below exercises those local state decisions. Its checks pass in the repository's offline tests. The in-memory Map does not test database durability, actual webhook delivery or a provider integration. A real ledger needs an atomic transaction and a durable uniqueness constraint.
+
+<Code code={fixture} lang="js" />
+
+After saving the download, print the fixture result with Node.js:
+
+```bash
+node --input-type=module -e "import {runFixture} from './reconciliation-fixture.mjs'; console.log(runFixture());"
+```
+
+Expected result: three `posted` decisions, `postingCount: 1`, and `review` for both the amount mismatch and ambiguous failure. There are no network calls or financial operations in this fixture. The application must separately test response-loss recovery and durable inbox/job storage against its real adapters.
+
+See [Privy's documented OUSD/Tempo request and action lifecycle](/providers/privy/#send-payouts) for a concrete provider path. Its HTTP example has not been submitted.
+
+<GuideNotes id="guides/integration-architecture" />

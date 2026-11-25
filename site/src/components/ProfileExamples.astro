@@ -1,0 +1,9 @@
+---
+import {Code} from '@astrojs/starlight/components';
+import type {z} from 'zod';
+import {ExampleSchema} from '../lib/schema';
+import {source} from '../lib/registry';
+interface Props {examples:z.infer<typeof ExampleSchema>[];references?:string[]}
+const {examples,references}=Astro.props;
+---
+{examples.map(example=><div><h3 id={example.id}>{example.title}</h3><p>{example.description}</p><Code code={example.code} lang={example.language}/><p><small>Sources: {example.sourceIds.map((id,i)=><>{i>0?' · ':''}<a href={source(id).url}>{references?`[${references.indexOf(id)+1}] ${source(id).title}`:source(id).title}</a></>)}</small></p></div>)}

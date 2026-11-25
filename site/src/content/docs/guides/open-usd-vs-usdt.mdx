@@ -1,0 +1,62 @@
+---
+title: "Open USD vs USDT"
+description: "Compare OUSD and Tether USDT: issuer access, redemption minimums and fees, native networks, reserves, and integration checks."
+modifiedAt: '2026-11-09'
+reviewedAt: '2026-10-11'
+draft: false
+sources:
+  - id: bridge-live
+    reviewedAt: '2026-10-11'
+    claim: Bridge identifies Bridge Building Inc. as OUSD's current issuer and advertises no mint/redemption fees.
+  - id: os-integrate
+    reviewedAt: '2026-10-11'
+    claim: Open Standard lists native OUSD networks, provider onboarding and eligibility, and registration for partner rewards.
+  - id: os-live
+    reviewedAt: '2026-11-09'
+    claim: Open Standard names OUSD reserve holders and links to its monthly attestation portal; no individual report was reviewed here.
+  - id: tether-terms
+    claim: The terms, updated February 26, 2026, identify Tether International in El Salvador, verified-customer redemption, jurisdiction restrictions and reserve categories.
+  - id: tether-fees
+    claim: Tether publishes a USD 100,000 direct acquisition/redemption minimum, transaction fees and a nonrefundable verification fee.
+  - id: tether-protocols
+    claim: Tether lists asset-specific network identifiers, legacy-network deprecations and the Ethereum USDT transfer-return caveat.
+  - id: tether-yield
+    claim: Tether explains stablecoin yield through lending and liquidity provision, separate from holding or redeeming the token.
+related: [what-is-open-usd, open-usd-vs-usdc, open-usd-vs-usdg]
+---
+
+import GuideNotes from "../../../components/GuideNotes.astro";
+
+**Exchanging USDT directly with Tether for dollars requires a verified account and at least US$100,000. OUSD uses provider onboarding.** Tether's minimum applies to dealing with the issuer, not every exchange trade or wallet transfer. For a payment integration, compare your actual access route first.
+
+## At a glance
+
+| Question | Open USD (OUSD) | Tether USD₮ (USDT) |
+| --- | --- | --- |
+| [Issuer](/guides/concepts/#issuer) | [Bridge Building Inc.](https://withbridge.com/blog/ousd-is-live-issued-by-bridge) | [Tether International, S.A. de C.V.](https://tether.to/en/legal/), domiciled in El Salvador. |
+| [Native](/guides/concepts/#native-and-bridged-tokens) networks | Base, Ethereum, Solana and Tempo. [Contracts](/networks/) | Multiple networks, including Ethereum, Tron and Solana. Use Tether's [USDT-specific identifiers](https://tether.to/en/supported-protocols/). |
+| [Create tokens or redeem for dollars](/guides/concepts/#minting-and-redemption) | Provider onboarding and eligibility checks. | Approved account, identity checks and jurisdiction eligibility; minimum US$100,000. |
+| Issuer transaction fees | No Bridge mint/redemption fee; other service charges may apply. | Acquisition: 0.1%. Redemption: greater of US$1,000 or 0.1%. [Fee schedule](https://tether.to/en/fees/) |
+
+Tether also charges a nonrefundable verification fee of US$150 in Tether tokens, which can count toward a redemption. An exchange or payment provider sets its own fees, limits and settlement terms. Tether's [eligibility restrictions](https://tether.to/en/legal/) include most US persons, with limited approved exceptions; OUSD access also depends on the provider and geography.
+
+## What backs the tokens?
+
+[Open Standard’s launch announcement](https://joinopenstandard.com/blog/ousd-is-live) names BlackRock, Lead Bank and other large financial institutions as OUSD [reserve](/guides/concepts/#reserves) holders and links to [monthly attestations](https://reserves.bridge.xyz/ousd). This comparison has not reviewed an individual OUSD attestation.
+
+[Tether's terms](https://tether.to/en/legal/) describe USDT reserves as cash, cash equivalents and other assets, potentially including affiliate loan receivables. Dollar-denominated does not mean cash-only backing. Compare the current reserve disclosures and redemption rights rather than treating either token as a bank deposit; no reserves were independently audited here.
+
+## Rewards need separate terms
+
+OUSD's [supply/activity rewards require Open Standard partner registration](https://joinopenstandard.com/integrate). A USDT lending or exchange yield offer is a separate service, not part of the issuer's 1:1 redemption mechanism. Tether's [yield explainer](https://tether.io/news/where-do-stablecoin-yields-come-from/) describes lending and liquidity provision, which add their own risks. Do not assume that holding either token makes a customer eligible for a reward program.
+
+## Before you integrate
+
+- Confirm the exact [token address](/guides/concepts/#token-address) and network at both ends. A common ticker or dollar target does not make tokens interchangeable in an API.
+- For USDT, avoid using legacy network entries as evidence of current issuer support. Tether has ended direct issuance/redemption on Omni, Bitcoin Cash SLP, Kusama, EOS and Algorand.
+- For an Ethereum [smart contract](/guides/concepts/#smart-contract), Tether notes that USDT's transfer function does not return a Boolean and recommends a compatible safe-transfer wrapper. See its [integration guidelines](https://tether.to/en/supported-protocols/).
+- For OUSD, [choose a provider by task](/start/), then confirm that account's supported operation and network.
+
+This compares Open Standard's OUSD with USDT. Origin Dollar (also OUSD) and Tether's USAT are different assets. No payment flow was independently tested for this page.
+
+<GuideNotes id="guides/open-usd-vs-usdt" />

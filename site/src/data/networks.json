@@ -1,0 +1,590 @@
+[
+  {
+    "id": "base",
+    "name": "Base",
+    "legacyRecordId": "base-native-ousd",
+    "asset": "OUSD",
+    "deployment": "native",
+    "address": "0xB2000000000000000000002fEb517dFeC7415344",
+    "explorerUrl": "https://basescan.org/address/0xB2000000000000000000002fEb517dFeC7415344",
+    "sourceId": "os-integrate",
+    "reviewedAt": "2026-10-12",
+    "modifiedAt": "2026-11-09",
+    "profile": {
+      "title": "OUSD on Base",
+      "introduction": {
+        "text": "Open Standard lists native OUSD on Base. Use the Base-specific contract below with Base Mainnet, chain ID 8453. Base uses ETH for network fees.",
+        "sourceIds": [
+          "os-integrate",
+          "base-connection"
+        ]
+      },
+      "sections": [
+        {
+          "id": "network-setup",
+          "heading": "Connecting to Base",
+          "paragraphs": [
+            {
+              "text": "Base Mainnet uses chain ID 8453 and the public RPC endpoint https://mainnet.base.org. Base Sepolia is a separate development network with chain ID 84532 and RPC endpoint https://sepolia.base.org. Both use ETH as their network currency.",
+              "sourceIds": [
+                "base-connection"
+              ]
+            },
+            {
+              "text": "Use the RPC endpoint for reads and other requests. Base separately lists https://mainnet-sequencer.base.org for mainnet transaction submission. Check which endpoint your client uses rather than sending balance queries to the submission endpoint.",
+              "sourceIds": [
+                "base-connection"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "read-only-balance",
+          "heading": "Reading OUSD with a network check",
+          "paragraphs": [
+            {
+              "text": "The downloadable Node.js example first requires chain ID 8453, then queries the exact OUSD contract above. It pins eth_getCode, decimals() and balanceOf(address) to the same block number and prints the raw integer plus an exact decimal-string balance. eth_getBalance reads a native-currency balance, not OUSD.",
+              "sourceIds": [
+                "os-integrate",
+                "ethereum-rpc",
+                "evm-read-example",
+                "base-connection",
+                "base-rpc"
+              ]
+            },
+            {
+              "text": "The example makes JSON-RPC reads only; it requests no wallet connection, signature or transaction. The queried owner address is sent to the selected RPC endpoint. The command below uses the zero address only as a syntax illustration; replace it with the public address you intend to inspect.",
+              "sourceIds": [
+                "evm-read-example"
+              ]
+            },
+            {
+              "text": "The example queries decimals at runtime and checks the ABI response shape; it does not hard-code an unverified OUSD precision. It also rejects a contract with no bytecode at the selected block. Review the deployed interface before relying on the result.",
+              "sourceIds": [
+                "os-integrate",
+                "ethereum-rpc",
+                "evm-read-example",
+                "base-connection",
+                "base-rpc"
+              ]
+            },
+            {
+              "text": "Validation limit: the script passed syntax and mocked-response checks, including wrong-network and malformed-response failures. Live RPC requests from this review environment were blocked, so no live EVM balance result is claimed. Output should include network, chainId, block, token, owner, codeBytes, decimals, rawBalance and balance. A latest-block read is not a settlement or spendability guarantee.",
+              "sourceIds": [
+                "evm-read-example"
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "id": "base-balance-example",
+              "title": "Run the read-only balance example",
+              "language": "bash",
+              "description": "Save the linked download as read-ousd-evm.mjs and use Node.js 18 or later. Use a trusted RPC endpoint; do not paste an RPC credential into source code or shared logs.",
+              "code": "node read-ousd-evm.mjs base 0x0000000000000000000000000000000000000000",
+              "sourceIds": [
+                "evm-read-example"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network-fees",
+          "heading": "Estimating both fee components",
+          "paragraphs": [
+            {
+              "text": "A Base transaction has an execution fee on Base and an L1 fee for publishing transaction data to Ethereum. Estimate both components when budgeting a transfer; an execution-only estimate does not cover the complete network cost.",
+              "sourceIds": [
+                "base-fees"
+              ]
+            },
+            {
+              "text": "Base documents GasPriceOracle methods for estimating the L1 component from a serialized transaction or its approximate size. Fees vary with network conditions, so use the current estimate rather than a fixed price per OUSD transfer.",
+              "sourceIds": [
+                "base-fees"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tools-and-confirmation",
+          "heading": "Reading contracts and confirming payments",
+          "paragraphs": [
+            {
+              "text": "Base’s JSON-RPC reference covers eth_chainId, read-only contract queries with eth_call, event logs, and transaction receipts. eth_getBalance returns an account’s ETH balance; it is not a query for the account’s OUSD holdings.",
+              "sourceIds": [
+                "base-rpc"
+              ]
+            },
+            {
+              "text": "Base’s pending block tag now resolves to the latest canonical block; the RPC reference recommends using latest instead. Do not treat either as safe or finalized when deciding when to credit a payment. Public Base endpoints remain HTTP-only; WebSocket subscriptions require a WebSocket-capable provider.",
+              "sourceIds": [
+                "base-rpc"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ousd-limits",
+          "heading": "OUSD deployment and access limits",
+          "paragraphs": [
+            {
+              "text": "Open Standard’s native Base listing identifies OUSD, but does not establish a supported OUSD bridge route, a Base Sepolia deployment, or every provider’s deposit and withdrawal routes. Confirm the asset, network, and operation with the selected provider.",
+              "sourceIds": [
+                "os-integrate"
+              ]
+            },
+            {
+              "text": "The listed contract identifies the token, not a customer receiving address. This reference has not tested OUSD transfers or provider integrations on Base.",
+              "sourceIds": [
+                "os-integrate"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "ethereum",
+    "name": "Ethereum",
+    "legacyRecordId": "ethereum-native-ousd",
+    "asset": "OUSD",
+    "deployment": "native",
+    "address": "0x9f6F3991D525015a6F8CaF062C83b62fD3AC4436",
+    "explorerUrl": "https://etherscan.io/address/0x9f6F3991D525015a6F8CaF062C83b62fD3AC4436",
+    "sourceId": "os-integrate",
+    "reviewedAt": "2026-10-12",
+    "modifiedAt": "2026-10-12",
+    "profile": {
+      "title": "OUSD on Ethereum",
+      "introduction": {
+        "text": "Open Standard lists native OUSD on Ethereum. Pair the Ethereum contract below with Ethereum Mainnet, chain ID 1; a matching token symbol on another network is not the same deployment.",
+        "sourceIds": [
+          "os-integrate",
+          "ethereum-rpc"
+        ]
+      },
+      "sections": [
+        {
+          "id": "network-setup",
+          "heading": "Connecting to Ethereum Mainnet",
+          "paragraphs": [
+            {
+              "text": "Connect through your Ethereum node or selected RPC provider, then check the network with eth_chainId. The JSON-RPC reference returns chain IDs as hexadecimal strings; Ethereum Mainnet is 1, represented as 0x1.",
+              "sourceIds": [
+                "ethereum-rpc"
+              ]
+            },
+            {
+              "text": "Sepolia is Ethereum’s recommended testnet for application development. Accounts can exist across networks, but their balances and transaction histories are separate. A Mainnet token address does not establish a corresponding Sepolia deployment.",
+              "sourceIds": [
+                "ethereum-networks"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "read-only-balance",
+          "heading": "Reading OUSD with a network check",
+          "paragraphs": [
+            {
+              "text": "The downloadable Node.js example first requires chain ID 1, then queries the exact OUSD contract above. It pins eth_getCode, decimals() and balanceOf(address) to the same block number and prints the raw integer plus an exact decimal-string balance. eth_getBalance reads a native-currency balance, not OUSD.",
+              "sourceIds": [
+                "os-integrate",
+                "ethereum-rpc",
+                "evm-read-example"
+              ]
+            },
+            {
+              "text": "The example makes JSON-RPC reads only; it requests no wallet connection, signature or transaction. The queried owner address is sent to the selected RPC endpoint. The command below uses the zero address only as a syntax illustration; replace it with the public address you intend to inspect.",
+              "sourceIds": [
+                "evm-read-example"
+              ]
+            },
+            {
+              "text": "The example queries decimals at runtime and checks the ABI response shape; it does not hard-code an unverified OUSD precision. It also rejects a contract with no bytecode at the selected block. Review the deployed interface before relying on the result.",
+              "sourceIds": [
+                "os-integrate",
+                "ethereum-rpc",
+                "evm-read-example"
+              ]
+            },
+            {
+              "text": "Validation limit: the script passed syntax and mocked-response checks, including wrong-network and malformed-response failures. Live RPC requests from this review environment were blocked, so no live EVM balance result is claimed. Output should include network, chainId, block, token, owner, codeBytes, decimals, rawBalance and balance. A latest-block read is not a settlement or spendability guarantee.",
+              "sourceIds": [
+                "evm-read-example"
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "id": "ethereum-balance-example",
+              "title": "Run the read-only balance example",
+              "language": "bash",
+              "description": "Save the linked download as read-ousd-evm.mjs and use Node.js 18 or later. Use a trusted RPC endpoint; do not paste an RPC credential into source code or shared logs.",
+              "code": "RPC_URL=\"YOUR_ETHEREUM_MAINNET_RPC_URL\" node read-ousd-evm.mjs ethereum 0x0000000000000000000000000000000000000000",
+              "sourceIds": [
+                "evm-read-example"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network-fees",
+          "heading": "Funding ETH execution fees",
+          "paragraphs": [
+            {
+              "text": "Ethereum charges transaction fees in ETH. The cost depends on gas used and the base and priority fees. Keep fee funding separate from the OUSD amount; a failed transaction can still consume gas.",
+              "sourceIds": [
+                "ethereum-gas"
+              ]
+            },
+            {
+              "text": "Estimate the actual contract operation. Ethereum’s 21,000-gas example describes a basic ETH transfer, not a universal gas limit for token transfers or other contract calls. Use an estimate for the transaction you intend to submit.",
+              "sourceIds": [
+                "ethereum-gas",
+                "ethereum-rpc"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tools-and-confirmation",
+          "heading": "Inspecting contract state and receipts",
+          "paragraphs": [
+            {
+              "text": "Use eth_call for read-only contract queries and eth_getTransactionReceipt to retrieve an included transaction’s receipt. These are general Ethereum interfaces; consult the token’s actual contract interface before constructing OUSD calls.",
+              "sourceIds": [
+                "ethereum-rpc"
+              ]
+            },
+            {
+              "text": "Ethereum RPC distinguishes pending, latest, safe, and finalized block state. Set a confirmation policy for payment crediting instead of treating a pending observation as final settlement.",
+              "sourceIds": [
+                "ethereum-rpc"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ousd-limits",
+          "heading": "OUSD deployment and access limits",
+          "paragraphs": [
+            {
+              "text": "The canonical Ethereum listing does not grant minting or redemption access and does not establish that a particular provider accepts this OUSD contract. Confirm the required operation and account eligibility with that provider.",
+              "sourceIds": [
+                "os-integrate"
+              ]
+            },
+            {
+              "text": "Use the listed contract to identify OUSD, not as a personal receiving address. This reference has not tested Ethereum OUSD transfers, provider integrations, or a Sepolia OUSD deployment.",
+              "sourceIds": [
+                "os-integrate",
+                "ethereum-networks"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "solana",
+    "name": "Solana",
+    "legacyRecordId": "solana-native-ousd",
+    "asset": "OUSD",
+    "deployment": "native",
+    "address": "ousd2mJsPEckLHcSCDxyKD7NDGARZcfLbDZkKiatYHB",
+    "explorerUrl": "https://solscan.io/token/ousd2mJsPEckLHcSCDxyKD7NDGARZcfLbDZkKiatYHB",
+    "sourceId": "os-integrate",
+    "reviewedAt": "2026-10-12",
+    "modifiedAt": "2026-10-12",
+    "profile": {
+      "title": "OUSD on Solana",
+      "introduction": {
+        "text": "On Solana, identify OUSD by the mint address below. A mint defines a token; individual holdings live in separate token accounts. Do not use the OUSD mint as a customer receiving account.",
+        "sourceIds": [
+          "os-integrate",
+          "solana-tokens"
+        ]
+      },
+      "sections": [
+        {
+          "id": "network-setup",
+          "heading": "Choosing the Solana cluster",
+          "paragraphs": [
+            {
+              "text": "Solana’s documented public Mainnet RPC is https://api.mainnet.solana.com. For application development, use Devnet at https://api.devnet.solana.com. Testnet is intended for validator and network stress testing. Each cluster has separate state.",
+              "sourceIds": [
+                "solana-clusters"
+              ]
+            },
+            {
+              "text": "Shared public RPC endpoints are rate-limited and are not intended for production applications. Select dedicated or private infrastructure before relying on RPC availability for customer payments.",
+              "sourceIds": [
+                "solana-clusters"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "read-only-balance",
+          "heading": "Reading an OUSD balance safely",
+          "paragraphs": [
+            {
+              "text": "The read-only example checks the Mainnet genesis hash, the exact OUSD mint, its owning program and six decimals before summing visible amounts from every token account returned for an owner. It verifies each account’s program, mint, owner and amount precision. No key, signature or transaction is needed.",
+              "sourceIds": [
+                "solana-genesis",
+                "solana-account-info",
+                "solana-owner-accounts",
+                "solana-read-example"
+              ]
+            },
+            {
+              "text": "On October 12, 2026, getAccountInfo returned an initialized Token-2022 mint at finalized slot 456215899. Its extensions were mintCloseAuthority, permanentDelegate, defaultAccountState, confidentialTransferMint, transferHook, metadataPointer, pausableConfig and tokenMetadata. The mint was not paused; its transfer-hook program ID was null. These are dated observations, not permanent token guarantees.",
+              "sourceIds": [
+                "solana-ousd-observation",
+                "solana-extensions"
+              ]
+            },
+            {
+              "text": "Download the example below and run it with Node.js 18 or later and a public wallet address you intend to query. That address is sent to the RPC endpoint. The smoke test used the public system-program address, not a customer wallet; it returned no token accounts at finalized slot 456215919 and visibleBalance 0.000000.",
+              "sourceIds": [
+                "solana-read-example",
+                "solana-ousd-observation"
+              ]
+            },
+            {
+              "text": "Expected output includes cluster, slot, mint, tokenProgram, owner, decimals, tokenAccounts, rawVisibleBalance and visibleBalance. Amounts stay integer or exact decimal strings. The query does not decrypt confidential balances, establish spendability or prove a payment settled; account reads can be at a later finalized slot than the mint read.",
+              "sourceIds": [
+                "solana-read-example",
+                "solana-owner-accounts",
+                "solana-extensions"
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "id": "solana-balance-example",
+              "title": "Run the read-only balance example",
+              "language": "bash",
+              "description": "Save the linked download as read-ousd-solana.mjs. This reproducible smoke test queries a public program address and should not be used as a customer receiving address.",
+              "code": "node read-ousd-solana.mjs 11111111111111111111111111111111",
+              "sourceIds": [
+                "solana-read-example",
+                "solana-ousd-observation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network-fees",
+          "heading": "Budgeting SOL and token-account storage",
+          "paragraphs": [
+            {
+              "text": "Solana transaction fees are paid in SOL and comprise a base fee plus an optional prioritization fee. Budget the fee payer’s SOL separately from the OUSD amount being transferred.",
+              "sourceIds": [
+                "solana-fees"
+              ]
+            },
+            {
+              "text": "An associated token account provides a predictable account address for an owner and mint. Creating one requires a refundable minimum storage balance, funded by the instruction’s payer even when another wallet owns the account. Include that cost when a recipient needs a new token account.",
+              "sourceIds": [
+                "solana-tokens"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tools-and-confirmation",
+          "heading": "Reading balances and choosing commitment",
+          "paragraphs": [
+            {
+              "text": "A token account records its mint, owner, and token amount. A wallet can own multiple accounts for one mint. Check those fields when reading OUSD holdings instead of treating the mint address as the customer’s balance account.",
+              "sourceIds": [
+                "solana-tokens"
+              ]
+            },
+            {
+              "text": "Solana RPC supports reads, simulation, and subscriptions. Choose the commitment level deliberately: processed data can roll back; confirmed reflects a supermajority vote; finalized is the network’s strongest confirmation state.",
+              "sourceIds": [
+                "solana-commitment"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ousd-limits",
+          "heading": "OUSD deployment and access limits",
+          "paragraphs": [
+            {
+              "text": "OUSD uses Token-2022. The read-only mint observation on October 12, 2026 found six decimals and the program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb. Inspect current extensions before selecting account-derivation or transfer tooling; a balance read does not test transfers.",
+              "sourceIds": [
+                "solana-ousd-launch",
+                "solana-ousd-observation"
+              ]
+            },
+            {
+              "text": "The native OUSD listing does not establish a Devnet deployment or every provider’s Solana OUSD route. This reference has not tested OUSD transfers or provider integrations on Solana.",
+              "sourceIds": [
+                "os-integrate",
+                "solana-clusters"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tempo",
+    "name": "Tempo",
+    "legacyRecordId": "tempo-native-ousd",
+    "asset": "OUSD",
+    "deployment": "native",
+    "address": "0x20c0000000000000000000006a37DA5C996874BE",
+    "explorerUrl": "https://explore.tempo.xyz/address/0x20c0000000000000000000006a37DA5C996874BE",
+    "sourceId": "os-integrate",
+    "reviewedAt": "2026-10-12",
+    "modifiedAt": "2026-10-12",
+    "profile": {
+      "title": "OUSD on Tempo",
+      "introduction": {
+        "text": "Open Standard lists native OUSD on Tempo. Use the contract below with Tempo Mainnet, chain ID 4217. Tempo has no native gas token: transaction fees use supported USD-denominated TIP-20 tokens.",
+        "sourceIds": [
+          "os-integrate",
+          "tempo-connection",
+          "tempo-fees"
+        ]
+      },
+      "sections": [
+        {
+          "id": "network-setup",
+          "heading": "Connecting to Tempo or Moderato",
+          "paragraphs": [
+            {
+              "text": "Tempo Mainnet uses chain ID 4217, HTTP RPC https://rpc.tempo.xyz, and WebSocket RPC wss://rpc.tempo.xyz. The wallet currency symbol is USD, but it does not represent a native token balance.",
+              "sourceIds": [
+                "tempo-connection"
+              ]
+            },
+            {
+              "text": "Moderato is the development testnet: chain ID 42431, HTTP RPC https://rpc.moderato.tempo.xyz, and WebSocket RPC wss://rpc.moderato.tempo.xyz. Mainnet and testnet funds, assets, and transaction histories are separate.",
+              "sourceIds": [
+                "tempo-connection"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "read-only-balance",
+          "heading": "Reading OUSD with a network check",
+          "paragraphs": [
+            {
+              "text": "The downloadable Node.js example first requires chain ID 4217, then queries the exact OUSD contract above. It pins eth_getCode, decimals() and balanceOf(address) to the same block number and prints the raw integer plus an exact decimal-string balance. eth_getBalance reads a native-currency balance, not OUSD.",
+              "sourceIds": [
+                "os-integrate",
+                "ethereum-rpc",
+                "evm-read-example",
+                "tempo-tip20",
+                "tempo-connection"
+              ]
+            },
+            {
+              "text": "The example makes JSON-RPC reads only; it requests no wallet connection, signature or transaction. The queried owner address is sent to the selected RPC endpoint. The command below uses the zero address only as a syntax illustration; replace it with the public address you intend to inspect.",
+              "sourceIds": [
+                "evm-read-example"
+              ]
+            },
+            {
+              "text": "Tempo’s TIP-20 specification fixes decimals at six and supplies the balanceOf interface. TIP-20 is implemented by native precompiles, so the example does not require ordinary ERC-20 bytecode on Tempo. It still validates the actual read responses.",
+              "sourceIds": [
+                "os-integrate",
+                "ethereum-rpc",
+                "evm-read-example",
+                "tempo-tip20",
+                "tempo-connection"
+              ]
+            },
+            {
+              "text": "Validation limit: the script passed syntax and mocked-response checks, including wrong-network and malformed-response failures. Live RPC requests from this review environment were blocked, so no live EVM balance result is claimed. Output should include network, chainId, block, token, owner, codeBytes, decimals, rawBalance and balance. A latest-block read is not a settlement or spendability guarantee.",
+              "sourceIds": [
+                "evm-read-example"
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "id": "tempo-balance-example",
+              "title": "Run the read-only balance example",
+              "language": "bash",
+              "description": "Save the linked download as read-ousd-evm.mjs and use Node.js 18 or later. Use a trusted RPC endpoint; do not paste an RPC credential into source code or shared logs.",
+              "code": "node read-ousd-evm.mjs tempo 0x0000000000000000000000000000000000000000",
+              "sourceIds": [
+                "evm-read-example"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "network-fees",
+          "heading": "Selecting and estimating the fee token",
+          "paragraphs": [
+            {
+              "text": "The fee token can differ from the payment token. If conversion to a validator’s preferred token is required, the Fee AMM needs enough liquidity. The sender can pay fees, or a separately authorized fee payer can sponsor them.",
+              "sourceIds": [
+                "tempo-fees"
+              ]
+            },
+            {
+              "text": "Estimate the actual call with its sender and fee configuration. Transfers to a new token holder can require more gas than transfers to an existing holder. Gas prices, usage, and network state can change before inclusion; use the receipt and fee-token transfer to reconcile the amount charged.",
+              "sourceIds": [
+                "tempo-fees"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tools-and-confirmation",
+          "heading": "Using SDKs and checking delivery",
+          "paragraphs": [
+            {
+              "text": "Tempo publishes SDK references for TypeScript with Viem or Wagmi, Go, Python, Foundry, and Rust. Query TIP-20 balances for actual funds instead of interpreting an Ethereum-style native-balance response as spendable money.",
+              "sourceIds": [
+                "tempo-sdk",
+                "tempo-evm"
+              ]
+            },
+            {
+              "text": "A successful TIP-20 call does not always mean the intended receiver was credited. If an account-level receive policy blocks delivery, funds go to ReceivePolicyGuard and a recovery receipt is recorded. Token-level policy failures instead revert. Check delivery effects when reconciling payments.",
+              "sourceIds": [
+                "tempo-receive-policies"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ousd-limits",
+          "heading": "OUSD fee eligibility and access limits",
+          "paragraphs": [
+            {
+              "text": "The native OUSD listing does not establish current OUSD fee-conversion liquidity or a provider-supported OUSD route. Verify fee-token eligibility and the available conversion liquidity for the intended transaction; no OUSD fee-payment transaction was tested for this reference.",
+              "sourceIds": [
+                "os-integrate",
+                "tempo-fees"
+              ]
+            },
+            {
+              "text": "Use the listed contract to identify OUSD, not as a personal receiving address. Mainnet setup and generic testnet instructions are separate from evidence of a successful OUSD transfer. This reference has not tested OUSD transfers or provider integrations on Tempo.",
+              "sourceIds": [
+                "os-integrate",
+                "tempo-connection"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

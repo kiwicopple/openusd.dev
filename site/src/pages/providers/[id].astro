@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import {providers,capabilities,source} from '../../lib/registry';
+import {capabilityActivityAnchor,legacyProfileAnchors,providerTasks} from '../../lib/provider-guides';
+import ProfileStatement from '../../components/ProfileStatement.astro';
+import ProfileExamples from '../../components/ProfileExamples.astro';
+import ProviderActivity from '../../components/ProviderActivity.astro';
+export function getStaticPaths(){return providers.filter(p=>p.detail).map(p=>({params:{id:p.id},props:{p}}));}
+const {p}=Astro.props;
+const records=capabilities.filter(c=>c.providerId===p.id);
+const profile=p.profile!;
+const tasks=providerTasks(p.id);
+const referenceIds=[...new Set([profile.introduction,...profile.sections.flatMap(s=>[...s.paragraphs,...(s.examples||[])])].flatMap(s=>s.sourceIds).concat(records.flatMap(c=>c.sources.map(s=>s.sourceId))))];
+const headings=[...profile.sections.flatMap(s=>[{depth:2,slug:s.id,text:s.heading},...(s.examples||[]).map(e=>({depth:3,slug:e.id,text:e.title}))]),{depth:2,slug:'next-steps',text:'Related references'},{depth:2,slug:'references',text:'References and last updated'}];
+---
+<Base title={profile.title} description={p.description} headings={headings}>
+<ProfileStatement statement={profile.introduction} concepts references={referenceIds}/>
+<span id="task-matrix" aria-hidden="true"></span>
+<span id="products" aria-hidden="true"></span>
+{profile.sections.map(s=>{
+ const task=tasks.find(t=>t.slug===s.id);
+ const linkedRecords=records.filter(c=>capabilityActivityAnchor(c)===s.id);
+ return <section>
+  {(legacyProfileAnchors[p.id]?.[s.id]||[]).map(id=><span id={id} class="anchor-alias" aria-hidden="true"></span>)}
+  {linkedRecords.map(c=><span id={c.id} class="anchor-alias" aria-hidden="true"></span>)}
+  <h2 id={s.id}>{s.heading}</h2>
+  <ProviderActivity paragraphs={s.paragraphs} references={referenceIds}/><ProfileExamples examples={s.examples||[]} references={referenceIds}/>
+  {task&&<p><a href={`/guides/${task.slug}/`}>General workflow: {task.title}</a></p>}
+ </section>;
+})}
+<h2 id="next-steps">Related references</h2>
+<ul><li><a href="/ecosystem/">Compare all providers</a></li><li><a href="/networks/">OUSD networks and exact token addresses</a></li><li><a href="/guides/integration-architecture/">Handling payment events, retries and reconciliation</a></li></ul>
+<h2 id="references">References and last updated</h2>
+<p class="source-note">Reviewed {p.reviewedAt} · Updated {p.modifiedAt}. This profile summarizes provider documentation. No live integration independently tested.</p>
+<ol class="profile-references">{referenceIds.map(id=>{const ref=source(id);return <li id={`reference-${id}`}><a href={ref.url}>{ref.title} ↗</a><br/><small>Published {ref.publishedAt||'date not provided'} · Reviewed {ref.reviewedAt}</small></li>})}</ol>
+<p>Claim-level sources, product review dates and evidence status are retained in the <a href="/data/">downloadable dataset</a>.</p>
+</Base>

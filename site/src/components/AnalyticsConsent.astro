@@ -1,0 +1,33 @@
+---
+import { measurementId } from '../config/analytics';
+const productionTracking = import.meta.env.PROD && process.env.PRODUCTION_INDEXING === 'true';
+---
+<section id="analytics-consent" class="analytics-consent" aria-labelledby="analytics-consent-title" hidden>
+  <div>
+    <p id="analytics-consent-title"><strong>Allow usage analytics?</strong></p>
+    <p>With your permission, Google Analytics uses cookies to measure visits and help improve this site. We don’t use it for advertising. <a href="/privacy/#analytics">Privacy details</a></p>
+    <p id="analytics-consent-status" role="status"></p>
+  </div>
+  <div class="analytics-consent-actions">
+    <button type="button" id="analytics-decline">No thanks</button>
+    <button type="button" id="analytics-accept">Allow analytics</button>
+    <button type="button" id="analytics-close" hidden>Close</button>
+  </div>
+</section>
+{productionTracking && <script is:inline src="/analytics.js" defer data-measurement-id={measurementId}></script>}
+<style>
+  /* Starlight isolates the content column below its fixed sidebar. Let the
+     consent panel reach its own z-index only while it is visible. */
+  :global(.main-pane:has(#analytics-consent:not([hidden]))) { isolation:auto; }
+  .analytics-consent { position:fixed; z-index:100; inset:auto 1rem 1rem; max-width:46rem; margin-inline:auto; padding:1.25rem; border:1px solid var(--ousd-control-border); border-radius:var(--ousd-radius); background:var(--ousd-surface); color:var(--sl-color-text); font-size:.875rem; line-height:1.5; }
+  .analytics-consent[hidden], #analytics-close[hidden] { display:none; }
+  #analytics-consent-title { margin:0 0 .4rem; font-size:1rem; color:var(--sl-color-white); }
+  .analytics-consent p { margin:.4rem 0 0; }
+  .analytics-consent a { color:var(--sl-color-text-accent); text-decoration:underline; }
+  #analytics-consent-status:empty { display:none; }
+  .analytics-consent-actions { display:flex; flex-wrap:wrap; gap:.625rem; margin-top:1rem; }
+  .analytics-consent-actions button { padding:.45rem .8rem; border:1px solid var(--ousd-control-border); border-radius:var(--ousd-radius); background:var(--ousd-surface); color:var(--sl-color-white); font:inherit; cursor:pointer; }
+  .analytics-consent-actions button:hover { background:var(--sl-color-gray-6); }
+  button:focus-visible, a:focus-visible { outline:2px solid var(--sl-color-text-accent); outline-offset:3px; }
+  @media(max-width:40rem) { .analytics-consent { inset:auto .5rem .5rem; padding:1rem; } }
+</style>
