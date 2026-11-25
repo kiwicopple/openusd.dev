@@ -157,7 +157,7 @@
     "kind": "Payments platform",
     "description": "OUSD balances and product-specific integration docs. External transfer assets vary by product.",
     "detail": true,
-    "modifiedAt": "2026-11-09",
+    "modifiedAt": "2026-11-16",
     "reviewedAt": "2026-10-12",
     "profile": {
       "title": "Stripe OUSD integration",
@@ -325,7 +325,7 @@
           "heading": "Accepting OUSD payments",
           "paragraphs": [
             {
-              "text": "Can customers pay in OUSD? Stripe’s September 30, 2026 launch announcement explicitly includes OUSD payment acceptance, and its OUSD overview links to Payments. The detailed accepted-token table still names only USDC, USDP and USDG. This conflict remained unresolved on October 12, 2026; confirm the merchant, network and integration with Stripe before implementation.",
+              "text": "Can customers pay in OUSD? Stripe’s September 30, 2026 launch announcement explicitly includes OUSD payment acceptance, and its OUSD overview links to Payments. The detailed accepted-token table still names only USDC, USDP and USDG. This conflict remained unresolved on November 16, 2026; confirm the merchant, network and integration with Stripe before implementation.",
               "sourceIds": [
                 "stripe-ousd-launch",
                 "stripe-ousd",
@@ -345,6 +345,13 @@
                 "stripe-payments",
                 "stripe-accept-stablecoins"
               ]
+            },
+            {
+              "text": "For agent-paid APIs, Stripe’s OUSD overview links to Machine Payments Protocol (MPP). The machine-payments availability table specifies USDC.e on Tempo and USDC on Solana for MPP, and USDC on Base for x402. It does not establish OUSD acceptance through either protocol. Use the product-specific token table, not the overview link, when choosing a payment route.",
+              "sourceIds": [
+                "stripe-ousd",
+                "stripe-machine-payments"
+              ]
             }
           ]
         }
@@ -357,7 +364,7 @@
     "kind": "Payments infrastructure",
     "description": "OUSD issuance, custodial wallets and transfers; production access requires onboarding.",
     "detail": true,
-    "modifiedAt": "2026-11-09",
+    "modifiedAt": "2026-11-16",
     "reviewedAt": "2026-10-12",
     "profile": {
       "title": "Bridge OUSD integration",
@@ -394,7 +401,7 @@
               ]
             },
             {
-              "text": "Prepare deposit handling before November 16, 2026: Bridge says incoming RTP deposits may return rtp in Transfer source payment_received_rail, Virtual Account source payment_rail, and wallet activity/history. Accept that response value in parsers and webhooks. When creating transfers or configuring virtual accounts, keep using fednow; rtp is a response value, not a request rail. This upcoming rail change does not establish an additional OUSD route.",
+              "text": "Bridge’s announced November 16, 2026 rollout means incoming RTP deposits may return rtp in Transfer source payment_received_rail, Virtual Account source payment_rail, and wallet activity/history. Accept that response value in parsers and webhooks. When creating transfers or configuring virtual accounts, keep using fednow; rtp is a response value, not a request rail. This rail change does not establish an additional OUSD route.",
               "sourceIds": [
                 "bridge-changelog"
               ]

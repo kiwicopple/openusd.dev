@@ -158,5 +158,15 @@
     "description": "Added BVNK with its documentation conflict, Bridge’s November 16 RTP response-value warning, current Stripe setup and payout API guidance, and Base’s revised pending-block behavior. Corrected reserve-source attribution and source metadata; no new native OUSD network is verified.",
     "sourceId": null,
     "draft": false
+  },
+  {
+    "id": "machine-payments-rail-review-nov16",
+    "date": "2026-11-16",
+    "modifiedAt": "2026-11-16",
+    "type": "site",
+    "title": "Stripe machine-payment routes clarified; Bridge rollout wording updated",
+    "description": "Added Stripe’s protocol-specific currency matrix to distinguish its agent-payment documentation from verified OUSD acceptance. Updated Bridge’s November 16 RTP rollout wording without claiming account-level activation. Native OUSD networks are unchanged.",
+    "sourceId": null,
+    "draft": false
   }
 ]

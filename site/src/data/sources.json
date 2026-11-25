@@ -32,7 +32,7 @@
     "url": "https://docs.stripe.com/payments/stablecoin-payments",
     "title": "Stripe: Stablecoin payments",
     "publishedAt": null,
-    "reviewedAt": "2026-10-12"
+    "reviewedAt": "2026-11-16"
   },
   {
     "id": "bridge-announcement",
@@ -67,7 +67,7 @@
     "url": "https://apidocs.bridge.xyz/changelog/changelog",
     "title": "Bridge: Developer changelog",
     "publishedAt": null,
-    "reviewedAt": "2026-11-09"
+    "reviewedAt": "2026-11-16"
   },
   {
     "id": "tempo-announcement",
@@ -165,7 +165,7 @@
     "url": "https://docs.stripe.com/stablecoins/ecosystem/ousd",
     "title": "Stripe: Open USD product integration overview",
     "publishedAt": null,
-    "reviewedAt": "2026-10-12"
+    "reviewedAt": "2026-11-16"
   },
   {
     "id": "stripe-treasury",
@@ -873,5 +873,12 @@
     "title": "BVNK: Currencies and network eligibility",
     "publishedAt": null,
     "reviewedAt": "2026-11-09"
+  },
+  {
+    "id": "stripe-machine-payments",
+    "url": "https://docs.stripe.com/payments/machine",
+    "title": "Stripe machine payments: protocol, network and currency availability",
+    "publishedAt": null,
+    "reviewedAt": "2026-11-16"
   }
 ]

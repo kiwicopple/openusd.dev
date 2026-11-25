@@ -60,5 +60,5 @@ Documentation reviewed October 12, 2026. Modified October 12, 2026. No live inte
 ## Available providers
 
 <!-- task-providers:start -->
-- [Stripe](/providers/stripe/#accept-payments): Can customers pay in OUSD? Stripe’s September 30, 2026 launch announcement explicitly includes OUSD payment acceptance, and its OUSD overview links to Payments. The detailed accepted-token table still names only USDC, USDP and USDG. This conflict remained unresolved on October 12, 2026; confirm the merchant, network and integration with Stripe before implementation.
+- [Stripe](/providers/stripe/#accept-payments): Can customers pay in OUSD? Stripe’s September 30, 2026 launch announcement explicitly includes OUSD payment acceptance, and its OUSD overview links to Payments. The detailed accepted-token table still names only USDC, USDP and USDG. This conflict remained unresolved on November 16, 2026; confirm the merchant, network and integration with Stripe before implementation.
 <!-- task-providers:end -->
